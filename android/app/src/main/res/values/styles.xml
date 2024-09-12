@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
+        <item name="android:datePickerDialogTheme">@style/DialogDatePicker.Theme</item>
+        <item name="android:timePickerDialogTheme">@style/DialogTimePicker.Theme</item>
+    </style>
+    <style name="DialogDatePicker.Theme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">#EB422B</item>
+        <item name="android:textColor">#EB422B</item>
+        <item name="android:textColorPrimary">#EB422B</item>
+    </style>
+    <style name="DialogTimePicker.Theme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">#EB422B</item>
+        <item name="android:textColor">#EB422B</item>
+        <item name="android:textColorPrimary">#EB422B</item>
+    </style>
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+</resources>
