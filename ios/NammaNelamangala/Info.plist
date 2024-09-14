@@ -47,11 +47,12 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>ProductSans-Bold.ttf</string>
 		<string>ProductSans-Regular.ttf</string>
+		<string>Vazirmatn-ExtraBold.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

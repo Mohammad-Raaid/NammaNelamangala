@@ -1,5 +1,5 @@
 import React from 'react'
-import { Keyboard, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Image, Keyboard, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import FocusAwareStatusBar from '../../components/FocusAwareStatusBar'
 import { Colors, Constants } from '../../global/index'
 import GlobalButton from '../../components/CustomButton/CustomButton'
@@ -11,33 +11,53 @@ const OtpScreen = () => {
         goToHome,
         code,
         setCode,
-        otpInput
+        otpInput,
+        countdown,
+        resendOtp
     } = OtpHooks()
     return (
         <View style={styles.mainConatiner}>
-            <FocusAwareStatusBar barColor={Colors.SNOW} isLightBar={false} isTopSpace={true} />
-            <View style={styles.alignCenterContainer}>
-                <Text style={styles.title}>Enter OTP</Text>
-                <Text style={styles.description}>Enter Unique verification code{'\n'} which you have received on your{'\n'} phone number.</Text>
-            </View>
-            <View style={styles.otpInputContainer}>
-                <OTPTextInput
-                    handleTextChange={(item) => {
-                        setCode(item);
-                        if (item.length == 6) {
-                            Keyboard.dismiss();
-                        }
-                    }}
-                    underlineColorAndroid='transparent'
-                    ref={otpInput}
-                    inputCount={6}
-                    tintColor={Colors.RICH_BLACK_30}
-                    offTintColor={Colors.GRAY_MEDIUM}
-                    containerStyle={styles.otpContainer}
-                    textInputStyle={styles.textInputStyle}
-                />
-            </View>
-            <View style={styles.footerContainer}>
+            <FocusAwareStatusBar barColor={Colors.WHITE} isLightBar={false} isTopSpace={true} />
+            <ScrollView>
+                <View style={styles.images}>
+                    <View style={styles.imageBorder}>
+                        <Image
+                            resizeMode="contain"
+                            style={styles.image}
+                            source={require('../../assets/images/logo.png')}
+                        />
+                    </View>
+                    <Text style={styles.headerText}>
+                        ನಮ್ಮ ನೆಲಮಂಗಲ
+                    </Text>
+                    <View style={styles.imageBorder}>
+                        <Image
+                            resizeMode="cover"
+                            source={require('../../assets/images/logo-2.png')}
+                        />
+                    </View>
+                </View>
+                <View style={styles.alignCenterContainer}>
+                    <Text style={styles.title}>Verify OTP</Text>
+                    <Text style={styles.description}>We’ve sent the OTP to your registered{`\n`}mobile number</Text>
+                </View>
+                <View style={styles.otpInputContainer}>
+                    <OTPTextInput
+                        handleTextChange={(item) => {
+                            setCode(item);
+                            if (item.length == 6) {
+                                Keyboard.dismiss();
+                            }
+                        }}
+                        underlineColorAndroid='transparent'
+                        ref={otpInput}
+                        inputCount={6}
+                        tintColor={Colors.PRIMARY}
+                        offTintColor={Colors.GRAY_85}
+                        containerStyle={styles.otpContainer}
+                        textInputStyle={styles.textInputStyle}
+                    />
+                </View>
                 <GlobalButton
                     buttonPress={() => {
                         if (code.length == 6) {
@@ -49,9 +69,16 @@ const OtpScreen = () => {
                             })
                         }
                     }}
-                    buttonText='Submit'
+                    externalButtonContainerStyle={styles.buttonContainer}
+                    buttonText='Continue'
                 />
-            </View>
+                <Text style={styles.resendOtp} onPress={resendOtp}>
+                    Resend OTP{countdown != 0 ? ` in 00:${countdown}` : ``}
+                </Text>
+            </ScrollView>
+            <Text style={styles.footerText}>
+                Ravikumar Foundation®
+            </Text>
         </View>
     )
 }

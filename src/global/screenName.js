@@ -9,6 +9,7 @@ export const CONTACT_US_SCREEN = 'CONTACT_US_SCREEN'
 
 
 
+export const HOME_DRAWER = 'HOME_DRAWER'
 export const BOTTOM_TABS = 'BOTTOM_TABS'
 export const HOME_STACK = 'HOME_STACK'
 export const COMPLAINTS_STACK = 'COMPLAINTS_STACK'

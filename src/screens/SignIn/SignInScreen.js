@@ -19,7 +19,6 @@ const SignInScreen = () => {
         <View style={styles.mainConatiner}>
             <FocusAwareStatusBar barColor={Colors.WHITE} isLightBar={false} isTopSpace={true} />
             <ScrollView>
-
                 <View style={styles.images}>
                     <View style={styles.imageBorder}>
                         <Image
@@ -31,7 +30,6 @@ const SignInScreen = () => {
                     <View style={styles.imageBorder}>
                         <Image
                             resizeMode="cover"
-                            style={styles.imageContainer}
                             source={require('../../assets/images/logo-2.png')}
                         />
                     </View>
@@ -41,7 +39,7 @@ const SignInScreen = () => {
                     width={Constants.SCREEN_WIDTH}
                     height={Constants.SCREEN_WIDTH / 1.6}
                     autoPlay={true}
-                    style={{ marginTop: Constants.CHANGE_BY_MOBILE_DPI(20) }}
+                    style={{ marginTop: Constants.CHANGE_BY_MOBILE_DPI(36) }}
                     data={bannerImages}
                     scrollAnimationDuration={3000}
                     renderItem={({ item }) => (
@@ -60,6 +58,7 @@ const SignInScreen = () => {
                     <CustomTextInput
                         placeholderText='Enter phone number to recieve an OTP'
                         setValue={setMobileNumber}
+                        maxLength={10}
                         Prefix={() => {
                             return (
                                 <View style={styles.phoneCodeContainer}>
@@ -79,11 +78,9 @@ const SignInScreen = () => {
                     buttonText='Continue'
                 />
             </ScrollView>
-            <View style={styles.footer}>
-                <Text style={styles.footerText}>
-                    Ravikumar Foundation®
-                </Text>
-            </View>
+            <Text style={styles.footerText}>
+                Ravikumar Foundation®
+            </Text>
         </View>
     )
 }

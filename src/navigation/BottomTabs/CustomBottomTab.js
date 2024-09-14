@@ -18,7 +18,7 @@ import ApplicationsSelected from '../../assets/svgs/bottomTabIcons/applicationsS
 import GallerySelected from '../../assets/svgs/bottomTabIcons/gallerySelected.svg';
 import ContactUsSelected from '../../assets/svgs/bottomTabIcons/contactusSelected.svg';
 
-import { Colors, Constants } from '../../global';
+import { Colors, Constants, Fonts } from '../../global';
 //components
 
 
@@ -64,7 +64,7 @@ const CustomBottomTab = ({ state, navigation }) => {
 
                         return (
                             <TouchableOpacity
-                                key={`bottomtabs-${index}`} activeOpacity={1} onPress={onPress} style={stylesToBeApplied[index]}>
+                                key={`bottomtabs-${index}`} activeOpacity={1} onPress={onPress} style={styles.tab}>
                                 <Animated.View>
                                     {
                                         isFocused
@@ -75,14 +75,9 @@ const CustomBottomTab = ({ state, navigation }) => {
                                     }
                                 </Animated.View>
                                 {
-
-                                    isFocused
-                                        ?
-                                        <Text style={{ ...styles.names, color: isFocused ? Colors.PRIMARY : "#C5CACE" }}>
-                                            {names[index]}
-                                        </Text>
-                                        :
-                                        null
+                                    <Text style={{ ...styles.names, color: isFocused ? Colors.PRIMARY : "#111111", fontFamily: isFocused ? Fonts.BOLD : Fonts.REGULAR }}>
+                                        {names[index]}
+                                    </Text>
                                 }
                             </TouchableOpacity>
                         );

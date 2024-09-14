@@ -14,19 +14,21 @@ const OtpHooks = () => {
     // state
     const [confirm, setConfirm] = React.useState(null);
     const [code, setCode] = React.useState('');
+    const [countdown, setCountdown] = React.useState(60);
+    const [canResend, setCanResend] = React.useState(false);
     // function
-    const resetStackAndGoToBottom = CommonActions.reset({
+    const resetStackAndGoToHome = CommonActions.reset({
         index: 0,
-        routes: [{ name: ScreenNames.BOTTOM_TABS }],
+        routes: [{ name: ScreenNames.HOME_DRAWER }],
     });
 
     const goToHome = async (autoVerified = false) => {
         dispatch(UserActions.setOnScreenLodaer(true))
         if (!autoVerified) {
             try {
-                if (confirm) {
-                    await confirm.confirm(code)
-                }
+                // if (confirm) {
+                //     await confirm.confirm(code)
+                // }
             } catch (error) {
                 dispatch(UserActions.setOnScreenLodaer(false))
                 setToastMsgData({
@@ -38,6 +40,8 @@ const OtpHooks = () => {
             }
         }
         try {
+            navigation.dispatch(resetStackAndGoToHome)
+            dispatch(UserActions.setOnScreenLodaer(false))
         } catch (error) {
             dispatch(UserActions.setOnScreenLodaer(false))
             setToastMsgData({
@@ -46,6 +50,10 @@ const OtpHooks = () => {
             })
             console.log('goToHome_error', error.message)
         }
+    }
+
+    const resendOtp = () => {
+        setCountdown(60)
     }
     // const sendOtptoFirebase = async () => {
     //     try {
@@ -80,11 +88,31 @@ const OtpHooks = () => {
     //     });
     //     return () => removeListener();
     // }, []);
+
+    React.useEffect(() => {
+        let interval;
+        if (countdown > 0) {
+            interval = setInterval(() => {
+                let num = countdown - 1;
+                if (num < 10) {
+                    setCountdown(`0${num}`);
+                } else {
+                    setCountdown(num);
+                }
+            }, 1000);
+        } else {
+            setCanResend(true);
+            clearInterval(interval);
+        }
+        return () => clearInterval(interval);
+    }, [countdown]);
     return {
         goToHome,
         setCode,
         code,
-        otpInput
+        otpInput,
+        countdown,
+        resendOtp
     }
 }
 

@@ -9,13 +9,7 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         marginHorizontal: Constants.CHANGE_BY_MOBILE_DPI(20),
-        marginTop: Constants.CHANGE_BY_MOBILE_DPI(20)
-    },
-    imageContainer: {
-        width: Constants.CHANGE_BY_MOBILE_DPI(50),
-        alignSelf: 'center',
-        height: Constants.CHANGE_BY_MOBILE_DPI(50),
-        borderRadius: Constants.CHANGE_BY_MOBILE_DPI(30),
+        marginTop: Constants.CHANGE_BY_MOBILE_DPI(32)
     },
     imageBorder: {
         borderWidth: Constants.CHANGE_BY_MOBILE_DPI(2.5),
@@ -24,7 +18,8 @@ export const styles = StyleSheet.create({
         width: Constants.CHANGE_BY_MOBILE_DPI(50),
         justifyContent: "center",
         alignItems: "center",
-        borderColor: Colors.GRAY_85
+        borderColor: Colors.GRAY_85,
+        overflow: "hidden"
     },
     bannerImage: {
         height: "100%",
@@ -32,7 +27,6 @@ export const styles = StyleSheet.create({
     },
     image: {
         width: Constants.CHANGE_BY_MOBILE_DPI(37),
-        alignSelf: 'center',
         height: Constants.CHANGE_BY_MOBILE_DPI(37),
     },
     alignCenterContainer: {
@@ -41,7 +35,7 @@ export const styles = StyleSheet.create({
     },
     title: {
         fontSize: Constants.CHANGE_BY_MOBILE_DPI(32),
-        fontFamily: Fonts.BOLD,
+        fontFamily: Fonts.EXTRA_BOLD,
         color: Colors.PRIMARY,
         includeFontPadding: true
     },
@@ -88,12 +82,12 @@ export const styles = StyleSheet.create({
     primaryText: {
         color: Colors.PRIMARY,
     },
-    footer: {
-        alignItems: "center",
-        marginBottom: Constants.CHANGE_BY_MOBILE_DPI(8)
-    },
     footerText: {
-        color: "#DFC9FB"
+        textAlign: "center",
+        marginBottom: Constants.CHANGE_BY_MOBILE_DPI(8),
+        color: "#DFC9FB",
+        fontFamily: Fonts.REGULAR,
+        fontSize: Constants.CHANGE_BY_MOBILE_DPI(12)
     }
 
 })

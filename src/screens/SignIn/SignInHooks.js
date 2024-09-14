@@ -3,6 +3,7 @@ import { ScreenNames } from '../../global/index';
 import { CommonActions, useNavigation } from '@react-navigation/native';
 import * as UserAction from '../../redux/actions/userAction';
 import { useDispatch } from 'react-redux';
+import { isValidPhoneNumber } from '../../global/validation';
 
 const SignInHooks = () => {
 
@@ -25,9 +26,11 @@ const SignInHooks = () => {
 
 
     const goToOtp = async () => {
-        if (mobileNumber != "") {
+        if (isValidPhoneNumber(mobileNumber).valid) {
             try {
                 dispatch(UserAction.setOnScreenLodaer(true))
+                navigation.navigate(ScreenNames.OTP_SCREEN)
+                dispatch(UserAction.setOnScreenLodaer(false))
             } catch (error) {
                 dispatch(UserAction.setOnScreenLodaer(false))
                 console.log("goToOtp", error);
@@ -35,16 +38,10 @@ const SignInHooks = () => {
             }
         } else {
             let invalidFields = []
-            if (mobileNumber == "") {
+            if (!isValidPhoneNumber(mobileNumber).valid) {
                 invalidFields.push({
                     field: "mobileNumber",
-                    errorMessage: "This field is cannot be empty"
-                })
-            }
-            if (password == "") {
-                invalidFields.push({
-                    field: "password",
-                    errorMessage: "This field is cannot be empty"
+                    errorMessage: isValidPhoneNumber(mobileNumber).message
                 })
             }
             setInvalidFields(invalidFields)

@@ -10,6 +10,7 @@ import OtpScreen from "../screens/Otp/OtpScreen";
 import BottomTabs from "./BottomTabs/BottomTabs";
 import { isReadyRef, navigationRef } from "./RootNavigation";
 import { useSelector } from "react-redux";
+import HomeDrawer from "./Drawer/HomeDrawer";
 enableScreens();
 const Stack = createStackNavigator();
 
@@ -29,7 +30,7 @@ const MainStack = () => {
                     <Stack.Screen name={ScreenNames.SPLASH_SCREEN} component={SplashScreen} />
                     <Stack.Screen name={ScreenNames.SIGNIN_SCREEN} component={SignInScreen} />
                     <Stack.Screen name={ScreenNames.OTP_SCREEN} component={OtpScreen} />
-                    <Stack.Screen name={ScreenNames.BOTTOM_TABS} component={BottomTabs} />
+                    <Stack.Screen name={ScreenNames.HOME_DRAWER} component={HomeDrawer} />
                 </Stack.Navigator>
             </NavigationContainer>
 

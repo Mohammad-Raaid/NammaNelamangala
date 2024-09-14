@@ -9,31 +9,23 @@ const RADIUS = 20;
 
 export const styles = StyleSheet.create({
     con: {
-        backgroundColor: Colors.SNOW,
-        borderRadius: Constants.CHANGE_BY_MOBILE_DPI(10)
+        backgroundColor: Colors.WHITE,
+        borderRadius: Constants.CHANGE_BY_MOBILE_DPI(10),
+        borderTopWidth: Constants.CHANGE_BY_MOBILE_DPI(1),
+        borderColor: Colors.GRAY_85
     },
     tabBarCon: {
         flexDirection: 'row',
         height: Constants.CHANGE_BY_MOBILE_DPI(60)
     },
-    home: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    cancerTab: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    chatTab: {
+    tab: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },
     names: {
         fontSize: Constants.CHANGE_BY_MOBILE_DPI(10),
-        fontFamily: Fonts.SEMIBOLD,
+        fontFamily: Fonts.REGULAR,
         includeFontPadding: false,
     }
 });
