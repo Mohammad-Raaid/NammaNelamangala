@@ -19,6 +19,23 @@ const SignInScreen = () => {
         <View style={styles.mainConatiner}>
             <FocusAwareStatusBar barColor={Colors.WHITE} isLightBar={false} isTopSpace={true} />
             <ScrollView>
+
+                <View style={styles.images}>
+                    <View style={styles.imageBorder}>
+                        <Image
+                            resizeMode="contain"
+                            style={styles.image}
+                            source={require('../../assets/images/logo.png')}
+                        />
+                    </View>
+                    <View style={styles.imageBorder}>
+                        <Image
+                            resizeMode="cover"
+                            style={styles.imageContainer}
+                            source={require('../../assets/images/logo-2.png')}
+                        />
+                    </View>
+                </View>
                 <Carousel
                     loop
                     width={Constants.SCREEN_WIDTH}
@@ -36,8 +53,8 @@ const SignInScreen = () => {
                     )}
                 />
                 <View style={styles.alignCenterContainer}>
-                    <Text style={styles.title}>Welcome back!</Text>
-                    <Text style={styles.description}>Namaste,{'\n'}Kindly log in to proceed further.</Text>
+                    <Text style={styles.title}>ನಮ್ಮ ನೆಲಮಂಗಲ</Text>
+                    <Text style={styles.description}>Login to be a part of our local improvement</Text>
                 </View>
                 <View style={styles.inputContainer}>
                     <CustomTextInput
@@ -59,9 +76,14 @@ const SignInScreen = () => {
                 </View>
                 <GlobalButton
                     buttonPress={goToOtp}
-                    buttonText='Get OTP'
+                    buttonText='Continue'
                 />
             </ScrollView>
+            <View style={styles.footer}>
+                <Text style={styles.footerText}>
+                    Ravikumar Foundation®
+                </Text>
+            </View>
         </View>
     )
 }

@@ -5,28 +5,53 @@ export const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: Colors.WHITE
     },
+    images: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginHorizontal: Constants.CHANGE_BY_MOBILE_DPI(20),
+        marginTop: Constants.CHANGE_BY_MOBILE_DPI(20)
+    },
+    imageContainer: {
+        width: Constants.CHANGE_BY_MOBILE_DPI(50),
+        alignSelf: 'center',
+        height: Constants.CHANGE_BY_MOBILE_DPI(50),
+        borderRadius: Constants.CHANGE_BY_MOBILE_DPI(30),
+    },
+    imageBorder: {
+        borderWidth: Constants.CHANGE_BY_MOBILE_DPI(2.5),
+        borderRadius: Constants.CHANGE_BY_MOBILE_DPI(25),
+        height: Constants.CHANGE_BY_MOBILE_DPI(50),
+        width: Constants.CHANGE_BY_MOBILE_DPI(50),
+        justifyContent: "center",
+        alignItems: "center",
+        borderColor: Colors.GRAY_85
+    },
     bannerImage: {
         height: "100%",
         width: "100%"
     },
+    image: {
+        width: Constants.CHANGE_BY_MOBILE_DPI(37),
+        alignSelf: 'center',
+        height: Constants.CHANGE_BY_MOBILE_DPI(37),
+    },
     alignCenterContainer: {
         alignItems: 'center',
-        marginTop: Constants.CHANGE_BY_MOBILE_DPI(60)
+        marginTop: Constants.CHANGE_BY_MOBILE_DPI(10)
     },
     title: {
-        fontSize: Constants.CHANGE_BY_MOBILE_DPI(24),
-        fontFamily: Fonts.SEMIBOLD,
-        color: Colors.RICH_BLACK,
-        marginBottom: Constants.CHANGE_BY_MOBILE_DPI(20)
+        fontSize: Constants.CHANGE_BY_MOBILE_DPI(32),
+        fontFamily: Fonts.BOLD,
+        color: Colors.PRIMARY,
     },
     description: {
-        fontSize: Constants.CHANGE_BY_MOBILE_DPI(18),
+        fontSize: Constants.CHANGE_BY_MOBILE_DPI(14),
         fontFamily: Fonts.REGULAR,
-        color: Colors.RICH_BLACK,
+        color: Colors.BLACK,
         textAlign: 'center'
     },
     inputContainer: {
-        marginTop: Constants.CHANGE_BY_MOBILE_DPI(100)
+        marginTop: Constants.CHANGE_BY_MOBILE_DPI(58)
     },
     inputPlaceholder: {
         fontFamily: Fonts.REGULAR
@@ -62,5 +87,12 @@ export const styles = StyleSheet.create({
     primaryText: {
         color: Colors.PRIMARY,
     },
+    footer: {
+        alignItems: "center",
+        marginBottom: Constants.CHANGE_BY_MOBILE_DPI(8)
+    },
+    footerText: {
+        color: "#DFC9FB"
+    }
 
 })
