@@ -8,11 +8,9 @@ const MenuHeader = () => {
     return (
         <View style={styles.headerContainer}>
             <MenuSvg />
-            <View style={styles.headerTextContainer}>
-                <Text style={styles.headerText}>
-                    ನಮ್ಮ ನೆಲಮಂಗಲ
-                </Text>
-            </View>
+            <Text style={styles.headerText}>
+                ನಮ್ಮ ನೆಲಮಂಗಲ
+            </Text>
             <View style={styles.svgContainer}>
                 <View style={styles.iconsContainer}>
                     <LanguageSvg />

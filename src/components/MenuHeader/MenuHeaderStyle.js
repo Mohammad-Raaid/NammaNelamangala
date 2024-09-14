@@ -4,13 +4,13 @@ export const styles = StyleSheet.create({
 
     headerContainer: {
         flexDirection: "row",
-        justifyContent: "space-between",
         alignItems: "center",
         marginLeft: Constants.CHANGE_BY_MOBILE_DPI(24),
         marginTop: Constants.CHANGE_BY_MOBILE_DPI(16)
     },
     svgContainer: {
         flexDirection: "row",
+        alignItems: "center",
         marginRight: Constants.CHANGE_BY_MOBILE_DPI(24)
     },
     iconsContainer: {
@@ -19,9 +19,12 @@ export const styles = StyleSheet.create({
     headerTextContainer: {
         width: Constants.CHANGE_BY_MOBILE_DPI(105),
         height: Constants.CHANGE_BY_MOBILE_DPI(22),
-        marginTop: Constants.CHANGE_BY_MOBILE_DPI(5)
     },
     headerText: {
+        flex: 1,
+        textAlign: "right",
+        marginRight: Constants.CHANGE_BY_MOBILE_DPI(32),
+        marginTop: Constants.CHANGE_BY_MOBILE_DPI(5),
         color: Colors.PRIMARY,
         fontSize: Constants.CHANGE_BY_MOBILE_DPI(14),
         fontFamily: Fonts.EXTRA_BOLD,
