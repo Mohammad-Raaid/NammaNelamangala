@@ -1,16 +1,12 @@
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { styles } from './GlobalTextInputStyle'
+import { styles } from './CustomTextInputStyle'
 import { Colors, Constants } from '../../global'
 import { CHANGE_BY_MOBILE_DPI } from '../../global/constant'
-const GlobalTextInput = ({
+const CustomTextInput = ({
     setValue,
-    svg = null,
     externalStyle,
-    required = false,
-    externalPlaceholder = '',
     placeholderText = '',
-    placeholderColor = '#04040433',
     multiline = false,
     keyboardType = 'default',
     maxLength = null,
@@ -18,7 +14,9 @@ const GlobalTextInput = ({
     onBlur = () => { },
     editable = true,
     defaultValue = '',
-    error = null
+    error = null,
+    placeholderStyle = {},
+    Prefix = null
 }) => {
 
     const [inputValue, setInputValue] = React.useState(defaultValue)
@@ -27,24 +25,28 @@ const GlobalTextInput = ({
         setValue(text)
     }
     return (
-        <View style={{ marginBottom: CHANGE_BY_MOBILE_DPI(20), }}>
+        <View style={styles.mainContainer}>
             {
-                externalPlaceholder != ""
+                placeholderText != ""
                 &&
-                <Text style={styles.textContainer}>
-                    {externalPlaceholder}{required ? <Text style={styles.starContainer}> *</Text> : null}
+                <Text style={[styles.textContainer, placeholderStyle]}>
+                    {placeholderText}
                 </Text>
             }
             <View style={[styles.inputMainContainer, externalStyle, multiline ? { height: Constants.CHANGE_BY_MOBILE_DPI(90) } : {}, error ? styles.error : {}]}>
+                {
+                    Prefix
+                    &&
+                    <Prefix />
+                }
                 <View style={styles.flexContainer}>
                     <TextInput
                         onFocus={onFocus}
                         onBlur={onBlur}
+                        selectionColor={Colors.PRIMARY}
                         editable={editable}
                         multiline={multiline}
-                        style={[styles.inputStyle, !editable ? { color: Colors.GRAY_DARK } : {}]}
-                        placeholderTextColor={placeholderColor}
-                        placeholder={placeholderText}
+                        style={styles.inputStyle}
                         onChangeText={onChangeText}
                         keyboardType={keyboardType}
                         maxLength={maxLength}
@@ -62,4 +64,4 @@ const GlobalTextInput = ({
     )
 }
 
-export default GlobalTextInput;
+export default CustomTextInput;

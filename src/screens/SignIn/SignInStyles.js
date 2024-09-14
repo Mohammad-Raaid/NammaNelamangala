@@ -28,6 +28,25 @@ export const styles = StyleSheet.create({
     inputContainer: {
         marginTop: Constants.CHANGE_BY_MOBILE_DPI(100)
     },
+    inputPlaceholder: {
+        fontFamily: Fonts.REGULAR
+    },
+    phoneCodeContainer: {
+        flexDirection: "row",
+        alignItems: "center"
+    },
+    phoneCode: {
+        color: Colors.GRAY_90,
+        fontSize: Constants.CHANGE_BY_MOBILE_DPI(14),
+        fontFamily: Fonts.REGULAR,
+        marginLeft: Constants.CHANGE_BY_MOBILE_DPI(12)
+    },
+    divider: {
+        height: Constants.CHANGE_BY_MOBILE_DPI(24),
+        width: Constants.CHANGE_BY_MOBILE_DPI(1),
+        backgroundColor: Colors.GRAY_90,
+        marginLeft: Constants.CHANGE_BY_MOBILE_DPI(14)
+    },
     googleLoginContainer: {
         alignSelf: "center",
         marginVertical: Constants.CHANGE_BY_MOBILE_DPI(30)

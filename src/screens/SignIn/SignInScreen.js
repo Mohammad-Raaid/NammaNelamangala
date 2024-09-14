@@ -3,8 +3,8 @@ import { Image, ScrollView, Text, View } from 'react-native'
 import { styles } from './SignInStyles'
 import FocusAwareStatusBar from '../../components/FocusAwareStatusBar'
 import { Colors, Constants } from '../../global'
-import GlobalTextInput from '../../components/GlobalTextInput/GlobalTextInput'
-import GlobalButton from '../../components/GlobalButton/GlobalButton'
+import CustomTextInput from '../../components/CustomTextInput/CustomTextInput'
+import GlobalButton from '../../components/CustomButton/CustomButton'
 import { SignInHooks } from './SignInHooks'
 import Carousel from 'react-native-reanimated-carousel'
 
@@ -40,12 +40,21 @@ const SignInScreen = () => {
                     <Text style={styles.description}>Namaste,{'\n'}Kindly log in to proceed further.</Text>
                 </View>
                 <View style={styles.inputContainer}>
-                    <GlobalTextInput
-                        externalPlaceholder='Username or mobile number'
-                        required
+                    <CustomTextInput
+                        placeholderText='Enter phone number to recieve an OTP'
                         setValue={setMobileNumber}
+                        Prefix={() => {
+                            return (
+                                <View style={styles.phoneCodeContainer}>
+                                    <Text style={styles.phoneCode}>
+                                        +91
+                                    </Text>
+                                    <View style={styles.divider} />
+                                </View>
+                            )
+                        }}
+                        placeholderStyle={styles.inputPlaceholder}
                         error={invalidFields.find(e => e.field == "mobileNumber")}
-                        placeholderText={'Enter Username or mobile number'}
                     />
                 </View>
                 <GlobalButton

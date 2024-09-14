@@ -2,7 +2,7 @@ import React from 'react'
 import { Keyboard, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import FocusAwareStatusBar from '../../components/FocusAwareStatusBar'
 import { Colors, Constants } from '../../global/index'
-import GlobalButton from '../../components/GlobalButton/GlobalButton'
+import GlobalButton from '../../components/CustomButton/CustomButton'
 import { styles } from './OtpStyles'
 import { OtpHooks } from './OtpHooks'
 import OTPTextInput from 'react-native-otp-textinput';

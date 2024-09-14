@@ -2,15 +2,18 @@ import { Platform, StyleSheet } from "react-native";
 import { Colors, Constants, Fonts } from "../../global";
 import { CHANGE_BY_MOBILE_DPI } from "../../global/constant";
 export const styles = StyleSheet.create({
+    mainContainer: {
+        marginHorizontal: CHANGE_BY_MOBILE_DPI(20),
+        marginBottom: CHANGE_BY_MOBILE_DPI(16)
+    },
     inputMainContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        height: CHANGE_BY_MOBILE_DPI(40),
+        height: CHANGE_BY_MOBILE_DPI(48),
         borderWidth: CHANGE_BY_MOBILE_DPI(1.5),
-        borderColor: Colors.RICH_BLACK + "66",
+        borderColor: Colors.GRAY_85,
         borderRadius: CHANGE_BY_MOBILE_DPI(5),
         backgroundColor: Colors.WHITE,
-        marginHorizontal: CHANGE_BY_MOBILE_DPI(20),
     },
     error: {
         borderColor: Colors.RED + "90",
@@ -23,10 +26,10 @@ export const styles = StyleSheet.create({
         marginTop: CHANGE_BY_MOBILE_DPI(4)
     },
     textContainer: {
-        fontFamily: Fonts.MEDIUM,
+        fontFamily: Fonts.BOLD,
         color: Colors.BLACK,
-        marginLeft: Constants.CHANGE_BY_MOBILE_DPI(23),
-        marginBottom: Constants.CHANGE_BY_MOBILE_DPI(5)
+        fontSize: CHANGE_BY_MOBILE_DPI(14),
+        marginBottom: CHANGE_BY_MOBILE_DPI(12)
     },
     starContainer: {
         fontFamily: Fonts.MEDIUM,
@@ -45,9 +48,9 @@ export const styles = StyleSheet.create({
     },
     inputStyle: {
         marginLeft: CHANGE_BY_MOBILE_DPI(6),
-        fontSize: CHANGE_BY_MOBILE_DPI(12),
+        fontSize: CHANGE_BY_MOBILE_DPI(14),
         fontFamily: Fonts.REGULAR,
-        color: Colors.RICH_BLACK,
+        color: Colors.GRAY_90,
         includeFontPadding: false
     }
 })
