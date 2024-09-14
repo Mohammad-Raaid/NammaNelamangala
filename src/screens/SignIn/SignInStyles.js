@@ -43,6 +43,7 @@ export const styles = StyleSheet.create({
         fontSize: Constants.CHANGE_BY_MOBILE_DPI(32),
         fontFamily: Fonts.BOLD,
         color: Colors.PRIMARY,
+        includeFontPadding: true
     },
     description: {
         fontSize: Constants.CHANGE_BY_MOBILE_DPI(14),
