@@ -10,7 +10,13 @@ const SignInHooks = () => {
     const dispatch = useDispatch();
     const [mobileNumber, setMobileNumber] = React.useState('')
     const [invalidFields, setInvalidFields] = React.useState([])
-
+    const [bannerImages] = React.useState([
+        require('../../assets/images/loginBanner/1.jpeg'),
+        require('../../assets/images/loginBanner/2.jpeg'),
+        require('../../assets/images/loginBanner/3.jpeg'),
+        require('../../assets/images/loginBanner/4.jpeg'),
+        require('../../assets/images/loginBanner/5.jpeg'),
+    ])
     const resetStackAndGoToBottom = CommonActions.reset({
         index: 0,
         routes: [{ name: ScreenNames.BOTTOM_TABS, }],
@@ -53,7 +59,8 @@ const SignInHooks = () => {
     return {
         setMobileNumber,
         goToOtp,
-        invalidFields
+        invalidFields,
+        bannerImages
     }
 }
 

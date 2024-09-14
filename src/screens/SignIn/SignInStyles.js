@@ -3,7 +3,11 @@ import { Colors, Constants, Fonts } from "../../global";
 export const styles = StyleSheet.create({
     mainConatiner: {
         flex: 1,
-        backgroundColor: Colors.SNOW
+        backgroundColor: Colors.WHITE
+    },
+    bannerImage: {
+        height: "100%",
+        width: "100%"
     },
     alignCenterContainer: {
         alignItems: 'center',

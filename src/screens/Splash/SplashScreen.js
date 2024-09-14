@@ -11,9 +11,9 @@ const SplashScreen = () => {
     return (
         <View style={styles.mainContainer}>
             <FocusAwareStatusBar barColor={Colors.PRIMARY} isLightBar={true} isTopSpace={true} />
-            {/* <Image
+            <Image
                 style={styles.imagesContainer}
-                source={require('../../assets/images/nammanelamangala-01.png')} resizeMode='contain' /> */}
+                source={require('../../assets/images/logo.png')} resizeMode='contain' />
         </View>
     )
 }
