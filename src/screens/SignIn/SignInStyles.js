@@ -17,7 +17,8 @@ export const styles = StyleSheet.create({
         fontSize: Constants.CHANGE_BY_MOBILE_DPI(24),
         fontFamily: Fonts.SEMIBOLD,
         color: Colors.RICH_BLACK,
-        marginBottom: Constants.CHANGE_BY_MOBILE_DPI(20)
+        marginBottom: Constants.CHANGE_BY_MOBILE_DPI(20),
+        includeFontPadding: true
     },
     description: {
         fontSize: Constants.CHANGE_BY_MOBILE_DPI(18),
