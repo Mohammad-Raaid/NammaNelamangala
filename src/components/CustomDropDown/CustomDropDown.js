@@ -8,7 +8,7 @@ const CustomDropDown = ({ placeHolder, containerStyle = {}, dropDownList, setSta
     const [selectedValue, setSelectedValue] = React.useState(null)
     const [borderColor, setBorderColor] = React.useState(Colors.BLACK)
     const [placeHolderColor, setPlaceHolderColor] = React.useState(
-        Colors.RICH_BLACK + "33",
+        Colors.BLACK + "33",
     );
     const [modalVisibility, setModalVisibility] = React.useState(false)
     const toggleModalVisibility = () => setModalVisibility(!modalVisibility)
@@ -23,22 +23,21 @@ const CustomDropDown = ({ placeHolder, containerStyle = {}, dropDownList, setSta
             setSelectedValue(dropDownList.filter(d => d.value === defaultValue)[0])
         }
     }, [])
-    console.log(selectedValue);
     return (
-        <View style={{ marginBottom: CHANGE_BY_MOBILE_DPI(20), flex: 1, ...containerStyle, }}>
+        <View style={{ marginBottom: CHANGE_BY_MOBILE_DPI(16), flex: 1, ...containerStyle, marginHorizontal: Constants.CHANGE_BY_MOBILE_DPI(24), }}>
             {
-                externalPlaceholder != ""
+                placeHolder != ""
                 &&
                 <Text style={styles.textContainer}>
-                    {externalPlaceholder}{required ? <Text style={styles.starContainer}> *</Text> : null}
+                    {placeHolder}
                 </Text>
             }
             <TouchableOpacity disabled={disabled} onPress={toggleModalVisibility} style={[styles.container,]}>
                 <Text style={[styles.placeHolderText, { color: placeHolderColor }]}>
-                    {selectedValue ? selectedValue.name : placeHolder}
+                    {selectedValue ? selectedValue.name : ''}
                 </Text>
-                <DownArrow />
-                <DropDownModal dropDownTitle={"Select Area"} visibility={modalVisibility} toggleVisibility={toggleModalVisibility} dropDownList={dropDownList} setState={setValue} state={selectedValue} />
+                <DownArrow fill={Colors.GRAY_85} />
+                <DropDownModal visibility={modalVisibility} toggleVisibility={toggleModalVisibility} dropDownList={dropDownList} setState={setValue} state={selectedValue} />
             </TouchableOpacity>
         </View>
     )
@@ -47,23 +46,24 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
         alignItems: "center",
-        borderWidth: Constants.CHANGE_BY_MOBILE_DPI(1.5),
+        borderWidth: Constants.CHANGE_BY_MOBILE_DPI(2),
         backgroundColor: Colors.WHITE,
         includeFontPadding: false,
         fontFamily: Fonts.MEDIUM,
         fontSize: Constants.CHANGE_BY_MOBILE_DPI(14),
-        height: Constants.CHANGE_BY_MOBILE_DPI(40),
+        height: Constants.CHANGE_BY_MOBILE_DPI(48),
         borderRadius: Constants.CHANGE_BY_MOBILE_DPI(5),
         paddingHorizontal: Constants.CHANGE_BY_MOBILE_DPI(10),
         color: Colors.BLACK,
-        borderColor: Colors.RICH_BLACK + "66",
+        borderColor: Colors.GRAY_85,
         flex: 1,
         justifyContent: "space-between",
     },
     textContainer: {
-        fontFamily: Fonts.MEDIUM,
+        fontFamily: Fonts.BOLD,
         color: Colors.BLACK,
-        marginBottom: Constants.CHANGE_BY_MOBILE_DPI(5)
+        fontSize: CHANGE_BY_MOBILE_DPI(14),
+        marginBottom: Constants.CHANGE_BY_MOBILE_DPI(8)
     },
     starContainer: {
         fontFamily: Fonts.MEDIUM,

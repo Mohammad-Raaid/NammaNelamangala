@@ -21,6 +21,10 @@ const OtpHooks = () => {
         index: 0,
         routes: [{ name: ScreenNames.HOME_DRAWER }],
     });
+    const resetStackAndGoToRegister = CommonActions.reset({
+        index: 0,
+        routes: [{ name: ScreenNames.REGISTER_SCREEN }],
+    });
 
     const goToHome = async (autoVerified = false) => {
         dispatch(UserActions.setOnScreenLodaer(true))
@@ -31,23 +35,16 @@ const OtpHooks = () => {
                 // }
             } catch (error) {
                 dispatch(UserActions.setOnScreenLodaer(false))
-                setToastMsgData({
-                    isOpen: true,
-                    errorMessage: error.message
-                })
                 console.log('goToHome_error', error.message)
                 return;
             }
         }
         try {
-            navigation.dispatch(resetStackAndGoToHome)
+            navigation.dispatch(resetStackAndGoToRegister)
+            // navigation.dispatch(resetStackAndGoToHome)
             dispatch(UserActions.setOnScreenLodaer(false))
         } catch (error) {
             dispatch(UserActions.setOnScreenLodaer(false))
-            setToastMsgData({
-                isOpen: true,
-                errorMessage: error.message
-            })
             console.log('goToHome_error', error.message)
         }
     }

@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
         borderRadius: Constants.CHANGE_BY_MOBILE_DPI(5),
         alignItems: 'center',
         justifyContent: 'center',
-        marginHorizontal: Constants.CHANGE_BY_MOBILE_DPI(20)
+        marginHorizontal: Constants.CHANGE_BY_MOBILE_DPI(24)
     },
     buttonFontStyle: {
         fontSize: Constants.CHANGE_BY_MOBILE_DPI(16),

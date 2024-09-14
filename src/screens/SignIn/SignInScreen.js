@@ -57,7 +57,7 @@ const SignInScreen = () => {
                 <View style={styles.inputContainer}>
                     <CustomTextInput
                         placeholderText='Enter phone number to recieve an OTP'
-                        setValue={setMobileNumber}
+                        onChangeText={setMobileNumber}
                         maxLength={10}
                         Prefix={() => {
                             return (

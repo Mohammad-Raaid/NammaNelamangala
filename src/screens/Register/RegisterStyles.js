@@ -5,52 +5,25 @@ export const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: Colors.WHITE
     },
-    images: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        marginHorizontal: Constants.CHANGE_BY_MOBILE_DPI(20),
-        marginTop: Constants.CHANGE_BY_MOBILE_DPI(32)
-    },
-    imageBorder: {
-        borderWidth: Constants.CHANGE_BY_MOBILE_DPI(2.5),
-        borderRadius: Constants.CHANGE_BY_MOBILE_DPI(25),
-        height: Constants.CHANGE_BY_MOBILE_DPI(50),
-        width: Constants.CHANGE_BY_MOBILE_DPI(50),
-        justifyContent: "center",
-        alignItems: "center",
-        borderColor: Colors.GRAY_85,
-        overflow: "hidden"
-    },
-    bannerImage: {
-        height: "100%",
-        width: "100%"
-    },
-    image: {
-        width: Constants.CHANGE_BY_MOBILE_DPI(37),
-        height: Constants.CHANGE_BY_MOBILE_DPI(37),
-    },
-    alignCenterContainer: {
-        alignItems: 'center',
-        marginTop: Constants.CHANGE_BY_MOBILE_DPI(10)
-    },
-    title: {
-        fontSize: Constants.CHANGE_BY_MOBILE_DPI(32),
-        fontFamily: Fonts.EXTRA_BOLD,
-        color: Colors.PRIMARY,
-        includeFontPadding: true
-    },
-    description: {
-        fontSize: Constants.CHANGE_BY_MOBILE_DPI(14),
-        fontFamily: Fonts.REGULAR,
-        color: Colors.BLACK,
-        textAlign: 'center'
+    scrollContainer: {
+        paddingBottom: Constants.CHANGE_BY_MOBILE_DPI(30)
     },
     inputContainer: {
-        marginTop: Constants.CHANGE_BY_MOBILE_DPI(58)
+        marginTop: Constants.CHANGE_BY_MOBILE_DPI(24)
+    },
+    fullNamePrefix: {
+        flexDirection: "row",
+        alignItems: "center",
+        marginLeft: Constants.CHANGE_BY_MOBILE_DPI(12)
+    },
+    fullNamePrefixText: {
+        fontFamily: Fonts.REGULAR,
+        fontSize: Constants.CHANGE_BY_MOBILE_DPI(14),
+        color: Colors.GRAY_90,
+        marginRight: Constants.CHANGE_BY_MOBILE_DPI(8)
     },
     inputPlaceholder: {
-        fontFamily: Fonts.REGULAR,
-        marginBottom: Constants.CHANGE_BY_MOBILE_DPI(12)
+        fontFamily: Fonts.REGULAR
     },
     phoneCodeContainer: {
         flexDirection: "row",

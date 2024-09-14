@@ -3,20 +3,27 @@ import { Colors, Constants, Fonts } from "../../global";
 import { CHANGE_BY_MOBILE_DPI } from "../../global/constant";
 export const styles = StyleSheet.create({
     mainContainer: {
-        marginHorizontal: CHANGE_BY_MOBILE_DPI(20),
+        marginHorizontal: CHANGE_BY_MOBILE_DPI(24),
         marginBottom: CHANGE_BY_MOBILE_DPI(16)
     },
     inputMainContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         height: CHANGE_BY_MOBILE_DPI(48),
-        borderWidth: CHANGE_BY_MOBILE_DPI(1.5),
+        borderWidth: CHANGE_BY_MOBILE_DPI(2),
         borderColor: Colors.GRAY_85,
         borderRadius: CHANGE_BY_MOBILE_DPI(5),
         backgroundColor: Colors.WHITE,
     },
     error: {
         borderColor: Colors.RED + "90",
+    },
+    lengthText: {
+        fontFamily: Fonts.REGULAR,
+        fontSize: Constants.CHANGE_BY_MOBILE_DPI(8),
+        color: Colors.SONIC_SILVER,
+        textAlign: "right",
+        marginTop: CHANGE_BY_MOBILE_DPI(8)
     },
     errorText: {
         color: Colors.RED,
@@ -29,7 +36,7 @@ export const styles = StyleSheet.create({
         fontFamily: Fonts.BOLD,
         color: Colors.BLACK,
         fontSize: CHANGE_BY_MOBILE_DPI(14),
-        marginBottom: CHANGE_BY_MOBILE_DPI(12)
+        marginBottom: CHANGE_BY_MOBILE_DPI(8)
     },
     starContainer: {
         fontFamily: Fonts.MEDIUM,

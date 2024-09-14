@@ -3,15 +3,14 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { styles } from './HeaderStyles'
 import { Constants, ScreenNames } from '../../global'
+import BackIcon from '../../assets/svgs/BackIcon.svg'
 const Header = ({ backIcon = false, headerText = "", externalHeaderContainer, profileDataFlag, rightButton = false, profileNavigationFlag = false, ScreenName = '' }) => {
     const navigation = useNavigation()
     const onpress = () => {
         if (profileNavigationFlag) {
             ScreenName != '' && navigation.navigate(ScreenName)
         } else {
-            if (backIcon) {
-                navigation.goBack()
-            }
+            navigation.goBack()
         }
     }
     const goToProfile = () => {
@@ -19,25 +18,12 @@ const Header = ({ backIcon = false, headerText = "", externalHeaderContainer, pr
     }
     return (
         <View style={styles.headerMainConatiner}>
-            {
-                backIcon &&
-                <TouchableOpacity activeOpacity={0.3} hitSlop={{ left: 20, right: 20, top: 20, bottom: 20 }} onPress={onpress}>
-                </TouchableOpacity>
-            }
-            {
-                headerText &&
-                <View style={[styles.headerContainer, externalHeaderContainer]}>
-                    <Text style={styles.headerText}>{headerText}</Text>
-                </View>
-            }
-
-            {
-                rightButton &&
-                <View style={{ position: 'absolute', top: Constants.CHANGE_BY_MOBILE_DPI(20), right: Constants.CHANGE_BY_MOBILE_DPI(10) }}>
-                    <TouchableOpacity onPress={goToProfile} style={[styles.headerContainer, externalHeaderContainer]}>
-                    </TouchableOpacity>
-                </View>
-            }
+            <TouchableOpacity hitSlop={{ left: 20, right: 20, top: 20, bottom: 20 }} onPress={onpress}>
+                <BackIcon />
+            </TouchableOpacity>
+            <View style={[styles.headerContainer, externalHeaderContainer]}>
+                <Text style={styles.headerText}>{headerText}</Text>
+            </View>
         </View>
     )
 }

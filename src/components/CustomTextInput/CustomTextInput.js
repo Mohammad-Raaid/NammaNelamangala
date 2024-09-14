@@ -4,7 +4,7 @@ import { styles } from './CustomTextInputStyle'
 import { Colors, Constants } from '../../global'
 import { CHANGE_BY_MOBILE_DPI } from '../../global/constant'
 const CustomTextInput = ({
-    setValue,
+    onChangeText,
     externalStyle,
     placeholderText = '',
     multiline = false,
@@ -20,9 +20,9 @@ const CustomTextInput = ({
 }) => {
 
     const [inputValue, setInputValue] = React.useState(defaultValue)
-    const onChangeText = (text) => {
+    const onChangeTextValue = (text) => {
         setInputValue(text)
-        setValue(text)
+        onChangeText(text)
     }
     return (
         <View style={styles.mainContainer}>
@@ -47,12 +47,20 @@ const CustomTextInput = ({
                         editable={editable}
                         multiline={multiline}
                         style={styles.inputStyle}
-                        onChangeText={onChangeText}
+                        onChangeText={onChangeTextValue}
                         keyboardType={keyboardType}
                         maxLength={maxLength}
                     >{inputValue}</TextInput>
                 </View>
             </View>
+            {
+                multiline
+                && maxLength
+                &&
+                <Text style={styles.lengthText}>
+                    {inputValue.length} / {maxLength} words
+                </Text>
+            }
             {
                 error
                 &&
@@ -60,7 +68,7 @@ const CustomTextInput = ({
                     {error.errorMessage}
                 </Text>
             }
-        </View>
+        </View >
     )
 }
 

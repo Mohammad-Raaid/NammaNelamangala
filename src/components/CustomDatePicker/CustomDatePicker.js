@@ -4,14 +4,14 @@ import { Constants, Colors, Fonts } from "../../global/index"
 import { CHANGE_BY_MOBILE_DPI } from "../../global/constant";
 import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from "moment";
-const CustomDatePicker = ({ placeHolder, containerStyle = {}, setState, disabled = false, defaultValue = '', maximumDate = null, minimumDate = null, externalPlaceholder = '', required = false }) => {
+const CustomDatePicker = ({ placeHolder, containerStyle = {}, setState, disabled = false, defaultValue = '', maximumDate = null, minimumDate = null }) => {
 
     const [currentDate, setCurrentDate] = React.useState(new Date());
     const [showDatePicker, setShowDatePicker] = React.useState(false);
     const [selectedDate, setSelectedDate] = React.useState(defaultValue)
     const [borderColor, setBorderColor] = React.useState(Colors.BLACK)
     const [placeHolderColor, setPlaceHolderColor] = React.useState(
-        Colors.RICH_BLACK_30,
+        Colors.GRAY_90,
     );
     const selectDateFromPicker = (d, date) => {
         if (Platform.OS === "android") {
@@ -32,17 +32,17 @@ const CustomDatePicker = ({ placeHolder, containerStyle = {}, setState, disabled
         }
     }
     return (
-        <View style={{ flex: 1, ...containerStyle }}>
+        <View style={{ flex: 1, marginHorizontal: CHANGE_BY_MOBILE_DPI(24), marginBottom: CHANGE_BY_MOBILE_DPI(16), ...containerStyle }}>
             {
-                externalPlaceholder != ""
+                placeHolder != ""
                 &&
                 <Text style={styles.textContainer}>
-                    {externalPlaceholder}{required ? <Text style={styles.starContainer}> *</Text> : null}
+                    {placeHolder}
                 </Text>
             }
             <TouchableOpacity disabled={disabled} onPress={() => setShowDatePicker(true)} style={[styles.container,]}>
                 <Text style={[styles.placeHolderText, { color: placeHolderColor }]}>
-                    {selectedDate ? moment(selectedDate).format("DD-MM-YYYY") : placeHolder}
+                    {selectedDate ? moment(selectedDate).format("DD-MM-YYYY") : 'DD / MM / YYYY'}
                 </Text>
                 {
                     showDatePicker
@@ -91,18 +91,18 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
         alignItems: "center",
-        borderWidth: Constants.CHANGE_BY_MOBILE_DPI(1.5),
+        borderWidth: Constants.CHANGE_BY_MOBILE_DPI(2),
         backgroundColor: Colors.WHITE,
         fontSize: Constants.CHANGE_BY_MOBILE_DPI(14),
-        height: Constants.CHANGE_BY_MOBILE_DPI(40),
+        height: Constants.CHANGE_BY_MOBILE_DPI(48),
         borderRadius: Constants.CHANGE_BY_MOBILE_DPI(5),
         paddingHorizontal: Constants.CHANGE_BY_MOBILE_DPI(10),
-        borderColor: Colors.RICH_BLACK + "66",
+        borderColor: Colors.GRAY_85
     },
     textContainer: {
-        fontFamily: Fonts.MEDIUM,
+        fontFamily: Fonts.EXTRA_BOLD,
         color: Colors.BLACK,
-        marginBottom: Constants.CHANGE_BY_MOBILE_DPI(5)
+        marginBottom: Constants.CHANGE_BY_MOBILE_DPI(8)
     },
     starContainer: {
         fontFamily: Fonts.MEDIUM,
