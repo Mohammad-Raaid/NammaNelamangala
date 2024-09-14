@@ -63,10 +63,10 @@ const OtpScreen = () => {
                         if (code.length == 6) {
                             goToHome()
                         } else {
-                            setToastMsgData({
-                                isOpen: true,
-                                errorMessage: "Please Enter Otp"
-                            })
+                            // setToastMsgData({
+                            //     isOpen: true,
+                            //     errorMessage: "Please Enter Otp"
+                            // })
                         }
                     }}
                     externalButtonContainerStyle={styles.buttonContainer}

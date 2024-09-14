@@ -1,7 +1,10 @@
 export const PRIMARY = '#623aa2'
 export const SECONDARY = '#9853af'
+export const LIGHT_PRIMARY = '#DFC9FB'
 
 export const RED = "#FF5151"
+export const DELETE = "#EA0202"
+
 export const WHITE = '#FFFFFF';
 export const BLACK = '#000000';
 export const CHINESE_BLACK = '#111111';
