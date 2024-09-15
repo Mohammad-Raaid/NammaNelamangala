@@ -1,7 +1,6 @@
 import { Dimensions, Platform, StyleSheet } from "react-native";
 import { Colors, Constants, Fonts } from "../../global/index";
 export const styles = StyleSheet.create({
-
     headerContainer: {
         flexDirection: "row",
         alignItems: "center",
