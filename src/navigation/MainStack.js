@@ -7,12 +7,12 @@ import SplashScreen from "../screens/Splash/SplashScreen";
 import { ActivityIndicator, View } from "react-native";
 import SignInScreen from "../screens/SignIn/SignInScreen";
 import OtpScreen from "../screens/Otp/OtpScreen";
-import BottomTabs from "./BottomTabs/BottomTabs";
 import { isReadyRef, navigationRef } from "./RootNavigation";
 import { useSelector } from "react-redux";
 import HomeDrawer from "./Drawer/HomeDrawer";
 import RegisterScreen from "../screens/Register/RegisterScreen";
 import CreateComplaintScreen from "../screens/CreateComplaint/CreateComplaintScreen";
+import CreateApplicationScreen from "../screens/CreateApplication/CreateApplicationScreen";
 enableScreens();
 const Stack = createStackNavigator();
 
@@ -35,6 +35,7 @@ const MainStack = () => {
                     <Stack.Screen name={ScreenNames.REGISTER_SCREEN} component={RegisterScreen} />
                     <Stack.Screen name={ScreenNames.HOME_DRAWER} component={HomeDrawer} />
                     <Stack.Screen name={ScreenNames.CREATE_COMPLAINTS_SCREEN} component={CreateComplaintScreen} />
+                    <Stack.Screen name={ScreenNames.CREATE_APPLICATIONS_SCREEN} component={CreateApplicationScreen} />
                 </Stack.Navigator>
             </NavigationContainer>
 

@@ -59,6 +59,7 @@ const SignInScreen = () => {
                         placeholderText='Enter phone number to recieve an OTP'
                         onChangeText={setMobileNumber}
                         maxLength={10}
+                        keyboardType='number-pad'
                         Prefix={() => {
                             return (
                                 <View style={styles.phoneCodeContainer}>

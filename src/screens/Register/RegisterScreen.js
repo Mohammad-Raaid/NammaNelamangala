@@ -59,6 +59,7 @@ const RegisterScreen = () => {
                     <CustomTextInput
                         placeholderText='Aadhar no.'
                         maxLength={12}
+                        keyboardType='number-pad'
                         onChangeText={(value) => updateFormData("aadharNo", value)}
                         error={invalidFields.find(e => e.field == "aadharNo")}
                     />
