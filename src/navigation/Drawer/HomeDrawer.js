@@ -16,7 +16,7 @@ const HomeDrawer = (props, { navigation }) => {
         headerShown: false,
         drawerPosition: 'left',
         drawerStyle: {
-          width: Constants.SCREEN_WIDTH - Constants.CHANGE_BY_MOBILE_DPI(50),
+          width: Constants.SCREEN_WIDTH - Constants.CHANGE_BY_MOBILE_DPI(113),
         },
       }}
       drawerStyle={{ borderTopRightRadius: 10, borderBottomEndRadius: 10 }}>
