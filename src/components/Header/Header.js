@@ -4,17 +4,10 @@ import { useNavigation } from '@react-navigation/native'
 import { styles } from './HeaderStyles'
 import { Constants, ScreenNames } from '../../global'
 import BackIcon from '../../assets/svgs/BackIcon.svg'
-const Header = ({ backIcon = false, headerText = "", externalHeaderContainer, profileDataFlag, rightButton = false, profileNavigationFlag = false, ScreenName = '' }) => {
+const Header = ({ headerText = "", externalHeaderContainer, headerDesc = "" }) => {
     const navigation = useNavigation()
     const onpress = () => {
-        if (profileNavigationFlag) {
-            ScreenName != '' && navigation.navigate(ScreenName)
-        } else {
-            navigation.goBack()
-        }
-    }
-    const goToProfile = () => {
-        navigation.navigate(ScreenNames.PROFILE_SCREEN)
+        navigation.goBack()
     }
     return (
         <View style={styles.headerMainConatiner}>
@@ -23,6 +16,11 @@ const Header = ({ backIcon = false, headerText = "", externalHeaderContainer, pr
             </TouchableOpacity>
             <View style={[styles.headerContainer, externalHeaderContainer]}>
                 <Text style={styles.headerText}>{headerText}</Text>
+                {
+                    headerDesc != ""
+                    &&
+                    <Text style={styles.headerDesc}>{headerDesc}</Text>
+                }
             </View>
         </View>
     )

@@ -13,7 +13,8 @@ const ComplaintsScreen = () => {
     const {
         selectedTab,
         setSelectedTab,
-        renderComplaints
+        renderComplaints,
+        goToCreateComplaint
     } = ComplaintsHooks();
 
     return (
@@ -28,7 +29,7 @@ const ComplaintsScreen = () => {
                     {
                         ["Active", "Resolved"].map((item) => {
                             return (
-                                <TouchableOpacity onPress={() => setSelectedTab(item)} style={{ ...styles.tab, backgroundColor: selectedTab == item ? Colors.PRIMARY : null }}>
+                                <TouchableOpacity key={item} onPress={() => setSelectedTab(item)} style={{ ...styles.tab, backgroundColor: selectedTab == item ? Colors.PRIMARY : null }}>
                                     <Text style={styles.tabText}>
                                         {item}
                                     </Text>
@@ -65,9 +66,9 @@ const ComplaintsScreen = () => {
             {
                 selectedTab == "Active"
                 &&
-                <View style={styles.plusIcon}>
+                <TouchableOpacity onPress={goToCreateComplaint} style={styles.plusIcon}>
                     <PlusIcon />
-                </View>
+                </TouchableOpacity>
             }
         </View>
     )

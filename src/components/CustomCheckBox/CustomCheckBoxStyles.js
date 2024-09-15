@@ -1,10 +1,25 @@
 import { StyleSheet } from "react-native";
 import { Colors, Constants, Fonts } from "../../global/index";
 export const styles = StyleSheet.create({
-    headerMainConatiner: {
-        paddingTop: Constants.CHANGE_BY_MOBILE_DPI(16),
-        paddingHorizontal: Constants.CHANGE_BY_MOBILE_DPI(14),
-        backgroundColor: Colors.WHITE
+    checkboxConatiner: {
+        paddingHorizontal: Constants.CHANGE_BY_MOBILE_DPI(24),
+        flexDirection: "row",
+        alignItems: "center"
+    },
+    checkbox: {
+        height: Constants.CHANGE_BY_MOBILE_DPI(16),
+        width: Constants.CHANGE_BY_MOBILE_DPI(16),
+        borderColor: "#0A7AFF",
+        borderWidth: Constants.CHANGE_BY_MOBILE_DPI(2),
+        borderRadius: Constants.CHANGE_BY_MOBILE_DPI(3),
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    checkboxLabel: {
+        marginLeft: Constants.CHANGE_BY_MOBILE_DPI(8),
+        fontSize: Constants.CHANGE_BY_MOBILE_DPI(12),
+        fontFamily: Fonts.REGULAR,
+        color: Colors.CHINESE_BLACK
     },
     headerContainer: {
         marginTop: Constants.CHANGE_BY_MOBILE_DPI(24),

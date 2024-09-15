@@ -3,6 +3,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Constants, ScreenNames } from '../../global';
 import ProfileDetailsDrawer from './ProfileDetailsDrawer';
 import BottomTabs from '../BottomTabs/BottomTabs';
+import CreateComplaintScreen from '../../screens/CreateComplaint/CreateComplaintScreen';
 const drawer = createDrawerNavigator();
 
 const HomeDrawer = (props, { navigation }) => {
@@ -20,6 +21,7 @@ const HomeDrawer = (props, { navigation }) => {
       }}
       drawerStyle={{ borderTopRightRadius: 10, borderBottomEndRadius: 10 }}>
       <drawer.Screen name={ScreenNames.BOTTOM_TABS} component={BottomTabs} />
+
     </drawer.Navigator>
   );
 };
