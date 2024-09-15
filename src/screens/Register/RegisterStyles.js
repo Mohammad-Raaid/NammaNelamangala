@@ -59,7 +59,7 @@ export const styles = StyleSheet.create({
     footerText: {
         textAlign: "center",
         marginBottom: Constants.CHANGE_BY_MOBILE_DPI(8),
-        color: "#DFC9FB",
+        color: Colors.LIGHT_PRIMARY,
         fontFamily: Fonts.REGULAR,
         fontSize: Constants.CHANGE_BY_MOBILE_DPI(12)
     }

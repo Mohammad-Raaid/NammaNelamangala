@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         marginLeft: Constants.CHANGE_BY_MOBILE_DPI(24),
-        marginTop: Constants.CHANGE_BY_MOBILE_DPI(16)
+        marginVertical: Constants.CHANGE_BY_MOBILE_DPI(16)
     },
     svgContainer: {
         flexDirection: "row",
@@ -27,5 +27,6 @@ export const styles = StyleSheet.create({
         color: Colors.PRIMARY,
         fontSize: Constants.CHANGE_BY_MOBILE_DPI(14),
         fontFamily: Fonts.EXTRA_BOLD,
+        includeFontPadding: true
     }
 })
