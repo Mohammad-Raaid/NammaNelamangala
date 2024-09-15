@@ -14,6 +14,8 @@ import RegisterScreen from "../screens/Register/RegisterScreen";
 import CreateComplaintScreen from "../screens/CreateComplaint/CreateComplaintScreen";
 import CreateApplicationScreen from "../screens/CreateApplication/CreateApplicationScreen";
 import GalleryDetailsScreen from "../screens/GalleryDetails/GalleryDetailsScreen";
+import JoinAsMemberScreen from "../screens/JoinAsMember/JoinAsMemberScreen";
+import JoinAsCommunityScreen from "../screens/JoinAsCommunity/JoinAsCommunityScreen";
 enableScreens();
 const Stack = createStackNavigator();
 
@@ -38,6 +40,8 @@ const MainStack = () => {
                     <Stack.Screen name={ScreenNames.CREATE_COMPLAINTS_SCREEN} component={CreateComplaintScreen} />
                     <Stack.Screen name={ScreenNames.CREATE_APPLICATIONS_SCREEN} component={CreateApplicationScreen} />
                     <Stack.Screen name={ScreenNames.GALLERY_DETAILS_SCREEN} component={GalleryDetailsScreen} />
+                    <Stack.Screen name={ScreenNames.JOIN_AS_MEMBER_SCREEN} component={JoinAsMemberScreen} />
+                    <Stack.Screen name={ScreenNames.JOIN_AS_COMMUNITY_SCREEN} component={JoinAsCommunityScreen} />
                 </Stack.Navigator>
             </NavigationContainer>
 

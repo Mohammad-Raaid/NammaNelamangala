@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { styles } from './HomeStyle'
 import { HomeHooks } from './HomeHooks'
@@ -14,7 +14,8 @@ const HomeScreen = () => {
         renderIndicators,
         setIndex,
         actions,
-        renderNewsAndEvents
+        renderNewsAndEvents,
+        navigate
     } = HomeHooks();
     return (
         <View style={styles.mainContainer}>
@@ -37,14 +38,14 @@ const HomeScreen = () => {
                 <View style={styles.actionListContainer}>
                     {actions.map((item) => {
                         return (
-                            <View key={item.name} style={styles.actionMainContainer}>
+                            <TouchableOpacity onPress={() => navigate(item)} key={item.name} style={styles.actionMainContainer}>
                                 <View style={styles.actionContainer}>
                                     {item.icon}
                                 </View>
                                 <Text style={styles.actionText}>
                                     {item.name}
                                 </Text>
-                            </View>
+                            </TouchableOpacity>
                         )
                     })}
                 </View>

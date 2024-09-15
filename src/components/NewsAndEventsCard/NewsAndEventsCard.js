@@ -1,12 +1,12 @@
 import React from "react";
-import { Image, ImageBackground, Text, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./NewsAndEventsCardStyle";
-import LinearGradient from "react-native-linear-gradient";
-import { Colors } from "../../global";
 import ShareIcon from '../../assets/svgs/newsShareIcon.svg'
+import { useNavigation } from "@react-navigation/native";
 const NewsAndEventsCard = ({ item }) => {
+
     return (
-        <View style={styles.container}>
+        <TouchableOpacity style={styles.container}>
             <Image source={require('../../assets/images/newImage.png')} style={styles.image} />
             <View style={styles.detailsConatiner}>
                 <Text style={styles.title}>
@@ -20,7 +20,7 @@ const NewsAndEventsCard = ({ item }) => {
                     <ShareIcon />
                 </View>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 export default NewsAndEventsCard;
