@@ -9,9 +9,6 @@ import { CreateComplaintHooks } from './CreateComplaintHooks'
 import Carousel from 'react-native-reanimated-carousel'
 import Header from '../../components/Header/Header'
 import CustomDropDown from '../../components/CustomDropDown/CustomDropDown'
-import DropDownModal from '../../components/DropDownModal/DropDownModal'
-import DownArrow from '../../assets/svgs/DropDownIcon.svg'
-import CustomDatePicker from '../../components/CustomDatePicker/CustomDatePicker'
 import CustomCheckBox from '../../components/CustomCheckBox/CustomCheckBox'
 const CreateComplaintScreen = () => {
     const {

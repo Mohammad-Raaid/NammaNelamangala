@@ -10,6 +10,7 @@ import PlusIcon from '../../assets/svgs/plusIcon.svg'
 const ApplicationsScreen = () => {
     const {
         renderApplications,
+        goToApplicationDetail,
         goToCreateApplication
     } = ApplicationsHooks();
     return (
@@ -19,11 +20,13 @@ const ApplicationsScreen = () => {
             <Text style={styles.heading}>
                 My Applications
             </Text>
-            <FlatList
-                data={[{ status: "Active", id: 1 }, { status: "Active", id: 2 }, { status: "Active", id: 3 }, { status: "Closed", id: 4 }]}
-                renderItem={renderApplications}
-                keyExtractor={(item) => JSON.stringify(item)}
-            />
+            <TouchableOpacity onPress={goToApplicationDetail}>
+                <FlatList
+                    data={[{ status: "Active", id: 1 }, { status: "Active", id: 2 }, { status: "Active", id: 3 }, { status: "Closed", id: 4 }]}
+                    renderItem={renderApplications}
+                    keyExtractor={(item) => JSON.stringify(item)}
+                />
+            </TouchableOpacity>
             <TouchableOpacity onPress={goToCreateApplication} style={styles.plusIcon}>
                 <PlusIcon />
             </TouchableOpacity>

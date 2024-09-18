@@ -14,6 +14,9 @@ const ApplicationsHooks = () => {
     const goToCreateApplication = () => {
         navigation.navigate(ScreenNames.CREATE_APPLICATIONS_SCREEN)
     }
+    const goToApplicationDetail = () => {
+        navigation.navigate(ScreenNames.APPLICATION_DETAIL_SCREEN)
+    }
     useFocusEffect(
         React.useCallback(() => {
             return () => {
@@ -22,7 +25,8 @@ const ApplicationsHooks = () => {
     );
     return {
         renderApplications,
-        goToCreateApplication
+        goToCreateApplication,
+        goToApplicationDetail
     }
 }
 

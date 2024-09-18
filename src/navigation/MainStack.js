@@ -13,6 +13,8 @@ import HomeDrawer from "./Drawer/HomeDrawer";
 import RegisterScreen from "../screens/Register/RegisterScreen";
 import CreateComplaintScreen from "../screens/CreateComplaint/CreateComplaintScreen";
 import CreateApplicationScreen from "../screens/CreateApplication/CreateApplicationScreen";
+import ComplaintDetailScreen from "../screens/ComplaintDetail/ComplaintDetailScreen";
+import ApplicationDetailScreen from "../screens/ApplicationDetail/ApplicationDetailScreen";
 enableScreens();
 const Stack = createStackNavigator();
 
@@ -36,6 +38,8 @@ const MainStack = () => {
                     <Stack.Screen name={ScreenNames.HOME_DRAWER} component={HomeDrawer} />
                     <Stack.Screen name={ScreenNames.CREATE_COMPLAINTS_SCREEN} component={CreateComplaintScreen} />
                     <Stack.Screen name={ScreenNames.CREATE_APPLICATIONS_SCREEN} component={CreateApplicationScreen} />
+                    <Stack.Screen name={ScreenNames.COMPLAINT_DETAIL_SCREEN} component={ComplaintDetailScreen} />
+                    <Stack.Screen name={ScreenNames.APPLICATION_DETAIL_SCREEN} component={ApplicationDetailScreen} />
                 </Stack.Navigator>
             </NavigationContainer>
 
