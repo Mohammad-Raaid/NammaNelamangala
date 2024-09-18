@@ -10,6 +10,7 @@ import SuggestionsIcon from '../../assets/svgs/SuggestionsIcon.svg'
 import JoinascommunityIcon from '../../assets/svgs/JoinascommunityIcon.svg'
 import JoinasmemberIcon from '../../assets/svgs/JoinasmemberIcon.svg'
 import NewsAndEventsCard from '../../components/NewsAndEventsCard/NewsAndEventsCard'
+import { ScreenNames } from '../../global'
 const HomeHooks = () => {
     const dispatch = useDispatch()
     const navigation = useNavigation()
@@ -18,15 +19,17 @@ const HomeHooks = () => {
     const [actions, setActions] = React.useState([
         {
             name: "Suggestions",
-            icon: <SuggestionsIcon />
+            icon: <SuggestionsIcon />,
         },
         {
             name: "Join as community",
-            icon: <JoinascommunityIcon />
+            icon: <JoinascommunityIcon />,
+            screen: ScreenNames.JOIN_AS_COMMUNITY_SCREEN
         },
         {
             name: "Join as member",
-            icon: <JoinasmemberIcon />
+            icon: <JoinasmemberIcon />,
+            screen: ScreenNames.JOIN_AS_MEMBER_SCREEN
         },
     ])
     const renderBanner = () => {
@@ -40,18 +43,25 @@ const HomeHooks = () => {
     const renderNewsAndEvents = (item) => {
         return <NewsAndEventsCard key={JSON.stringify(item)} item={item} />
     }
+
     useFocusEffect(
         React.useCallback(() => {
             return () => {
             };
         }, [])
     );
+    const navigate = (item) => {
+        if (item?.screen) {
+            navigation.navigate(item.screen)
+        }
+    }
     return {
         renderBanner,
         setIndex,
         renderIndicators,
         actions,
-        renderNewsAndEvents
+        renderNewsAndEvents,
+        navigate
     }
 }
 
