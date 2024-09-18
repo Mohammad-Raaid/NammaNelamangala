@@ -6,6 +6,7 @@ import GlobalButton from '../../components/CustomButton/CustomButton'
 import { styles } from './OtpStyles'
 import { OtpHooks } from './OtpHooks'
 import OTPTextInput from 'react-native-otp-textinput';
+import i18n from '../../i18n'
 const OtpScreen = () => {
     const {
         goToHome,
@@ -38,8 +39,8 @@ const OtpScreen = () => {
                     </View>
                 </View>
                 <View style={styles.alignCenterContainer}>
-                    <Text style={styles.title}>Verify OTP</Text>
-                    <Text style={styles.description}>We’ve sent the OTP to your registered{`\n`}mobile number</Text>
+                    <Text style={styles.title}>{i18n.t("OtpSection.VerifyText")}</Text>
+                    <Text style={styles.description}>{i18n.t("OtpSection.OtpText")}</Text>
                 </View>
                 <View style={styles.otpInputContainer}>
                     <OTPTextInput
@@ -70,10 +71,10 @@ const OtpScreen = () => {
                         }
                     }}
                     externalButtonContainerStyle={styles.buttonContainer}
-                    buttonText='Continue'
+                    buttonText={i18n.t("Common.ContinueButtonText")}
                 />
                 <Text style={styles.resendOtp} onPress={resendOtp}>
-                    Resend OTP{countdown != 0 ? ` in 00:${countdown}` : ``}
+                    {i18n.t("OtpSection.ResendOtpText")}{countdown != 0 ? ` in 00:${countdown}` : ``}
                 </Text>
             </ScrollView>
             <Text style={styles.footerText}>
@@ -82,4 +83,4 @@ const OtpScreen = () => {
         </View>
     )
 }
-export default OtpScreen
+export default OtpScreen;

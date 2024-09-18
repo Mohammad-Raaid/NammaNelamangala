@@ -1,3 +1,5 @@
+import i18n from "../i18n";
+
 export const isValidPhoneNumber = (phoneNumber) => {
     const regex = /^(1-?)?(\([0-9]\d{2}\)|[0-9]\d{2})-?[0-9]\d{2}-?\d{4}$/;
     if (typeof phoneNumber === 'string') {
@@ -5,20 +7,20 @@ export const isValidPhoneNumber = (phoneNumber) => {
         if (phoneNumber.length === 0) {
             return {
                 valid: false,
-                message: "Please enter a valid Phone Number",
+                message: i18n.t("Validation.ValidPhoneNumber"),
             };
         }
 
         else if (phoneNumber.length < 10) {
             return {
                 valid: false,
-                message: "Phone Number Must Be Of 10 Digits",
+                message: i18n.t("Validation.Digits"),
             };
         }
         else if (!regex.test(phoneNumber)) {
             return {
                 valid: false,
-                message: "Please enter a valid Phone Number"
+                message: i18n.t("Validation.ValidPhoneNumber"),
             }
         } else {
             return {
@@ -29,7 +31,7 @@ export const isValidPhoneNumber = (phoneNumber) => {
     } else {
         return {
             valid: false,
-            message: "Invalid Format",
+            message: i18n.t("Validation.Format"),
         };
     }
 };

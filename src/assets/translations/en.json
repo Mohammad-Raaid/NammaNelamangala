@@ -1,11 +1,24 @@
 {
   "LoginSection": {
     "WelcomeText": "Login to be a part of our local improvement",
+    "PhoneNumberText": "Enter phone number to recieve an OTP",
     "Access": "Log in ",
     "Facebook": "Facebook",
     "Google": "Google"
   },
-  "Common": {},
+  "OtpSection": {
+    "VerifyText": "Verify OTP",
+    "OtpText": "We’ve sent the OTP to your registered \n mobile number",
+    "ResendOtpText": "Resend OTP"
+  },
+  "Common": {
+    "ContinueButtonText": "Continue"
+  },
+  "Validation": {
+    "ValidPhoneNumber": "Please enter a valid Phone Number",
+    "Digits": "Phone Number Must Be Of 10 Digits",
+    "Format": "Invalid Format"
+  },
   "AlertSection": {
     "AlertTitle": "Alert Title",
     "CancelText": "Cancel",

@@ -57,7 +57,7 @@ const SignInScreen = () => {
                 </View>
                 <View style={styles.inputContainer}>
                     <CustomTextInput
-                        placeholderText='Enter phone number to recieve an OTP'
+                        placeholderText={i18n.t("LoginSection.PhoneNumberText")}
                         onChangeText={setMobileNumber}
                         maxLength={10}
                         keyboardType='number-pad'
@@ -77,7 +77,7 @@ const SignInScreen = () => {
                 </View>
                 <GlobalButton
                     buttonPress={goToOtp}
-                    buttonText='Continue'
+                    buttonText={i18n.t("Common.ContinueButtonText")}
                 />
             </ScrollView>
             <Text style={styles.footerText}>
