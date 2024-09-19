@@ -1,0 +1,111 @@
+{
+  "LoginSection": {
+    "TitleLogin": "Welcome",
+    "Access": "Log in ",
+    "Facebook": "Facebook",
+    "Google": "Google"
+  },
+  "AlertSection": {
+    "AlertTitle": "Alert Title",
+    "CancelText": "Cancel",
+    "SubmitText": "Submit",
+    "okText": "Ok"
+  },
+  "HomeSection": {
+    "DigitalSurvey": "డిజిటల్ సర్వే",
+    "CitizenSurvey": "సిటిజెన్ సర్వే",
+    "ApproveReject": "ఆమోదించండి / తిరస్కరించండి",
+    "Reports": "నివేదికలు",
+    "Profile": "ప్రొఫైల్",
+    "SurveyGallery": "సర్వే గ్యాలరీ"
+  },
+  "MenuSection": {
+    "DigitalSurvey": "డిజిటల్ సర్వే",
+    "CitizenSurvey": "సిటిజెన్ సర్వే",
+    "ReSurvey": "రీ-సర్వే",
+    "DigitalSurveyVerify": "ధృవీకరణ",
+    "MyReport": "నా నివేదిక",
+    "MyProfile": "నా జీవన వివరణ",
+    "SurveyGallery": "సర్వే గ్యాలరీ"
+  },
+  "DigitalSurveyFamilySection": {
+    "AddButton": "కొత్త కుటుంబాన్ని జోడించండి",
+    "AddUserButton": "వ్యక్తిని జోడించండి",
+    "CardBuildingText": "మ్యాప్ క్రమ సంఖ్య",
+    "CardPropertyText": "ఆస్తి క్రమ సంఖ్య"
+  },
+  "AddDigitalSurveyFamilySection": {
+    "MapText": "మ్యాప్ క్రమ సంఖ్య",
+    "PropertyText": "ఆస్తి క్రమ సంఖ్య",
+    "PropertyTypeText": "ఆస్తి రకం",
+    "DoorText": "డోర్ నంబర్",
+    "FloorText": "అంతస్తు సంఖ్య",
+    "ApartmentText": "అపార్ట్మెంట్ / భవనం",
+    "CrossText": "క్రాస్ రోడ్",
+    "MainText": "ప్రధాన రహదారి",
+    "LocalityText": "ప్రాంతం / ప్రాంతం",
+    "PincodeText": "పిన్ కోడ్",
+    "OwnershipText": "యాజమాన్యం",
+    "ReligionText": "మతం",
+    "MainCasteText": "ప్రధాన కులం",
+    "SubCasteText": "ఉప కులం",
+    "MotherText": "మాతృ భాష",
+    "RationText": "రేషన్ కార్డు రకం",
+    "FamilyText": "కుటుంబ మొబైల్ నంబర్",
+    "PublicText": "ప్రజాభిప్రాయాన్ని",
+    "OtherOpoinion": "ఇతర అభిప్రాయం"
+  },
+  "AddDigitalSurveyMemberSection": {
+    "WithinFamilyText": "Within Family Sl. No",
+    "VoterText": "Voter ID Number",
+    "AadharText": "Aadhar Number",
+    "FullText": "Full Name",
+    "DateText": "Date of Birth",
+    "AgeText": "Age",
+    "GenderText": "Gender",
+    "RelationTypeText": "Relation Type",
+    "RelationName": "Relation Name",
+    "VoterFormText": "Voter Form",
+    "DisabilityText": "Disability",
+    "WidowText": "Widow",
+    "EducationGroupText": "Education Group",
+    "EducationText": "Education",
+    "EmploymentTypeText": "Employment Type",
+    "EmploymentText": "Employment",
+    "MobileNumberText": "Mobile Number",
+    "EmailIdText": "Email Id"
+  },
+  "FilterSection": {
+    "state": "రాష్ట్రం",
+    "mpConstituency": "MP నియోజకవర్గం",
+    "mlaConstituency": "MLA నియోజకవర్గం",
+    "wardVillage": "వార్డ్ సంఖ్య / ప్రధాన గ్రామం",
+    "wardName": "వార్డ్ సంఖ్య",
+    "manVillage": "ప్రధాన గ్రామం",
+    "mainVillage": "ప్రధాన గ్రామం",
+    "boothNumber": "బూత్ సంఖ్య",
+    "vendor": "విక్రేత",
+    "emumerator": "ఎన్యూమరేటర్",
+    "userRole": "వినియోగదారు పాత్ర",
+    "person": "వ్యక్తి",
+    "formdate": "తేదీ నుంచి",
+    "todate": "ఈ రోజు వరకు",
+    "search": "వెతకండి"
+  },
+  "UserSection": {
+    "fullName": "Full Name",
+    "designation": "Designation",
+    "organization": "Organization",
+    "newOrganization": "New Organization",
+    "mobileNumber": "Mobile Number",
+    "email": "Email",
+    "aadhaarNumber": "Aadhaar Number",
+    "panNumber": "PAN Number",
+    "password": "Password",
+    "fullAddress": "Full Address",
+    "continue": "Continue",
+    "submit": "Submit",
+    "addNewAccessibility": "Add New Accessibility",
+    "remove": "Remove"
+  }
+}

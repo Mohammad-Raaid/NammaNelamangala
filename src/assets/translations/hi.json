@@ -1,0 +1,111 @@
+{
+  "LoginSection": {
+    "TitleLogin": "Welcome",
+    "Access": "Log in ",
+    "Facebook": "Facebook",
+    "Google": "Google"
+  },
+  "AlertSection": {
+    "AlertTitle": "Alert Title",
+    "CancelText": "Cancel",
+    "SubmitText": "Submit",
+    "okText": "Ok"
+  },
+  "HomeSection": {
+    "DigitalSurvey": "Digital Survey",
+    "CitizenSurvey": "Citizen Survey",
+    "ApproveReject": "Approve/Reject",
+    "Reports": "Reports",
+    "Profile": "Profile",
+    "SurveyGallery": "Survey Gallery"
+  },
+  "MenuSection": {
+    "DigitalSurvey": "Digital Survey",
+    "CitizenSurvey": "Citizen Data",
+    "ReSurvey": "Citizen Data",
+    "DigitalSurveyVerify": "Digital Survey Verify",
+    "MyReport": "My Report",
+    "MyProfile": "My Profile",
+    "SurveyGallery": "Survery Gallery"
+  },
+  "DigitalSurveyFamilySection": {
+    "AddButton": "नया परिवार जोड़ें",
+    "AddUserButton": "व्यक्ति जोड़ें",
+    "CardBuildingText": "नक्शा क्रमांक संख्या",
+    "CardPropertyText": "संपत्ति क्रमांक संख्या"
+  },
+  "AddDigitalSurveyFamilySection": {
+    "MapText": "नक्शा सीरियल नंबर",
+    "PropertyText": "संपत्ति धारावाहिक संख्या",
+    "PropertyTypeText": "सम्पत्ती के प्रकार",
+    "DoorText": "डोर नंबर",
+    "FloorText": "मंजिल संख्या",
+    "ApartmentText": "अपार्टमेंट इमारत",
+    "CrossText": "क्रॉस रोड",
+    "MainText": "मुख्य सड़क",
+    "LocalityText": "स्थानीयता / क्षेत्र",
+    "PincodeText": "पिन कोड",
+    "OwnershipText": "स्वामित्व",
+    "ReligionText": "धर्म",
+    "MainCasteText": "मुख्य जाति",
+    "SubCasteText": "उप जाति",
+    "MotherText": "मातृ भाषा",
+    "RationText": "राशन कार्ड प्रकार",
+    "FamilyText": "पारिवारिक मोबाइल नंबर",
+    "PublicText": "जनता की राय",
+    "OtherOpoinion": "अन्य राय"
+  },
+  "AddDigitalSurveyMemberSection": {
+    "WithinFamilyText": "परिवार सदस्य संख्या",
+    "VoterText": "मतदाता आईडी नंबर",
+    "AadharText": "आधार संख्या",
+    "FullText": "पूरा नाम",
+    "DateText": "जन्म की तारीख",
+    "AgeText": "आयु",
+    "GenderText": "लिंग",
+    "RelationTypeText": "संबंध प्रकार",
+    "RelationName": "संबंध नाम",
+    "VoterFormText": "मतदाता रूप",
+    "DisabilityText": "विकलांगता",
+    "WidowText": "विधवा",
+    "EducationGroupText": "शिक्षा समूह",
+    "EducationText": "शिक्षा",
+    "EmploymentTypeText": "रोजगार के प्रकार",
+    "EmploymentText": "रोज़गार",
+    "MobileNumberText": "मोबाइल नंबर",
+    "EmailIdText": "ईमेल आईडी"
+  },
+  "FilterSection": {
+    "state": "राज्य",
+    "mpConstituency": "सांसद निर्वाचन क्षेत्र",
+    "mlaConstituency": "विधायक निर्वाचन क्षेत्र",
+    "wardVillage": "वार्ड नंबर / मुख्य गाँव",
+    "wardName": "वार्ड नंबर",
+    "manVillage": "मुख्य गाँव",
+    "mainVillage": "मुख्य गाँव",
+    "boothNumber": "कक्ष संख्या",
+    "vendor": "वेंडर",
+    "emumerator": "गणनाकार",
+    "userRole": "उपयोगकर्ता भूमिका",
+    "person": "व्यक्ति",
+    "formdate": "की तिथि से",
+    "todate": "तारीख तक",
+    "search": "खोज"
+  },
+  "UserSection": {
+    "fullName": "Full Name",
+    "designation": "Designation",
+    "organization": "Organization",
+    "newOrganization": "New Organization",
+    "mobileNumber": "Mobile Number",
+    "email": "Email",
+    "aadhaarNumber": "Aadhaar Number",
+    "panNumber": "PAN Number",
+    "password": "Password",
+    "fullAddress": "Full Address",
+    "continue": "Continue",
+    "submit": "Submit",
+    "addNewAccessibility": "Add New Accessibility",
+    "remove": "Remove"
+  }
+}

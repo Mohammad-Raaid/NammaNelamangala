@@ -1,0 +1,111 @@
+{
+  "LoginSection": {
+    "TitleLogin": "Welcome",
+    "Access": "Log in ",
+    "Facebook": "Facebook",
+    "Google": "Google"
+  },
+  "AlertSection": {
+    "AlertTitle": "Alert Title"
+  },
+  "HomeSection": {
+    "DigitalSurvey": "ಡಿಜಿಟಲ್ ಸಮೀಕ್ಷೆ",
+    "CitizenSurvey": "ನಾಗರಿಕ ಸಮೀಕ್ಷೆ",
+    "ApproveReject": "ಅನುಮೋದಿಸಿ / ತಿರಸ್ಕರಿಸಿ",
+    "Reports": "ವರದಿಗಳು",
+    "Profile": "ಪ್ರೊಫೈಲ್",
+    "SurveyGallery": "ಸಮೀಕ್ಷೆ ಗ್ಯಾಲರಿ"
+  },
+  "MenuSection": {
+    "DigitalSurvey": "ಡಿಜಿಟಲ್ ಸಮೀಕ್ಷೆ",
+    "CitizenSurvey": "ನಾಗರಿಕ ಸಮೀಕ್ಷೆ",
+    "ReSurvey": "ಮರು ಸಮೀಕ್ಷೆ",
+    "DigitalSurveyVerify": "ಪರಿಶೀಲನೆ",
+    "MyReport": "ನನ್ನ ವರದಿ",
+    "MyProfile": "ಪ್ರೊಫೈಲ್",
+    "SurveyGallery": "ಸಮೀಕ್ಷೆ ಗ್ಯಾಲರಿ"
+  },
+  "DigitalSurveyFamilySection": {
+    "AddButton": "ಹೊಸ ಮನೆ ಸೇರ್ಪಡೆ",
+    "AddUserButton": "ವ್ಯಕ್ತಿಯನ್ನು ಸೇರಿಸಿ",
+    "CardBuildingText": "ನಕ್ಷಯ ಕ್ರಮ ಸಂಖ್ಯೆ",
+    "CardPropertyText": "ಆಸ್ತಿ ಕ್ರಮ ಸಂಖ್ಯೆ"
+  },
+  "AddDigitalSurveyFamilySection": {
+    "MapText": "ನಕ್ಷಯ ಕ್ರಮ ಸಂಖ್ಯೆ",
+    "PropertyText": "ಆಸ್ತಿ ಕ್ರಮ ಸಂಖ್ಯೆ",
+    "PropertyTypeText": "ನಕ್ಷೆ ಪ್ರಕಾರ ಆಸ್ತಿಯ ವಿಧ",
+    "DoorText": "ಡೋರ್ ಸಂಖ್ಯೆ",
+    "FloorText": "ಮಹಡಿ",
+    "ApartmentText": "ಬಹು ಮಹಡಿ ಕಟ್ಟಡ",
+    "CrossText": "ಅಡ್ಡ ರಸ್ತೆ",
+    "MainText": "ಮುಖ್ಯ ರಸ್ತೆ",
+    "LocalityText": "ಪ್ರದೇಶ",
+    "PincodeText": "ಪಿನ್ ಕೋಡ್",
+    "OwnershipText": "ಮಾಲೀಕತ್ವ",
+    "ReligionText": "ಧರ್ಮ",
+    "MainCasteText": "ಮುಖ್ಯ ಜಾತಿ",
+    "SubCasteText": "ಉಪ ಜಾತಿ",
+    "MotherText": "ಮಾತೃ ಭಾಷೆ",
+    "RationText": "ಪಡಿತರ ಚೀಟಿ ಪ್ರಕಾರ",
+    "FamilyText": "ಕುಟುಂಬದ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+    "PublicText": "ಸಾರ್ವಜನಿಕ ಅಭಿಪ್ರಾಯ",
+    "OtherOpoinion": "ಇತರ ಅಭಿಪ್ರಾಯ"
+  },
+  "AddDigitalSurveyMemberSection": {
+    "WithinFamilyText": "ಸದಸ್ಯ ಸಂಖ್ಯೆ",
+    "VoterText": "ವೋಟರ್ ಐಡಿ ಸಂಖ್ಯೆ",
+    "AadharText": "ಆಧಾರ್ ಸಂಖ್ಯೆ",
+    "FullText": "ಪೂರ್ಣ ಹೆಸರು",
+    "DateText": "ಹುಟ್ಟಿದ ದಿನಾಂಕ",
+    "AgeText": "ವಯಸ್ಸು",
+    "GenderText": "ಲಿಂಗ",
+    "RelationTypeText": "ಸಂಬಂಧದ ಪ್ರಕಾರ",
+    "RelationName": "ಸಂಬಂಧದ ಹೆಸರು",
+    "StayingOutsideText": "Staying Outside",
+    "StayingAddressText": "Staying Address",
+    "ConfirmationAlertHeaderText": "ನಿಮ್ಮ ಕುಟುಂಬದಲ್ಲಿ ಯಾರಾದರೂ ಮತದಾರರ ಗುರುತಿನ ಚೀಟಿ ಹೊಂದಿರುವವರು ಹೊರಗೆ ಅಥವಾ ಬೇರೆ ವಿಳಾಸದಲ್ಲಿ ಇದ್ದಾರೆಯೇ?",
+    "VoterFormText": "ಮತದಾರರ ಫಾರ್ಮ್",
+    "DisabilityText": "ಅಂಗವೈಕಲ್ಯ",
+    "WidowText": "ವಿಧವೆ",
+    "EducationGroupText": "ಶಿಕ್ಷಣ ಗುಂಪು",
+    "EducationText": "ಶಿಕ್ಷಣ",
+    "EmploymentTypeText": "ಉದ್ಯೋಗದ ರೀತಿ",
+    "EmploymentText": "ಉದ್ಯೋಗ",
+    "MobileNumberText": "ಮೊಬೈಲ್ ನಂಬರ",
+    "EmailIdText": "ಇಮೇಲ್ ಐಡಿ"
+  },
+  "FilterSection": {
+    "state": "ರಾಜ್ಯ",
+    "mpConstituency": "ಸಂಸದ ಕ್ಷೇತ್ರ",
+    "mlaConstituency": "ಶಾಸಕರ ಕ್ಷೇತ್ರ",
+    "wardVillage": "ವಾರ್ಡ್ ಸಂಖ್ಯೆ / ಮುಖ್ಯ ಗ್ರಾಮ",
+    "wardName": "ವಾರ್ಡ್ ಸಂಖ್ಯೆ",
+    "manVillage": "ಮುಖ್ಯ ಗ್ರಾಮ",
+    "mainVillage": "ಮುಖ್ಯ ಗ್ರಾಮ",
+    "boothNumber": "ಬೂತ್ ಸಂಖ್ಯೆ",
+    "vendor": "Vendor",
+    "emumerator": "Emumerator",
+    "userRole": "ಬಳಕೆದಾರರ ಪಾತ್ರ",
+    "person": "ವ್ಯಕ್ತಿ",
+    "formdate": "ದಿನಾಂಕದಿಂದ",
+    "todate": "ಇಲ್ಲಿಯವರೆಗೆ",
+    "search": "ಹುಡುಕಿ"
+  },
+  "UserSection": {
+    "fullName": "ಪೂರ್ಣ ಹೆಸರು",
+    "designation": "ಹುದ್ದೆ",
+    "organization": "ಸಂಸ್ಥೆ",
+    "newOrganization": "New Organization",
+    "mobileNumber": "ಮೊಬೈಲ್ ನಂಬರ",
+    "email": "ಇಮೇಲ್",
+    "aadhaarNumber": "ಆಧಾರ್ ಸಂಖ್ಯೆ",
+    "panNumber": "ಪ್ಯಾನ್‌ಕಾರ್ಡ್ ಸಂಖ್ಯೆ",
+    "password": "ಗುಪ್ತಪದ",
+    "fullAddress": "ಪೂರ್ತಿ ವಿಳಾಸ",
+    "continue": "ಮುಂದುವರಿಸು",
+    "submit": "ಸಲ್ಲಿಸು",
+    "addNewAccessibility": "ಹೊಸ ಪ್ರವೇಶವನ್ನು ಸೇರಿಸಿ",
+    "remove": "ತೆಗೆದುಹಾಕು"
+  }
+}

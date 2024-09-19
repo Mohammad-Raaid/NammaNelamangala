@@ -7,6 +7,7 @@ import CustomTextInput from '../../components/CustomTextInput/CustomTextInput'
 import GlobalButton from '../../components/CustomButton/CustomButton'
 import { SignInHooks } from './SignInHooks'
 import Carousel from 'react-native-reanimated-carousel'
+import i18n from '../../i18n'
 
 const SignInScreen = () => {
     const {
@@ -52,7 +53,7 @@ const SignInScreen = () => {
                 />
                 <View style={styles.alignCenterContainer}>
                     <Text style={styles.title}>ನಮ್ಮ ನೆಲಮಂಗಲ</Text>
-                    <Text style={styles.description}>Login to be a part of our local improvement</Text>
+                    <Text style={styles.description}>{i18n.t("LoginSection.WelcomeText")}</Text>
                 </View>
                 <View style={styles.inputContainer}>
                     <CustomTextInput
