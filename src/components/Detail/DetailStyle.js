@@ -1,18 +1,18 @@
 import { StyleSheet } from 'react-native';
 import { Colors, Constants, Fonts } from '../../global';
-import { CHANGE_BY_MOBILE_DPI } from '../../global/constant';
 export const styles = StyleSheet.create({
     mainContainer: {
-        width: Constants.CHANGE_BY_MOBILE_DPI(183),
+        width: Constants.SCREEN_WIDTH - Constants.CHANGE_BY_MOBILE_DPI(48),
         flexDirection: "row",
         marginTop: Constants.CHANGE_BY_MOBILE_DPI(16),
         marginHorizontal: Constants.CHANGE_BY_MOBILE_DPI(24),
+        minWidth: Constants.CHANGE_BY_MOBILE_DPI(183)
     },
     labelIdContainer: {
         flex: 1
     },
     marginContainer: {
-        marginTop: Constants.CHANGE_BY_MOBILE_DPI(4)
+        flex: 1
     },
     label: {
         fontFamily: Fonts.BOLD,

@@ -9,9 +9,7 @@ const ComplaintDetailScreen = () => {
     return (
         <View style={styles.mainContainer}>
             <FocusAwareStatusBar barColor={Colors.WHITE} isLightBar={false} isTopSpace={true} />
-            <Header headerText='Complaint details' />
-
-
+            <Header headerText='Complaint details' rightActions />
             <Detail label='Complaint ID' value='AAER22234D' />
             <Detail label='Issued on' value='Aug 23, 2024' />
             <Detail label='Ward' value='Jalahalli' />

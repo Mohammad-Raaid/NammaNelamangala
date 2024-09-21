@@ -6,7 +6,7 @@ import { Constants, ScreenNames } from '../../global'
 import BackIcon from '../../assets/svgs/BackIcon.svg'
 import DeleteSvg from '../../assets/svgs/deleteIcon'
 import ShareDetailSvg from '../../assets/svgs/shareDetail'
-const Header = ({ headerText = "", externalHeaderContainer, headerDesc = "" }) => {
+const Header = ({ headerText = "", externalHeaderContainer, headerDesc = "", rightActions = false }) => {
     const navigation = useNavigation()
     const onpress = () => {
         navigation.goBack()
@@ -15,31 +15,39 @@ const Header = ({ headerText = "", externalHeaderContainer, headerDesc = "" }) =
         <View style={styles.headerMainConatiner}>
             <TouchableOpacity style={styles.iconView} hitSlop={{ left: 20, right: 20, top: 20, bottom: 20 }} onPress={onpress}>
                 <BackIcon />
-                <View style={styles.iconContainer}>
-                    <View style={styles.shareIcon}>
-
-                        <ShareDetailSvg />
+                {
+                    rightActions
+                    &&
+                    <View style={styles.iconContainer}>
+                        <View style={styles.shareIcon}>
+                            <ShareDetailSvg />
+                        </View>
+                        <DeleteSvg />
                     </View>
-                    <DeleteSvg />
-                </View>
+                }
             </TouchableOpacity>
             <View style={[styles.headerContainer, externalHeaderContainer]}>
-                <Text style={styles.headerText}>{headerText}</Text>
-                {
-                    headerDesc != ""
-                    &&
-                    <Text style={styles.headerDesc}>{headerDesc}</Text>
-                }
-                <View style={styles.status}>
-                    <Text style={styles.statusText}>
-                        Status:
-                    </Text>
-                    <View style={styles.pendingView}>
-                        <Text style={styles.pending}>
-                            Pending
-                        </Text>
-                    </View>
+                <View>
+                    <Text style={styles.headerText}>{headerText}</Text>
+                    {
+                        headerDesc != ""
+                        &&
+                        <Text style={styles.headerDesc}>{headerDesc}</Text>
+                    }
                 </View>
+                {
+                    rightActions
+                    &&
+                    <View style={styles.status}>
+                        <Text style={styles.statusText}>
+                            Status:
+                        </Text>
+                        <View style={styles.pendingView}>
+                            <Text style={styles.pending}>
+                                Pending
+                            </Text>
+                        </View>
+                    </View>}
             </View>
 
 

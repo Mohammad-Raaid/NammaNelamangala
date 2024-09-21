@@ -9,7 +9,7 @@ const ApplicationDetailScreen = () => {
     return (
         <View style={styles.mainContainer}>
             <FocusAwareStatusBar barColor={Colors.WHITE} isLightBar={false} isTopSpace={true} />
-            <Header headerText='Application details' />
+            <Header headerText='Application details' rightActions />
             <Detail label='Application ID' value='AAER22234D' />
             <Detail label='Issued on' value='Aug 23, 2024' />
             <Detail label='MLA Constituency' value='Jalahalli' />
