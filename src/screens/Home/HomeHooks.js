@@ -11,6 +11,7 @@ import JoinascommunityIcon from '../../assets/svgs/JoinascommunityIcon.svg'
 import JoinasmemberIcon from '../../assets/svgs/JoinasmemberIcon.svg'
 import NewsAndEventsCard from '../../components/NewsAndEventsCard/NewsAndEventsCard'
 import { ScreenNames } from '../../global'
+import i18n from '../../i18n'
 const HomeHooks = () => {
     const dispatch = useDispatch()
     const navigation = useNavigation()
@@ -18,16 +19,16 @@ const HomeHooks = () => {
     const [index, setIndex] = React.useState(0)
     const [actions, setActions] = React.useState([
         {
-            name: "Suggestions",
+            name: i18n.t("HomeSection.NewsandEvents"),
             icon: <SuggestionsIcon />,
         },
         {
-            name: "Join as community",
+            name: i18n.t("HomeSection.JoinasCommunityText"),
             icon: <JoinascommunityIcon />,
             screen: ScreenNames.JOIN_AS_COMMUNITY_SCREEN
         },
         {
-            name: "Join as member",
+            name: i18n.t("HomeSection.JoinasMemberText"),
             icon: <JoinasmemberIcon />,
             screen: ScreenNames.JOIN_AS_MEMBER_SCREEN
         },

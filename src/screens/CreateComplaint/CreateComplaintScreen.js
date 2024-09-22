@@ -10,6 +10,7 @@ import Carousel from 'react-native-reanimated-carousel'
 import Header from '../../components/Header/Header'
 import CustomDropDown from '../../components/CustomDropDown/CustomDropDown'
 import CustomCheckBox from '../../components/CustomCheckBox/CustomCheckBox'
+import i18n from '../../i18n'
 const CreateComplaintScreen = () => {
     const {
         register,
@@ -25,7 +26,7 @@ const CreateComplaintScreen = () => {
                 <View style={styles.inputContainer}>
                     <CustomDropDown
                         setState={(value) => updateFormData("ward", value)}
-                        placeHolder={"Ward"}
+                        placeHolder={i18n.t("Common.Ward")}
                         dropDownList={[
                             {
                                 name: 'Ward1',
@@ -39,7 +40,7 @@ const CreateComplaintScreen = () => {
                     />
                     <CustomDropDown
                         setState={(value) => updateFormData("village", value)}
-                        placeHolder={"Village"}
+                        placeHolder={i18n.t("Common.VillageName")}
                         dropDownList={[
                             {
                                 name: 'Village1',
@@ -52,7 +53,7 @@ const CreateComplaintScreen = () => {
                         ]}
                     />
                     <CustomTextInput
-                        placeholderText='Booth'
+                        placeholderText={i18n.t("Common.Booth")}
                         onChangeText={(value) => updateFormData("booth", value)}
                         error={invalidFields.find(e => e.field == "booth")}
                     />
@@ -71,12 +72,12 @@ const CreateComplaintScreen = () => {
                         ]}
                     />
                     <CustomTextInput
-                        placeholderText='Location / Landmark'
+                        placeholderText={i18n.t("LodgedComplaintSection.LocationAndLandmarkText")}
                         onChangeText={(value) => updateFormData("location", value)}
                         error={invalidFields.find(e => e.field == "location")}
                     />
                     <CustomTextInput
-                        placeholderText='Complaint description'
+                        placeholderText={i18n.t("LodgedComplaintSection.ComplaintDescription")}
                         multiline
                         maxLength={200}
                         onChangeText={(value) => updateFormData("complaintDescription", value)}

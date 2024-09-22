@@ -11,8 +11,65 @@
     "OtpText": "We’ve sent the OTP to your registered \n mobile number",
     "ResendOtpText": "Resend OTP"
   },
+  "RegisterSection": {
+    "SelectGender": "Gender",
+    "VoterValidation": "Are you a Voter / Non Voter?",
+    "MobileNumber": "Mobile number",
+    "EmailIdText": "Email Id",
+    "DOB": "DOB",
+    "RegisterAddress": "Address"
+  },
+  "ProfileDetailSection": {
+    "HomeText": "Home",
+    "ComplaintsText": "Complaints",
+    "ApplicationText": "Application",
+    "ContactText": "Contact",
+    "GalleryText": "Gallery",
+    "NotificationText": "Notification",
+    "SettingText": "Setting"
+  },
+  "ComplaintCardSection": {
+    "ComplaintIdText": "Complaint ID:",
+    "ComplaintHeader": "Complaints"
+  },
+  "AppiliationCardSection": {
+    "AppiliationIdText": "Appilcation ID:"
+  },
+  "LodgedComplaintSection": {
+    "LocationAndLandmarkText": "Location / Landmark",
+    "ComplaintDescription": "Complaint description"
+  },
+  "CreateApplication": {
+    "TypeOfApplication": "Application type",
+    "Benefits": "Benefits / Schemes",
+    "PersonDetails": "Person details",
+    "Description": "Description",
+    "MLAConstituency": "MLA Constituency",
+    "WardName": "Ward name",
+    "VillageName": "Village name",
+    "DoorNumber": "Door number",
+    "Floor": "Floor",
+    "BuildingName": "Building name",
+    "OwnershipType": "Ownership Type",
+    "Cross": "Cross",
+    "Main": "Main",
+    "Locality": "Locality"
+  },
   "Common": {
-    "ContinueButtonText": "Continue"
+    "PinCode": "Pincode",
+    "ComplaintResolvedText": "Resolved on:",
+    "ComplaintStatusText": "Status:",
+    "ComplaintDeletedText": "Deleted on:",
+    "ComplaintIssued": "Issued:",
+    "ComplaintType": " Type:",
+    "ContinueButtonText": "Continue",
+    "FullName": "Full name",
+    "AadharNumber": "Aadhar no.",
+    "Ward": "Ward",
+    "Hobli": "Hobli",
+    "Booth": "Booth",
+    "VillageName": "Village",
+    "CheckVoterId": "Voter ID"
   },
   "Validation": {
     "ValidPhoneNumber": "Please enter a valid Phone Number",
@@ -28,12 +85,11 @@
     "No": "No"
   },
   "HomeSection": {
-    "DigitalSurvey": "Digital Survey",
-    "CitizenSurvey": "Citizen Survey",
-    "ApproveReject": "Approve/Reject",
-    "Reports": "Reports",
-    "Profile": "Profile",
-    "SurveyGallery": "Survey Gallery"
+    "NewsandEvents": "News and Events",
+    "ViewButtonText": " View all",
+    "SuggestionsText": "Suggestions",
+    "JoinasCommunityText": "Join as community",
+    "JoinasMemberText": "Join as member"
   },
   "MenuSection": {
     "DigitalSurvey": "Digital Survey",

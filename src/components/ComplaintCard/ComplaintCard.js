@@ -6,6 +6,7 @@ import { Colors, Constants, ScreenNames } from "../../global";
 import ShareIcon from '../../assets/svgs/newsShareIcon.svg'
 import RightIcon from '../../assets/svgs/rightIcon.svg'
 import { DrawerActions, useNavigation } from "@react-navigation/native";
+import i18n from "../../i18n";
 const ComplaintCard = ({ item }) => {
     const statusColor = {
         pending: "#E8EC23",
@@ -27,18 +28,18 @@ const ComplaintCard = ({ item }) => {
         <TouchableOpacity onPress={openComplaintScreen}>
             <View style={styles.container}>
                 <Text style={styles.complaintId}>
-                    Complaint ID: <Text style={styles.value}>AAER22234D</Text>
+                    {i18n.t("ComplaintCardSection.ComplaintIdText")} <Text style={styles.value}>AAER22234D</Text>
                 </Text>
                 <Text style={styles.details}>
-                    Type: <Text style={styles.value}>Type2</Text>
+                    {i18n.t("Common.ComplaintType")} <Text style={styles.value}>Type2</Text>
                 </Text>
                 <View style={styles.flexContainer}>
                     <Text style={{ ...styles.details, marginTop: Constants.CHANGE_BY_MOBILE_DPI(0) }}>
-                        Issued: <Text style={styles.value}>Aug 23, 2024</Text>
+                        {i18n.t("Common.ComplaintIssued")} <Text style={styles.value}>Aug 23, 2024</Text>
                     </Text>
                     <View style={styles.statusMainContainer}>
                         <Text style={styles.statusLabel}>
-                            {item.status == "resolved" ? `Resolved on:` : item.status == "deleted" ? `Deleted on:` : `Status:`}
+                            {item.status == "resolved" ? i18n.t("Common.ComplaintResolvedText") : item.status == "deleted" ? i18n.t("Common.ComplaintDeletedText") : i18n.t("Common.ComplaintStatusText")}
                         </Text>
                         <View style={{ ...styles.statusContainer, backgroundColor: statusColor[item.status] }}>
                             <Text style={{ ...styles.statusText, color: statusTextColor[item.status] }}>

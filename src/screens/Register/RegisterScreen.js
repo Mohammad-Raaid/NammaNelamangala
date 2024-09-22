@@ -12,6 +12,7 @@ import CustomDropDown from '../../components/CustomDropDown/CustomDropDown'
 import DropDownModal from '../../components/DropDownModal/DropDownModal'
 import DownArrow from '../../assets/svgs/DropDownIcon.svg'
 import CustomDatePicker from '../../components/CustomDatePicker/CustomDatePicker'
+import i18n from '../../i18n'
 const RegisterScreen = () => {
     const {
         register,
@@ -28,7 +29,7 @@ const RegisterScreen = () => {
                 <Header headerText="Register" />
                 <View style={styles.inputContainer}>
                     <CustomTextInput
-                        placeholderText='Full name'
+                        placeholderText={i18n.t("Common.FullName")}
                         onChangeText={(value) => updateFormData("fullName", value)}
                         Prefix={() => {
                             return (
@@ -44,7 +45,7 @@ const RegisterScreen = () => {
                     />
                     <CustomDropDown
                         setState={(value) => updateFormData("gender", value)}
-                        placeHolder={"Gender"}
+                        placeHolder={i18n.t("RegisterSection.SelectGender")}
                         dropDownList={[
                             {
                                 name: 'Male',
@@ -57,30 +58,30 @@ const RegisterScreen = () => {
                         ]}
                     />
                     <CustomTextInput
-                        placeholderText='Aadhar no.'
+                        placeholderText={i18n.t("Common.AadharNumber")}
                         maxLength={12}
                         keyboardType='number-pad'
                         onChangeText={(value) => updateFormData("aadharNo", value)}
                         error={invalidFields.find(e => e.field == "aadharNo")}
                     />
                     <CustomTextInput
-                        placeholderText='Ward / Hobli'
+                        placeholderText={i18n.t("Common.Ward") + "/ " + i18n.t("Common.Hobli")}
                         onChangeText={(value) => updateFormData("ward", value)}
                         error={invalidFields.find(e => e.field == "ward")}
                     />
                     <CustomTextInput
-                        placeholderText='Village / Ward'
+                        placeholderText={i18n.t("Common.VillageName") + "/ " + i18n.t("Common.Ward")}
                         onChangeText={(value) => updateFormData("village", value)}
                         error={invalidFields.find(e => e.field == "village")}
                     />
                     <CustomTextInput
-                        placeholderText='Booth'
+                        placeholderText={i18n.t("Common.Booth")}
                         onChangeText={(value) => updateFormData("booth", value)}
                         error={invalidFields.find(e => e.field == "booth")}
                     />
                     <CustomDropDown
                         setState={(value) => updateFormData("isVoter", value)}
-                        placeHolder={"Are you a Voter / Non Voter?"}
+                        placeHolder={i18n.t("RegisterSection.VoterValidation")}
                         dropDownList={[
                             {
                                 name: 'Yes',
@@ -93,36 +94,36 @@ const RegisterScreen = () => {
                         ]}
                     />
                     <CustomTextInput
-                        placeholderText='Voter ID'
+                        placeholderText={i18n.t("Common.CheckVoterId")}
                         onChangeText={(value) => updateFormData("voterId", value)}
                         error={invalidFields.find(e => e.field == "voterId")}
                     />
                     <CustomTextInput
-                        placeholderText='Mobile number'
+                        placeholderText={i18n.t("RegisterSection.MobileNumber")}
                         onChangeText={(value) => updateFormData("mobileNumber", value)}
                         keyboardType='number-pad'
                         maxLength={10}
                         error={invalidFields.find(e => e.field == "mobileNumber")}
                     />
                     <CustomTextInput
-                        placeholderText='Email ID'
+                        placeholderText={i18n.t("RegisterSection.EmailIdText")}
                         keyboardType='email-address'
                         onChangeText={(value) => updateFormData("emailId", value)}
                         error={invalidFields.find(e => e.field == "emailId")}
                     />
                     <CustomDatePicker
-                        placeHolder={"DOB"}
+                        placeHolder={i18n.t("RegisterSection.DOB")}
                         setState={(value) => updateFormData("dob", value)}
                     />
                     <CustomTextInput
-                        placeholderText='Address'
+                        placeholderText={i18n.t("RegisterSection.RegisterAddress")}
                         multiline
                         maxLength={200}
                         onChangeText={(value) => updateFormData("aadharNo", value)}
                         error={invalidFields.find(e => e.field == "aadharNo")}
                     />
                     <CustomTextInput
-                        placeholderText='Pincode'
+                        placeholderText={i18n.t("RegisterSection.RegisterPinCode")}
                         keyboardType='number-pad'
                         maxLength={6}
                         onChangeText={(value) => updateFormData("aadharNo", value)}

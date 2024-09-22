@@ -7,6 +7,7 @@ import { Colors, Constants } from '../../global'
 import { useSelector } from 'react-redux'
 import MenuHeader from '../../components/MenuHeader/MenuHeader'
 import Carousel from 'react-native-reanimated-carousel'
+import i18n from '../../i18n'
 
 const HomeScreen = () => {
     const {
@@ -52,11 +53,11 @@ const HomeScreen = () => {
                 <View style={styles.newsAndEventsContainer}>
                     <View style={styles.headingContainer}>
                         <Text style={styles.headingText}>
-                            News and Events
+                            {i18n.t("HomeSection.NewsandEvents")}
                         </Text>
                         <View style={styles.viewAllContainer}>
                             <Text style={styles.viewAllText}>
-                                View all
+                                {i18n.t("HomeSection.ViewButtonText")}
                             </Text>
                         </View>
                     </View>

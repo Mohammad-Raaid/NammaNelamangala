@@ -14,6 +14,7 @@ import NotificationIcon from '../../assets/svgs/menuNotifications'
 import GalleryIcon from '../../assets/svgs/gallery'
 import SettingIcon from '../../assets/svgs/settings'
 import FrameIcon from '../../assets/svgs/Frame'
+import i18n from '../../i18n';
 const ProfileDetailsDrawer = ({ }) => {
 	const navigation = useNavigation()
 	const userDetails = useSelector(state => state.user.userData);
@@ -25,31 +26,31 @@ const ProfileDetailsDrawer = ({ }) => {
 	const [menus, setMenus] = React.useState([
 		{
 			icon: <HomeIcon />,
-			name: "Home",
+			name: i18n.t("ProfileDetailSection.HomeText"),
 
 		},
 		{
 			icon: <DescriptionIcon />,
-			name: "Complaints",
+			name: i18n.t("ProfileDetailSection.ComplaintsText"),
 		},
 		{
-			icon: < ArticleIcon />,
-			name: "Applications",
+			icon: <ArticleIcon />,
+			name: i18n.t("ProfileDetailSection.ApplicationText"),
 
 		},
 		{
 			icon: <CallIcon />,
-			name: "Contact us",
+			name: i18n.t("ProfileDetailSection.ContactText"),
 
 		},
 		{
 			icon: <GalleryIcon />,
-			name: "Gallery",
+			name: i18n.t("ProfileDetailSection.GalleryText"),
 
 		},
 		{
 			icon: <NotificationIcon />,
-			name: "Notifications",
+			name: i18n.t("ProfileDetailSection.NotificationText"),
 
 		}
 	])
@@ -97,7 +98,7 @@ const ProfileDetailsDrawer = ({ }) => {
 					<View style={styles.settingContainer}>
 						<SettingIcon />
 						<Text style={styles.settingText}>
-							Settings
+							{i18n.t("ProfileDetailSection.SettingText")}
 						</Text>
 					</View>
 				</View>

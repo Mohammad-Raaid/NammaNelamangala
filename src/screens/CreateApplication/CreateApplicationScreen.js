@@ -13,12 +13,13 @@ import DropDownModal from '../../components/DropDownModal/DropDownModal'
 import DownArrow from '../../assets/svgs/DropDownIcon.svg'
 import CustomDatePicker from '../../components/CustomDatePicker/CustomDatePicker'
 import CustomCheckBox from '../../components/CustomCheckBox/CustomCheckBox'
+import i18n from '../../i18n'
 const Step1 = ({ updateFormData, invalidFields }) => {
     return (
         <View style={styles.inputContainer}>
             <CustomDropDown
                 setState={(value) => updateFormData("applicationType", value)}
-                placeHolder={"Application type"}
+                placeHolder={i18n.t("CreateApplication.TypeOfApplication")}
                 dropDownList={[
                     {
                         name: 'Type1',
@@ -32,7 +33,7 @@ const Step1 = ({ updateFormData, invalidFields }) => {
             />
             <CustomDropDown
                 setState={(value) => updateFormData("benefits", value)}
-                placeHolder={"Benefits / Schemes"}
+                placeHolder={i18n.t("CreateApplication.Benefits")}
                 dropDownList={[
                     {
                         name: 'Benefit1',
@@ -46,7 +47,7 @@ const Step1 = ({ updateFormData, invalidFields }) => {
             />
             <CustomDropDown
                 setState={(value) => updateFormData("personDetails", value)}
-                placeHolder={"Person details"}
+                placeHolder={i18n.t("CreateApplication.PersonDetails")}
                 dropDownList={[
                     {
                         name: 'Type1',
@@ -59,7 +60,7 @@ const Step1 = ({ updateFormData, invalidFields }) => {
                 ]}
             />
             <CustomTextInput
-                placeholderText='Description'
+                placeholderText={i18n.t("CreateApplication.Description")}
                 multiline
                 maxLength={200}
                 onChangeText={(value) => updateFormData("complaintDescription", value)}
@@ -114,47 +115,47 @@ const Step2 = ({ updateFormData, invalidFields }) => {
                 ]}
             />
             <CustomTextInput
-                placeholderText='Booth'
+                placeholderText={i18n.t("CreateApplication.MLAConstituency")}
                 onChangeText={(value) => updateFormData("complaintDescription", value)}
                 error={invalidFields.find(e => e.field == "complaintDescription")}
             />
             <CustomTextInput
-                placeholderText='Door number'
+                placeholderText={i18n.t("CreateApplication.WardName")}
                 onChangeText={(value) => updateFormData("complaintDescription", value)}
                 error={invalidFields.find(e => e.field == "complaintDescription")}
             />
             <CustomTextInput
-                placeholderText='Floor'
+                placeholderText={i18n.t("CreateApplication.VillageName")}
                 onChangeText={(value) => updateFormData("complaintDescription", value)}
                 error={invalidFields.find(e => e.field == "complaintDescription")}
             />
             <CustomTextInput
-                placeholderText='Building name'
+                placeholderText={i18n.t("Common.Booth")}
                 onChangeText={(value) => updateFormData("complaintDescription", value)}
                 error={invalidFields.find(e => e.field == "complaintDescription")}
             />
             <CustomTextInput
-                placeholderText='Ownership Type'
+                placeholderText={i18n.t("CreateApplication.DoorNumber")}
                 onChangeText={(value) => updateFormData("complaintDescription", value)}
                 error={invalidFields.find(e => e.field == "complaintDescription")}
             />
             <CustomTextInput
-                placeholderText='Cross'
+                placeholderText={i18n.t("CreateApplication.Floor")}
                 onChangeText={(value) => updateFormData("complaintDescription", value)}
                 error={invalidFields.find(e => e.field == "complaintDescription")}
             />
             <CustomTextInput
-                placeholderText='Main'
+                placeholderText={i18n.t("CreateApplication.BuildingName")}
                 onChangeText={(value) => updateFormData("complaintDescription", value)}
                 error={invalidFields.find(e => e.field == "complaintDescription")}
             />
             <CustomTextInput
-                placeholderText='Locality'
+                placeholderText={i18n.t("CreateApplication.OwnershipType")}
                 onChangeText={(value) => updateFormData("complaintDescription", value)}
                 error={invalidFields.find(e => e.field == "complaintDescription")}
             />
             <CustomTextInput
-                placeholderText='Pincode'
+                placeholderText={i18n.t("CreateApplication.PersonDetails")}
                 onChangeText={(value) => updateFormData("complaintDescription", value)}
                 error={invalidFields.find(e => e.field == "complaintDescription")}
             />

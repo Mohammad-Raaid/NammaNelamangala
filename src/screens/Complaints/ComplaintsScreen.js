@@ -9,6 +9,7 @@ import MenuHeader from '../../components/MenuHeader/MenuHeader'
 import DeleteTabIcon from '../../assets/svgs/deletedTab.svg'
 import DeleteTabPrimaryIcon from '../../assets/svgs/deletedTabPrimary.svg'
 import PlusIcon from '../../assets/svgs/plusIcon.svg'
+import i18n from '../../i18n'
 const ComplaintsScreen = () => {
     const {
         selectedTab,
@@ -22,7 +23,7 @@ const ComplaintsScreen = () => {
             <FocusAwareStatusBar isTopSpace barColor={Colors.WHITE} />
             <MenuHeader />
             <Text style={styles.heading}>
-                Complaints
+                {i18n.t("ComplaintCardSection.ComplaintHeader")}
             </Text>
             <View style={styles.tabs}>
                 <View style={styles.tabContainer}>
