@@ -7,6 +7,7 @@ import { Colors } from '../../global'
 import { useSelector } from 'react-redux'
 import MenuHeader from '../../components/MenuHeader/MenuHeader'
 import PlusIcon from '../../assets/svgs/plusIcon.svg'
+import i18n from '../../i18n'
 const ApplicationsScreen = () => {
     const {
         renderApplications,
@@ -18,7 +19,7 @@ const ApplicationsScreen = () => {
             <FocusAwareStatusBar isTopSpace barColor={Colors.WHITE} />
             <MenuHeader />
             <Text style={styles.heading}>
-                My Applications
+                {i18n.t("ApplicationSection.HeaderText")}
             </Text>
             <TouchableOpacity onPress={goToApplicationDetail}>
                 <FlatList

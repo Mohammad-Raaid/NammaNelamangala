@@ -20,7 +20,7 @@ const Detail = ({ label = '', value = '' }) => {
                         <View style={styles.labelIdContainer}>
                             <Text style={styles.label}>{label}</Text>
                         </View>
-                        <Text style={{ marginHorizontal: 12 }}>
+                        <Text style={styles.col}>
                             :
                         </Text>
                     </>

@@ -11,6 +11,12 @@ export const styles = StyleSheet.create({
     labelIdContainer: {
         flex: 1
     },
+    col: {
+        marginHorizontal: Constants.CHANGE_BY_MOBILE_DPI(12),
+        fontFamily: Fonts.BOLD,
+        fontSize: Constants.CHANGE_BY_MOBILE_DPI(12),
+        color: Colors.CHINESE_BLACK
+    },
     marginContainer: {
         flex: 1
     },

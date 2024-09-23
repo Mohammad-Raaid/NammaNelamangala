@@ -28,18 +28,18 @@ const ComplaintCard = ({ item }) => {
         <TouchableOpacity onPress={openComplaintScreen}>
             <View style={styles.container}>
                 <Text style={styles.complaintId}>
-                    {i18n.t("ComplaintCardSection.ComplaintIdText")} <Text style={styles.value}>AAER22234D</Text>
+                    {i18n.t("ComplaintCardSection.ComplaintIdText")}: <Text style={styles.value}>AAER22234D</Text>
                 </Text>
                 <Text style={styles.details}>
-                    {i18n.t("Common.ComplaintType")} <Text style={styles.value}>Type2</Text>
+                    {i18n.t("Common.Type")}: <Text style={styles.value}>Type2</Text>
                 </Text>
                 <View style={styles.flexContainer}>
                     <Text style={{ ...styles.details, marginTop: Constants.CHANGE_BY_MOBILE_DPI(0) }}>
-                        {i18n.t("Common.ComplaintIssued")} <Text style={styles.value}>Aug 23, 2024</Text>
+                        {i18n.t("Common.Issued")}: <Text style={styles.value}>Aug 23, 2024</Text>
                     </Text>
                     <View style={styles.statusMainContainer}>
                         <Text style={styles.statusLabel}>
-                            {item.status == "resolved" ? i18n.t("Common.ComplaintResolvedText") : item.status == "deleted" ? i18n.t("Common.ComplaintDeletedText") : i18n.t("Common.ComplaintStatusText")}
+                            {item.status == "resolved" ? i18n.t("Common.ResolvedOn") : item.status == "deleted" ? i18n.t("Common.DeletedOn") : i18n.t("Common.Status")}:
                         </Text>
                         <View style={{ ...styles.statusContainer, backgroundColor: statusColor[item.status] }}>
                             <Text style={{ ...styles.statusText, color: statusTextColor[item.status] }}>

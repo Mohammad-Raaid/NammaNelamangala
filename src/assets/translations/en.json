@@ -29,22 +29,41 @@
     "SettingText": "Setting"
   },
   "ComplaintCardSection": {
-    "ComplaintIdText": "Complaint ID:",
+    "ComplaintIdText": "Complaint ID",
     "ComplaintHeader": "Complaints"
   },
   "AppiliationCardSection": {
     "AppiliationIdText": "Appilcation ID:"
   },
   "LodgedComplaintSection": {
+    "HeaderText": "Lodge a complaint",
+    "HeaderDesc": "Make sure you enter the details properly",
     "LocationAndLandmarkText": "Location / Landmark",
-    "ComplaintDescription": "Complaint description"
+    "ComplaintDescription": "Complaint description",
+    "UploadImages": "Upload Images",
+    "InsertImages": "Insert images",
+    "MaximumImages": "Maximum {{count}} Images",
+    "Uploadfromgallery": "Upload from gallery",
+    "Opencamera": "Open camera"
+  },
+  "ComplaintDetailsSection": {
+    "HeaderText": "Complaint details",
+    "Issuedon": "Issued on"
   },
   "CreateApplication": {
+    "HeaderText": "Create application",
+    "ApplicationDetails": "Application details",
+    "ConstituencyDetails": "Constituency details",
+    "PersonalDetails": "Personal details",
+    "DocumentsUpload": "Documents upload",
+    "Step": "Step",
+    "Instructon1": "1. Make sure you enter the details properly",
+    "Instructon2-1": "2. Fields marked with an asterisk",
+    "Instructon2-2": "are mandatory to fill",
     "TypeOfApplication": "Application type",
     "Benefits": "Benefits / Schemes",
     "PersonDetails": "Person details",
     "Description": "Description",
-    "MLAConstituency": "MLA Constituency",
     "WardName": "Ward name",
     "VillageName": "Village name",
     "DoorNumber": "Door number",
@@ -53,23 +72,48 @@
     "OwnershipType": "Ownership Type",
     "Cross": "Cross",
     "Main": "Main",
-    "Locality": "Locality"
+    "Locality": "Locality",
+    "Areyouawidow": "Are you a widow?",
+    "Relationtype": "Relation type",
+    "Disabilities": "Disabilities",
+    "DOB": "DOB",
+    "Age": "Age",
+    "Gender": "Gender",
+    "Education": "Education",
+    "Employment": "Employment"
+  },
+  "ApplicationSection": {
+    "HeaderText": "My Applications"
   },
   "Common": {
     "PinCode": "Pincode",
-    "ComplaintResolvedText": "Resolved on:",
-    "ComplaintStatusText": "Status:",
-    "ComplaintDeletedText": "Deleted on:",
-    "ComplaintIssued": "Issued:",
-    "ComplaintType": " Type:",
+    "ResolvedOn": "Resolved on",
+    "Status": "Status",
+    "DeletedOn": "Deleted on",
+    "Issued": "Issued",
+    "Type": "Type",
     "ContinueButtonText": "Continue",
     "FullName": "Full name",
-    "AadharNumber": "Aadhar no.",
+    "AadharNo": "Aadhar no.",
+    "AadharNumber": "Aadhar number",
+    "DOB": "DOB",
+    "Age": "Age",
     "Ward": "Ward",
     "Hobli": "Hobli",
     "Booth": "Booth",
     "VillageName": "Village",
-    "CheckVoterId": "Voter ID"
+    "CheckVoterId": "Voter ID",
+    "Active": "Active",
+    "Resolved": "Resolved",
+    "Mobile": "Mobile",
+    "E-mail": "E-mail",
+    "AgreeTerms": "I Agree that the details provided by me are correct",
+    "Submit": "Submit",
+    "Complainttype": "Complaint type",
+    "Location": "Location",
+    "Next": "Next",
+    "Finish": "Finish",
+    "MLAConstituency": "MLA Constituency"
   },
   "Validation": {
     "ValidPhoneNumber": "Please enter a valid Phone Number",

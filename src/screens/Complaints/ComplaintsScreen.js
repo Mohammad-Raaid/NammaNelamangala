@@ -28,14 +28,14 @@ const ComplaintsScreen = () => {
             <View style={styles.tabs}>
                 <View style={styles.tabContainer}>
                     {
-                        ["Active", "Resolved"].map((item) => {
+                        [{ name: i18n.t("Common.Active"), value: "Active" }, { name: i18n.t("Common.Resolved"), value: "Resolved" }].map((item) => {
                             return (
-                                <TouchableOpacity key={item} onPress={() => setSelectedTab(item)} style={{ ...styles.tab, backgroundColor: selectedTab == item ? Colors.PRIMARY : null }}>
+                                <TouchableOpacity key={item.name} onPress={() => setSelectedTab(item.value)} style={{ ...styles.tab, backgroundColor: selectedTab == item.value ? Colors.PRIMARY : null }}>
                                     <Text style={styles.tabText}>
-                                        {item}
+                                        {item.name}
                                     </Text>
                                     <View style={styles.countContainer}>
-                                        <Text style={{ ...styles.count, color: selectedTab == item ? Colors.PRIMARY : Colors.LIGHT_PRIMARY }}>
+                                        <Text style={{ ...styles.count, color: selectedTab == item.value ? Colors.PRIMARY : Colors.LIGHT_PRIMARY }}>
                                             99
                                         </Text>
                                     </View>

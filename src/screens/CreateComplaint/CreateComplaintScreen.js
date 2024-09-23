@@ -11,6 +11,7 @@ import Header from '../../components/Header/Header'
 import CustomDropDown from '../../components/CustomDropDown/CustomDropDown'
 import CustomCheckBox from '../../components/CustomCheckBox/CustomCheckBox'
 import i18n from '../../i18n'
+import CustomImagePicker from '../../components/CustomImagePicker/CustomImagePicker'
 const CreateComplaintScreen = () => {
     const {
         register,
@@ -22,7 +23,7 @@ const CreateComplaintScreen = () => {
         <View style={styles.mainConatiner}>
             <FocusAwareStatusBar barColor={Colors.WHITE} isLightBar={false} isTopSpace={true} />
             <ScrollView contentContainerStyle={styles.scrollContainer}>
-                <Header headerText="Lodge a complaint" headerDesc='Make sure you enter the details properly' />
+                <Header headerText={i18n.t("LodgedComplaintSection.HeaderText")} headerDesc={i18n.t("LodgedComplaintSection.HeaderDesc")} />
                 <View style={styles.inputContainer}>
                     <CustomDropDown
                         setState={(value) => updateFormData("ward", value)}
@@ -59,7 +60,7 @@ const CreateComplaintScreen = () => {
                     />
                     <CustomDropDown
                         setState={(value) => updateFormData("complaintType", value)}
-                        placeHolder={"Complaint type"}
+                        placeHolder={i18n.t("Common.Complainttype")}
                         dropDownList={[
                             {
                                 name: 'Type1',
@@ -83,11 +84,15 @@ const CreateComplaintScreen = () => {
                         onChangeText={(value) => updateFormData("complaintDescription", value)}
                         error={invalidFields.find(e => e.field == "complaintDescription")}
                     />
-                    <CustomCheckBox label={'I Agree that the details provided by me are correct'} />
+                    <CustomImagePicker
+                        placeholderText={i18n.t("LodgedComplaintSection.UploadImages")}
+                        maxLength={4}
+                    />
+                    <CustomCheckBox label={i18n.t("Common.AgreeTerms")} />
                 </View>
                 <GlobalButton
                     buttonPress={register}
-                    buttonText='Submit'
+                    buttonText={i18n.t("Common.Submit")}
                 />
             </ScrollView>
         </View>

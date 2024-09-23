@@ -58,7 +58,7 @@ const RegisterScreen = () => {
                         ]}
                     />
                     <CustomTextInput
-                        placeholderText={i18n.t("Common.AadharNumber")}
+                        placeholderText={i18n.t("Common.AadharNo")}
                         maxLength={12}
                         keyboardType='number-pad'
                         onChangeText={(value) => updateFormData("aadharNo", value)}
@@ -123,7 +123,7 @@ const RegisterScreen = () => {
                         error={invalidFields.find(e => e.field == "aadharNo")}
                     />
                     <CustomTextInput
-                        placeholderText={i18n.t("RegisterSection.RegisterPinCode")}
+                        placeholderText={i18n.t("Common.PinCode")}
                         keyboardType='number-pad'
                         maxLength={6}
                         onChangeText={(value) => updateFormData("aadharNo", value)}
