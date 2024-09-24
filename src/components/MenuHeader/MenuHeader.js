@@ -5,10 +5,17 @@ import MenuSvg from '../../assets/svgs/menu'
 import NotificationSvg from '../../assets/svgs/notification'
 import LanguageSvg from '../../assets/svgs/language'
 import { DrawerActions, useNavigation } from '@react-navigation/native';
+import { ScreenNames } from '../../global';
 const MenuHeader = () => {
     const navigation = useNavigation();
     const openDrawer = () => {
         navigation.dispatch(DrawerActions.openDrawer());
+    }
+    const openLanguageChange = () => {
+        navigation.navigate(ScreenNames.CHOOSE_LANGUAGE_SCREEN)
+    }
+    const openNotification = () => {
+        navigation.navigate(ScreenNames.NOTIFICATION_SCREEN)
     }
     return (
         <View style={styles.headerContainer}>
@@ -19,10 +26,12 @@ const MenuHeader = () => {
                 ನಮ್ಮ ನೆಲಮಂಗಲ
             </Text>
             <View style={styles.svgContainer}>
-                <View style={styles.iconsContainer}>
+                <TouchableOpacity onPress={openLanguageChange} style={styles.iconsContainer}>
                     <LanguageSvg />
-                </View>
-                <NotificationSvg />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={openNotification}>
+                    <NotificationSvg />
+                </TouchableOpacity>
             </View>
         </View>
 

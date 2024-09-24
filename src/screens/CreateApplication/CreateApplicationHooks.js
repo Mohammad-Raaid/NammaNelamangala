@@ -18,12 +18,14 @@ const CreateApplicationHooks = () => {
         mlaConstituency: '',
         location: '',
     })
+    const [visibility, setVisibility] = React.useState(false)
     const [invalidFields, setInvalidFields] = React.useState([])
     const resetStackAndGoToHome = CommonActions.reset({
         index: 0,
         routes: [{ name: ScreenNames.HOME_DRAWER, }],
     });
 
+    const toggleVisibility = () => setVisibility(!visibility)
     const updateFormData = (key, value) => {
         const data = formData;
         data[key] = value;
@@ -43,8 +45,13 @@ const CreateApplicationHooks = () => {
         }
     }
 
+
     const onClickNext = () => {
-        setStep(step + 1)
+        if (step + 1 == 5) {
+            toggleVisibility()
+        } else {
+            setStep(step + 1)
+        }
     }
 
     React.useEffect(() => {
@@ -57,7 +64,9 @@ const CreateApplicationHooks = () => {
         updateFormData,
         formData,
         step,
-        onClickNext
+        onClickNext,
+        visibility,
+        toggleVisibility
     }
 }
 

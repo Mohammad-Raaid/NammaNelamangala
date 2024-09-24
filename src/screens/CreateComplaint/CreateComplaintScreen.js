@@ -12,12 +12,15 @@ import CustomDropDown from '../../components/CustomDropDown/CustomDropDown'
 import CustomCheckBox from '../../components/CustomCheckBox/CustomCheckBox'
 import i18n from '../../i18n'
 import CustomImagePicker from '../../components/CustomImagePicker/CustomImagePicker'
+import SuccessModal from '../../components/SuccessModal/SuccessModal'
 const CreateComplaintScreen = () => {
     const {
-        register,
+        submitComplaint,
         invalidFields,
         updateFormData,
-        formData
+        formData,
+        visibility,
+        toggleVisibility
     } = CreateComplaintHooks()
     return (
         <View style={styles.mainConatiner}>
@@ -91,9 +94,10 @@ const CreateComplaintScreen = () => {
                     <CustomCheckBox label={i18n.t("Common.AgreeTerms")} />
                 </View>
                 <GlobalButton
-                    buttonPress={register}
+                    buttonPress={submitComplaint}
                     buttonText={i18n.t("Common.Submit")}
                 />
+                <SuccessModal visibility={visibility} toggleVisibility={toggleVisibility} desc={i18n.t("LodgedComplaintSection.SuccessMsg")} idLabel={i18n.t("ComplaintCardSection.ComplaintIdText")} id={"AAER22234D"} />
             </ScrollView>
         </View>
     )

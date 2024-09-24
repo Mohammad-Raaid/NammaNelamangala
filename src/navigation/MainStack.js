@@ -18,6 +18,8 @@ import ApplicationDetailScreen from "../screens/ApplicationDetail/ApplicationDet
 import GalleryDetailsScreen from "../screens/GalleryDetails/GalleryDetailsScreen";
 import JoinAsMemberScreen from "../screens/JoinAsMember/JoinAsMemberScreen";
 import JoinAsCommunityScreen from "../screens/JoinAsCommunity/JoinAsCommunityScreen";
+import ChooseLanguage from "../screens/ChooseLanguage/ChooseLanguage";
+import NotificationScreen from "../screens/Notification/NotificationScreen";
 enableScreens();
 const Stack = createStackNavigator();
 
@@ -46,6 +48,8 @@ const MainStack = () => {
                     <Stack.Screen name={ScreenNames.GALLERY_DETAILS_SCREEN} component={GalleryDetailsScreen} />
                     <Stack.Screen name={ScreenNames.JOIN_AS_MEMBER_SCREEN} component={JoinAsMemberScreen} />
                     <Stack.Screen name={ScreenNames.JOIN_AS_COMMUNITY_SCREEN} component={JoinAsCommunityScreen} />
+                    <Stack.Screen name={ScreenNames.CHOOSE_LANGUAGE_SCREEN} component={ChooseLanguage} />
+                    <Stack.Screen name={ScreenNames.NOTIFICATION_SCREEN} component={NotificationScreen} />
                 </Stack.Navigator>
             </NavigationContainer>
 

@@ -6,6 +6,7 @@ import FocusAwareStatusBar from '../../components/FocusAwareStatusBar'
 import { Colors } from '../../global'
 import { useSelector } from 'react-redux'
 import MenuHeader from '../../components/MenuHeader/MenuHeader'
+import i18n from '../../i18n'
 const GalleryScreen = () => {
     const {
         renderGallery
@@ -16,7 +17,7 @@ const GalleryScreen = () => {
             <FocusAwareStatusBar isTopSpace barColor={Colors.WHITE} />
             <MenuHeader />
             <Text style={styles.heading}>
-                Gallery
+                {i18n.t("GallerySection.Gallery")}
             </Text>
             <FlatList
                 data={[1, 2, 3, 4]}

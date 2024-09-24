@@ -10,6 +10,7 @@ import EmailSvg from '../../assets/svgs/email.svg'
 import OfficeAddressSvg from '../../assets/svgs/officeAddress.svg'
 import ContactNumberSvg from '../../assets/svgs/contactNumbers.svg'
 import CopyIcon from '../../assets/svgs/copyIcon.svg'
+import i18n from '../../i18n'
 const ContactUsScreen = () => {
     const {
     } = ContactUsHooks();
@@ -19,11 +20,10 @@ const ContactUsScreen = () => {
             <FocusAwareStatusBar isTopSpace barColor={Colors.WHITE} />
             <MenuHeader />
             <Text style={styles.heading}>
-                Contact us
+                {i18n.t("ContactUsSection.ContactUs")}
             </Text>
             <Text style={styles.description}>
-                You can get in touch with us through below platforms.{`\n`}
-                Our team will reach out to you as soon as it would be possible.
+                {i18n.t("ContactUsSection.ContactUsDesc")}
             </Text>
             <ScrollView>
 
@@ -31,7 +31,7 @@ const ContactUsScreen = () => {
                     <View style={styles.title}>
                         <EmailSvg />
                         <Text style={styles.titleText}>
-                            Email ID
+                            {i18n.t("ContactUsSection.EmailID")}
                         </Text>
                     </View>
                     <View style={styles.details}>
@@ -45,7 +45,7 @@ const ContactUsScreen = () => {
                     <View style={styles.title}>
                         <OfficeAddressSvg />
                         <Text style={styles.titleText}>
-                            Office address
+                            {i18n.t("ContactUsSection.OfficeAddress")}
                         </Text>
                     </View>
                     <Text style={{ ...styles.detailsText, marginTop: Constants.CHANGE_BY_MOBILE_DPI(10) }}>
@@ -65,7 +65,7 @@ const ContactUsScreen = () => {
                     <View style={styles.title}>
                         <ContactNumberSvg />
                         <Text style={styles.titleText}>
-                            Contact numbers
+                            {i18n.t("ContactUsSection.ContactNumbers")}
                         </Text>
                     </View>
                     <View style={styles.details}>

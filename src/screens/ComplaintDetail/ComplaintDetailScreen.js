@@ -11,7 +11,7 @@ const ComplaintDetailScreen = () => {
     return (
         <View style={styles.mainContainer}>
             <FocusAwareStatusBar barColor={Colors.WHITE} isLightBar={false} isTopSpace={true} />
-            <Header headerText={i18n.t("ComplaintDetailsSection.HeaderText")} rightActions />
+            <Header headerText={i18n.t("ComplaintDetailsSection.HeaderText")} rightActions desc={i18n.t("LodgedComplaintSection.Desc")} idLabel={i18n.t("LodgedComplaintSection.Complaint")} id={'AAER22234D'} />
             <Detail label={i18n.t("ComplaintCardSection.ComplaintIdText")} value='AAER22234D' />
             <Detail label={i18n.t("ComplaintDetailsSection.Issuedon")} value='Aug 23, 2024' />
             <Detail label={i18n.t("Common.Ward")} value='Jalahalli' />

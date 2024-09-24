@@ -13,7 +13,7 @@ const ApplicationCard = ({ item }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.complaintId}>
-                {i18n.t("AppiliationCardSection.AppiliationIdText")} <Text style={styles.value}>AAER22234D</Text>
+                {i18n.t("AppiliationCardSection.AppiliationIdText")}: <Text style={styles.value}>AAER22234D</Text>
             </Text>
             <Text style={styles.details}>
                 {i18n.t("Common.Type")}: <Text style={styles.value}>Type2</Text>

@@ -17,27 +17,25 @@ const CreateComplaintHooks = () => {
         location: '',
         complaintDescription: ''
     })
+    const [visibility, setVisibility] = React.useState(false)
     const [invalidFields, setInvalidFields] = React.useState([])
-    const resetStackAndGoToHome = CommonActions.reset({
-        index: 0,
-        routes: [{ name: ScreenNames.HOME_DRAWER, }],
-    });
 
+    const toggleVisibility = () => setVisibility(!visibility)
     const updateFormData = (key, value) => {
         const data = formData;
         data[key] = value;
         setFormData(data)
     }
 
-    const register = async () => {
+    const submitComplaint = async () => {
         // if (isValidPhoneNumber(mobileNumber).valid) {
         try {
             dispatch(UserAction.setOnScreenLodaer(true))
-            navigation.dispatch(resetStackAndGoToHome)
+            toggleVisibility()
             dispatch(UserAction.setOnScreenLodaer(false))
         } catch (error) {
             dispatch(UserAction.setOnScreenLodaer(false))
-            console.log("register", error);
+            console.log("submitComplaint", error);
 
         }
     }
@@ -47,10 +45,12 @@ const CreateComplaintHooks = () => {
     }, [formData])
 
     return {
-        register,
+        submitComplaint,
         invalidFields,
         updateFormData,
         formData,
+        visibility,
+        toggleVisibility
     }
 }
 

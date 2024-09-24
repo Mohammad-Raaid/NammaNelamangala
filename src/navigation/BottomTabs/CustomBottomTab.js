@@ -19,6 +19,7 @@ import GallerySelected from '../../assets/svgs/bottomTabIcons/gallerySelected.sv
 import ContactUsSelected from '../../assets/svgs/bottomTabIcons/contactusSelected.svg';
 
 import { Colors, Constants, Fonts } from '../../global';
+import i18n from '../../i18n';
 //components
 
 
@@ -26,7 +27,7 @@ const CustomBottomTab = ({ state, navigation }) => {
 
     const insets = useSafeAreaInsets();
     const isIOS = Platform.OS === 'ios';
-    const names = ["Home", "Complaints", "Applications", "Gallery", 'Contact us'];
+    const names = [i18n.t("BottomTabSection.Home"), i18n.t("BottomTabSection.Complaints"), i18n.t("BottomTabSection.Applications"), i18n.t("BottomTabSection.Gallery"), i18n.t("BottomTabSection.ContactUs")];
     const svgs = [
         <HomeSelected height={Constants.CHANGE_BY_MOBILE_DPI(28)} width={Constants.CHANGE_BY_MOBILE_DPI(28)} />,
         <ComplaintsSelected height={Constants.CHANGE_BY_MOBILE_DPI(28)} width={Constants.CHANGE_BY_MOBILE_DPI(28)} />,

@@ -14,6 +14,8 @@ import DownArrow from '../../assets/svgs/DropDownIcon.svg'
 import CustomDatePicker from '../../components/CustomDatePicker/CustomDatePicker'
 import CustomCheckBox from '../../components/CustomCheckBox/CustomCheckBox'
 import i18n from '../../i18n'
+import SuccessModal from '../../components/SuccessModal/SuccessModal'
+import CustomFilePicker from '../../components/CustomFilePicker/CustomFilePicker'
 const Step1 = ({ updateFormData, invalidFields }) => {
     return (
         <View style={styles.inputContainer}>
@@ -288,11 +290,7 @@ const Step3 = ({ updateFormData, invalidFields }) => {
 const Step4 = ({ updateFormData, invalidFields }) => {
     return (
         <View style={styles.inputContainer}>
-            <CustomTextInput
-                placeholderText={i18n.t("Common.FullName")}
-                onChangeText={(value) => updateFormData("complaintDescription", value)}
-                error={invalidFields.find(e => e.field == "complaintDescription")}
-            />
+            <CustomFilePicker maxLength={4} />
         </View>
     )
 }
@@ -303,7 +301,9 @@ const CreateApplicationScreen = () => {
         updateFormData,
         formData,
         step,
-        onClickNext
+        onClickNext,
+        visibility,
+        toggleVisibility
     } = CreateApplicationHooks()
     let stepsName = {
         1: i18n.t("CreateApplication.ApplicationDetails"),
@@ -353,6 +353,7 @@ const CreateApplicationScreen = () => {
                     externalButtonContainerStyle={{ marginTop: Constants.CHANGE_BY_MOBILE_DPI(20) }}
                     buttonText={step == 4 ? i18n.t("Common.Finish") : i18n.t("Common.Next")}
                 />
+                <SuccessModal visibility={visibility} toggleVisibility={toggleVisibility} desc={i18n.t("CreateApplication.SuccessMsg")} idLabel={i18n.t("AppiliationCardSection.AppiliationIdText")} id={"AAER22234D"} />
             </ScrollView>
         </View>
     )

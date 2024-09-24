@@ -33,7 +33,7 @@
     "ComplaintHeader": "Complaints"
   },
   "AppiliationCardSection": {
-    "AppiliationIdText": "Appilcation ID:"
+    "AppiliationIdText": "Appilcation ID"
   },
   "LodgedComplaintSection": {
     "HeaderText": "Lodge a complaint",
@@ -44,13 +44,18 @@
     "InsertImages": "Insert images",
     "MaximumImages": "Maximum {{count}} Images",
     "Uploadfromgallery": "Upload from gallery",
-    "Opencamera": "Open camera"
+    "Opencamera": "Open camera",
+    "SuccessMsg": "Your complaint has been lodged successfully.",
+    "Desc": "Do you want to delete the",
+    "Complaint": "Complaint"
   },
   "ComplaintDetailsSection": {
     "HeaderText": "Complaint details",
     "Issuedon": "Issued on"
   },
   "CreateApplication": {
+    "ApplicationId": "Application Id",
+    "Details": "Details",
     "HeaderText": "Create application",
     "ApplicationDetails": "Application details",
     "ConstituencyDetails": "Constituency details",
@@ -80,12 +85,20 @@
     "Age": "Age",
     "Gender": "Gender",
     "Education": "Education",
-    "Employment": "Employment"
+    "Employment": "Employment",
+    "SuccessMsg": "Your application has been submitted successfully.",
+    "Uploadimagepdf": "Upload image/pdf",
+    "MaximumFiles": "Maximum {{count}} files"
   },
   "ApplicationSection": {
-    "HeaderText": "My Applications"
+    "HeaderText": "My Applications",
+    "UploadedDocuments": "Uploaded documents",
+    "ShowCompleteDetails": "Show complete details",
+    "Desc": "Do you want to revoke"
   },
   "Common": {
+    "Success": "Success",
+    "Email": "Email",
     "PinCode": "Pincode",
     "ResolvedOn": "Resolved on",
     "Status": "Status",
@@ -101,6 +114,7 @@
     "Ward": "Ward",
     "Hobli": "Hobli",
     "Booth": "Booth",
+    "BoothNumber": "Booth number",
     "VillageName": "Village",
     "CheckVoterId": "Voter ID",
     "Active": "Active",
@@ -113,20 +127,33 @@
     "Location": "Location",
     "Next": "Next",
     "Finish": "Finish",
-    "MLAConstituency": "MLA Constituency"
+    "MLAConstituency": "MLA Constituency",
+    "Continue": "Continue",
+    "Warning": "Warning",
+    "Yes": "Yes",
+    "No": "No"
+  },
+  "GallerySection": {
+    "Gallery": "Gallery"
+  },
+  "ContactUsSection": {
+    "ContactUs": "Contact us",
+    "ContactUsDesc": "You can get in touch with us through below platforms.\n Our team will reach out to you as soon as it would be possible.",
+    "EmailID": "Email ID",
+    "OfficeAddress": "Office address",
+    "ContactNumbers": "Contact numbers"
   },
   "Validation": {
     "ValidPhoneNumber": "Please enter a valid Phone Number",
     "Digits": "Phone Number Must Be Of 10 Digits",
     "Format": "Invalid Format"
   },
-  "AlertSection": {
-    "AlertTitle": "Alert Title",
-    "CancelText": "Cancel",
-    "SubmitText": "Submit",
-    "okText": "Ok",
-    "Yes": "Yes",
-    "No": "No"
+  "BottomTabSection": {
+    "Home": "Home",
+    "Complaints": "Complaints",
+    "Applications": "Applications",
+    "Gallery": "Gallery",
+    "ContactUs": "Contact us"
   },
   "HomeSection": {
     "NewsandEvents": "News and Events",
@@ -134,97 +161,5 @@
     "SuggestionsText": "Suggestions",
     "JoinasCommunityText": "Join as community",
     "JoinasMemberText": "Join as member"
-  },
-  "MenuSection": {
-    "DigitalSurvey": "Digital Survey",
-    "CitizenSurvey": "Citizen Data",
-    "ReSurvey": "Citizen Data",
-    "DigitalSurveyVerify": "Digital Survey Verify",
-    "MyReport": "My Report",
-    "MyProfile": "My Profile",
-    "SurveyGallery": "Survery Gallery"
-  },
-  "DigitalSurveyFamilySection": {
-    "AddButton": "Add New Family",
-    "AddUserButton": "Add User",
-    "CardBuildingText": "Map Sl. No",
-    "CardPropertyText": "Property Sl. No"
-  },
-  "AddDigitalSurveyFamilySection": {
-    "MapText": "Map Sl. No",
-    "PropertyText": "Property Sl. No",
-    "PropertyTypeText": "Property Type",
-    "DoorText": "Door Number",
-    "FloorText": "Floor Number",
-    "ApartmentText": "Apartment / Building",
-    "CrossText": "Cross Road",
-    "MainText": "Main Road",
-    "LocalityText": "Locality / Area",
-    "PincodeText": "Pincode",
-    "LocationText": "Location",
-    "OwnershipText": "Ownership",
-    "ReligionText": "Religion",
-    "MainCasteText": "Main Caste",
-    "SubCasteText": "Sub Caste",
-    "MotherText": "Mother Tongue",
-    "RationText": "Ration Card Type",
-    "FamilyText": "Family Mobile Number",
-    "PublicText": "Public Opinion",
-    "OtherOpoinion": "Others Opinion"
-  },
-  "AddDigitalSurveyMemberSection": {
-    "WithinFamilyText": "Within Family Sl. No",
-    "VoterText": "Voter ID Number",
-    "AadharText": "Aadhar Number",
-    "FullText": "Full Name",
-    "DateText": "Date of Birth",
-    "AgeText": "Age",
-    "GenderText": "Gender",
-    "StayingOutsideText": "Staying Outside",
-    "StayingAddressText": "Staying Address",
-    "ConfirmationAlertHeaderText": "Is anyone in your family having voter ID staying in different location ?",
-    "RelationTypeText": "Relation Type",
-    "RelationName": "Relation Name",
-    "VoterFormText": "Voter Form",
-    "DisabilityText": "Disability",
-    "WidowText": "Widow",
-    "EducationGroupText": "Education Group",
-    "EducationText": "Education",
-    "EmploymentTypeText": "Employment Type",
-    "EmploymentText": "Employment",
-    "MobileNumberText": "Mobile Number",
-    "EmailIdText": "Email Id"
-  },
-  "FilterSection": {
-    "state": "State",
-    "mpConstituency": "MP Constituency",
-    "mlaConstituency": "MLA Constituency",
-    "wardVillage": "Ward / Village",
-    "wardName": "Ward Name",
-    "manVillage": "Main Village",
-    "boothNumber": "Booth Number",
-    "vendor": "Vendor",
-    "emumerator": "Emumerator",
-    "userRole": "User Role",
-    "person": "Person",
-    "formdate": "From Date",
-    "todate": "To Date",
-    "search": "Search"
-  },
-  "UserSection": {
-    "fullName": "Full Name",
-    "designation": "Designation",
-    "organization": "Organization",
-    "newOrganization": "New Organization",
-    "mobileNumber": "Mobile Number",
-    "email": "Email",
-    "aadhaarNumber": "Aadhaar Number",
-    "panNumber": "PAN Number",
-    "password": "Password",
-    "fullAddress": "Full Address",
-    "continue": "Continue",
-    "submit": "Submit",
-    "addNewAccessibility": "Add New Accessibility",
-    "remove": "Remove"
   }
 }
