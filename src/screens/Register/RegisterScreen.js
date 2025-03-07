@@ -64,16 +64,19 @@ const RegisterScreen = () => {
                         onChangeText={(value) => updateFormData("aadharNo", value)}
                         error={invalidFields.find(e => e.field == "aadharNo")}
                     />
+                    {/* Convert to Dropdown */}
                     <CustomTextInput
                         placeholderText={i18n.t("Common.Ward") + "/ " + i18n.t("Common.Hobli")}
                         onChangeText={(value) => updateFormData("ward", value)}
                         error={invalidFields.find(e => e.field == "ward")}
                     />
+                    {/* Convert to Dropdown */}
                     <CustomTextInput
                         placeholderText={i18n.t("Common.VillageName") + "/ " + i18n.t("Common.Ward")}
                         onChangeText={(value) => updateFormData("village", value)}
                         error={invalidFields.find(e => e.field == "village")}
                     />
+                    {/* Convert to Dropdown */}
                     <CustomTextInput
                         placeholderText={i18n.t("Common.Booth")}
                         onChangeText={(value) => updateFormData("booth", value)}
