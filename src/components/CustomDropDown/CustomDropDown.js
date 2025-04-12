@@ -4,7 +4,18 @@ import { Constants, Colors, Fonts } from "../../global/index"
 import DownArrow from '../../assets/svgs/DropDownIcon.svg'
 import DropDownModal from "../DropDownModal/DropDownModal";
 import { CHANGE_BY_MOBILE_DPI } from "../../global/constant";
-const CustomDropDown = ({ placeHolder, containerStyle = {}, dropDownList = [], setState, defaultValue = null, disabled = false, endPoint, body, dropDownSearchKey }) => {
+const CustomDropDown = ({
+    placeHolder,
+    containerStyle = {},
+    dropDownList = [],
+    setState,
+    defaultValue = null,
+    disabled = false,
+    endPoint = '',
+    body,
+    dropDownSearchKey,
+    error = null
+}) => {
     const [selectedValue, setSelectedValue] = React.useState('')
     const [borderColor, setBorderColor] = React.useState(Colors.BLACK)
     const [placeHolderColor, setPlaceHolderColor] = React.useState(
@@ -32,7 +43,7 @@ const CustomDropDown = ({ placeHolder, containerStyle = {}, dropDownList = [], s
                     {placeHolder}
                 </Text>
             }
-            <TouchableOpacity disabled={disabled} onPress={toggleModalVisibility} style={[styles.container,]}>
+            <TouchableOpacity disabled={disabled} onPress={toggleModalVisibility} style={[styles.container, error ? styles.error : {}]}>
                 <Text style={[styles.placeHolderText, { color: placeHolderColor }]}>
                     {selectedValue ? selectedValue[dropDownSearchKey] : ''}
                 </Text>
@@ -48,6 +59,13 @@ const CustomDropDown = ({ placeHolder, containerStyle = {}, dropDownList = [], s
                     dropDownSearchKey={dropDownSearchKey}
                 />
             </TouchableOpacity>
+            {
+                error
+                &&
+                <Text style={styles.errorText}>
+                    {error.errorMessage}
+                </Text>
+            }
         </View>
     )
 }
@@ -88,6 +106,16 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
 
+    },
+    error: {
+        borderColor: Colors.RED + "90",
+    },
+    errorText: {
+        color: Colors.RED,
+        fontFamily: Fonts.REGULAR,
+        fontSize: CHANGE_BY_MOBILE_DPI(12),
+        marginLeft: CHANGE_BY_MOBILE_DPI(24),
+        marginTop: CHANGE_BY_MOBILE_DPI(4)
     },
 })
 export default CustomDropDown;

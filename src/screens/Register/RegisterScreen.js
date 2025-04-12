@@ -13,6 +13,7 @@ import DropDownModal from '../../components/DropDownModal/DropDownModal'
 import DownArrow from '../../assets/svgs/DropDownIcon.svg'
 import CustomDatePicker from '../../components/CustomDatePicker/CustomDatePicker'
 import i18n from '../../i18n'
+import { mla_constituency_id, mp_constituency_id } from '../../global/config'
 const RegisterScreen = () => {
     const {
         register,
@@ -22,6 +23,8 @@ const RegisterScreen = () => {
         modalVisibility,
         toggleModalVisibility
     } = RegisterHooks()
+    console.log(invalidFields);
+
     return (
         <View style={styles.mainConatiner}>
             <FocusAwareStatusBar barColor={Colors.WHITE} isLightBar={false} isTopSpace={true} />
@@ -30,107 +33,115 @@ const RegisterScreen = () => {
                 <View style={styles.inputContainer}>
                     <CustomTextInput
                         placeholderText={i18n.t("Common.FullName")}
-                        onChangeText={(value) => updateFormData("fullName", value)}
-                        Prefix={() => {
-                            return (
-                                <TouchableOpacity onPress={toggleModalVisibility} style={styles.fullNamePrefix}>
-                                    <Text style={styles.fullNamePrefixText}>
-                                        {formData?.namePrefix}
-                                    </Text>
-                                    <DownArrow fill={Colors.GRAY_90} />
-                                </TouchableOpacity>
-                            )
-                        }}
-                        error={invalidFields.find(e => e.field == "fullName")}
+                        onChangeText={(value) => updateFormData("full_name", value)}
+                        error={invalidFields.find(e => e.field == "full_name")}
                     />
                     <CustomDropDown
                         setState={(value) => updateFormData("gender", value)}
                         placeHolder={i18n.t("RegisterSection.SelectGender")}
-                        dropDownList={[
-                            {
-                                name: 'Male',
-                                value: 'Male'
-                            },
-                            {
-                                name: 'Female',
-                                value: 'Female'
-                            },
-                        ]}
+                        endPoint={'getOpen/gender'}
+                        body={{}}
+                        dropDownSearchKey={'disp_name'}
+                        error={invalidFields.find(e => e.field == "gender")}
                     />
                     <CustomTextInput
                         placeholderText={i18n.t("Common.AadharNo")}
                         maxLength={12}
                         keyboardType='number-pad'
-                        onChangeText={(value) => updateFormData("aadharNo", value)}
-                        error={invalidFields.find(e => e.field == "aadharNo")}
-                    />
-                    {/* Convert to Dropdown */}
-                    <CustomTextInput
-                        placeholderText={i18n.t("Common.Ward") + "/ " + i18n.t("Common.Hobli")}
-                        onChangeText={(value) => updateFormData("ward", value)}
-                        error={invalidFields.find(e => e.field == "ward")}
-                    />
-                    {/* Convert to Dropdown */}
-                    <CustomTextInput
-                        placeholderText={i18n.t("Common.VillageName") + "/ " + i18n.t("Common.Ward")}
-                        onChangeText={(value) => updateFormData("village", value)}
-                        error={invalidFields.find(e => e.field == "village")}
-                    />
-                    {/* Convert to Dropdown */}
-                    <CustomTextInput
-                        placeholderText={i18n.t("Common.Booth")}
-                        onChangeText={(value) => updateFormData("booth", value)}
-                        error={invalidFields.find(e => e.field == "booth")}
+                        onChangeText={(value) => updateFormData("aadhaar_number", value)}
+                        error={invalidFields.find(e => e.field == "aadhaar_number")}
                     />
                     <CustomDropDown
-                        setState={(value) => updateFormData("isVoter", value)}
+                        placeHolder={i18n.t("Common.Ward")}
+                        endPoint={'/getOpen/ward_number'}
+                        body={{
+                            mla_constituency_id: mla_constituency_id,
+                            mp_constituency_id: mp_constituency_id
+                        }}
+                        dropDownSearchKey={'disp_name'}
+                        setState={(value) => updateFormData("ward_number_id", value)}
+                        error={invalidFields.find(e => e.field == "ward_number_id")}
+                    />
+                    <CustomDropDown
+                        placeHolder={i18n.t("Common.VillageName")}
+                        endPoint={'/getOpen/main_village'}
+                        body={{
+                            mla_constituency_id: mla_constituency_id,
+                            mp_constituency_id: mp_constituency_id
+                        }}
+                        dropDownSearchKey={'disp_name'}
+                        setState={(value) => updateFormData("main_village_id", value)}
+                        error={invalidFields.find(e => e.field == "main_village_id")}
+                    />
+                    {/* Convert to Dropdown */}
+                    <CustomDropDown
+                        setState={(value) => updateFormData("booth_number_id", value)}
+                        placeHolder={i18n.t("Common.Booth")}
+                        endPoint={'/getOpen/booth_number'}
+                        dropDownSearchKey={'disp_name'}
+                        body={{
+                            mla_constituency_id: mla_constituency_id,
+                            mp_constituency_id: mp_constituency_id,
+                            ward_number_id: formData?.ward_number_id ? formData?.ward_number_id?.id : null,
+                            main_village_id: formData?.main_village_id ? formData?.main_village_id?.id : null
+                        }}
+                        error={invalidFields.find(e => e.field == "booth_number_id")}
+                    />
+                    <CustomDropDown
+                        setState={(value) => updateFormData("is_voter", value)}
                         placeHolder={i18n.t("RegisterSection.VoterValidation")}
+                        dropDownSearchKey={'name'}
                         dropDownList={[
                             {
                                 name: 'Yes',
-                                value: 'Yes'
+                                value: '1'
                             },
                             {
                                 name: 'No',
-                                value: 'No'
+                                value: '0'
                             },
                         ]}
+                        error={invalidFields.find(e => e.field == "is_voter")}
                     />
-                    <CustomTextInput
-                        placeholderText={i18n.t("Common.CheckVoterId")}
-                        onChangeText={(value) => updateFormData("voterId", value)}
-                        error={invalidFields.find(e => e.field == "voterId")}
-                    />
+                    {
+                        formData?.is_voter == "1"
+                        &&
+                        <CustomTextInput
+                            placeholderText={i18n.t("Common.CheckVoterId")}
+                            onChangeText={(value) => updateFormData("voter_id_number", value)}
+                            error={invalidFields.find(e => e.field == "voter_id_number")}
+                        />
+                    }
                     <CustomTextInput
                         placeholderText={i18n.t("RegisterSection.MobileNumber")}
-                        onChangeText={(value) => updateFormData("mobileNumber", value)}
+                        onChangeText={(value) => updateFormData("contact_number", value)}
                         keyboardType='number-pad'
                         maxLength={10}
-                        error={invalidFields.find(e => e.field == "mobileNumber")}
+                        error={invalidFields.find(e => e.field == "contact_number")}
                     />
                     <CustomTextInput
                         placeholderText={i18n.t("RegisterSection.EmailIdText")}
                         keyboardType='email-address'
-                        onChangeText={(value) => updateFormData("emailId", value)}
-                        error={invalidFields.find(e => e.field == "emailId")}
+                        onChangeText={(value) => updateFormData("email", value)}
+                        error={invalidFields.find(e => e.field == "email")}
                     />
                     <CustomDatePicker
                         placeHolder={i18n.t("RegisterSection.DOB")}
-                        setState={(value) => updateFormData("dob", value)}
+                        setState={(value) => updateFormData("date_of_birth", value)}
                     />
                     <CustomTextInput
                         placeholderText={i18n.t("RegisterSection.RegisterAddress")}
                         multiline
                         maxLength={200}
-                        onChangeText={(value) => updateFormData("aadharNo", value)}
-                        error={invalidFields.find(e => e.field == "aadharNo")}
+                        onChangeText={(value) => updateFormData("full_address", value)}
+                        error={invalidFields.find(e => e.field == "full_address")}
                     />
                     <CustomTextInput
                         placeholderText={i18n.t("Common.PinCode")}
                         keyboardType='number-pad'
                         maxLength={6}
-                        onChangeText={(value) => updateFormData("aadharNo", value)}
-                        error={invalidFields.find(e => e.field == "aadharNo")}
+                        onChangeText={(value) => updateFormData("pincode", value)}
+                        error={invalidFields.find(e => e.field == "pincode")}
                     />
                 </View>
                 <GlobalButton

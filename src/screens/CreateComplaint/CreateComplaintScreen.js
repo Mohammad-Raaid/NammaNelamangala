@@ -35,29 +35,32 @@ const CreateComplaintScreen = () => {
                     <CustomDropDown
                         setState={(value) => updateFormData("ward_number_id", value)}
                         placeHolder={i18n.t("Common.Ward")}
-                        endPoint={'/meta'}
+                        endPoint={'/getOpen/ward_number'}
                         disabled={!!formData?.main_village_id}
                         dropDownSearchKey={'disp_name'}
                         body={{
-                            flag: "ward_number",
-                            group: "political",
-                            filters: [{ field: "mla_constituency_id", value: mla_constituency_id }],
+                            // flag: "ward_number",
+                            // group: "political",
+                            // filters: [{ field: "mla_constituency_id", value: mla_constituency_id }],
+                            mla_constituency_id: mla_constituency_id,
+                            mp_constituency_id: mp_constituency_id
                         }}
                     />
                     <CustomDropDown
                         setState={(value) => updateFormData("main_village_id", value)}
                         placeHolder={i18n.t("Common.VillageName")}
-                        endPoint={'get/main_village'}
+                        endPoint={'/getOpen/main_village'}
                         dropDownSearchKey={'disp_name'}
                         disabled={!!formData?.ward_number_id}
                         body={{
-                            mp_constituency_id: mp_constituency_id
+                            mp_constituency_id: mp_constituency_id,
+                            mla_constituency_id: mla_constituency_id,
                         }}
                     />
                     <CustomDropDown
                         setState={(value) => updateFormData("booth_number_id", value)}
                         placeHolder={i18n.t("Common.Booth")}
-                        endPoint={'get/booth_number'}
+                        endPoint={'/getOpen/booth_number'}
                         dropDownSearchKey={'disp_name'}
                         body={{
                             mla_constituency_id: mla_constituency_id,
@@ -69,7 +72,7 @@ const CreateComplaintScreen = () => {
                     <CustomDropDown
                         setState={(value) => updateFormData("complaint_type_id", value)}
                         placeHolder={i18n.t("Common.Complainttype")}
-                        endPoint={'meta'}
+                        endPoint={'/meta'}
                         dropDownSearchKey={'disp_name'}
                         body={{
                             "flag": "user_complaint_type"

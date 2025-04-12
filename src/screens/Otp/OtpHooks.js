@@ -5,6 +5,7 @@ import { ScreenNames } from '../../global';
 import * as UserActions from '../../redux/actions/userAction';
 import axiosInstance from '../../global/api-core';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Toast from 'react-native-toast-message';
 const OtpHooks = () => {
 
     const navigation = useNavigation()
@@ -31,17 +32,28 @@ const OtpHooks = () => {
     const goToHome = async () => {
         dispatch(UserActions.setOnScreenLodaer(true))
         try {
-            const response = await axiosInstance.post(`login`, {
+            const response = await axiosInstance.post(`login-public`, {
                 "username": route.params.mobileNumber,
-                "password": code,
-                "userAgent": "generic"
+                "password": code
             })
+            console.log('response:', response.data)
             if (response.status == 200 || response.status == 201) {
-                await AsyncStorage.setItem('userData', JSON.stringify(response.data.user))
-                await AsyncStorage.setItem('token', response.data.token)
-                axiosInstance.defaults.headers['Authorization'] = `Bearer ${response.data.token}`
-                dispatch(UserActions.setUser(response.data.user))
-                navigation.dispatch(resetStackAndGoToHome)
+                if (response?.data?.success === true && response?.data?.id === "EXISTING_USER") {
+                    await AsyncStorage.setItem('userData', JSON.stringify(response.data.user))
+                    await AsyncStorage.setItem('token', response.data.token)
+                    axiosInstance.defaults.headers['Authorization'] = `Bearer ${response.data.token}`
+                    dispatch(UserActions.setUser(response.data.user))
+                    navigation.dispatch(resetStackAndGoToHome)
+                } else if (response?.data?.success === true && response?.data?.id === "NEW_USER") {
+                    // await AsyncStorage.setItem('userData', JSON.stringify(response.data.user))
+                    // await AsyncStorage.setItem('token', response.data.token)
+                    // axiosInstance.defaults.headers['Authorization'] = `Bearer ${response.data.token}`
+                    // dispatch(UserActions.setUser(response.data.user))
+                    navigation.dispatch(resetStackAndGoToRegister)
+                } else {
+                    Toast.show({ type: "error", text1: 'Error:' + response.data.message })
+                }
+
             }
             dispatch(UserActions.setOnScreenLodaer(false))
         } catch (error) {

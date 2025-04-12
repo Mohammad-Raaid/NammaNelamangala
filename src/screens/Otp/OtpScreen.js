@@ -29,7 +29,7 @@ const OtpScreen = () => {
                         />
                     </View>
                     <Text style={styles.headerText}>
-                        ನಮ್ಮ ನೆಲಮಂಗಲ
+                        ನಮ್ಮ ರಾಜಾಜಿನಗರ
                     </Text>
                     <View style={styles.imageBorder}>
                         <Image

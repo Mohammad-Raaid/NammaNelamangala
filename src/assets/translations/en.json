@@ -146,7 +146,9 @@
   "Validation": {
     "ValidPhoneNumber": "Please enter a valid Phone Number",
     "Digits": "Phone Number Must Be Of 10 Digits",
-    "Format": "Invalid Format"
+    "Format": "Invalid Format",
+    "Valid": "Please enter a valid {{name}}",
+    "ValidSelect": "Please select {{name}}"
   },
   "BottomTabSection": {
     "Home": "Home",

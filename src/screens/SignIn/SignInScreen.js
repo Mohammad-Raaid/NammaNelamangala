@@ -52,7 +52,7 @@ const SignInScreen = () => {
                     )}
                 />
                 <View style={styles.alignCenterContainer}>
-                    <Text style={styles.title}>ನಮ್ಮ ನೆಲಮಂಗಲ</Text>
+                    <Text style={styles.title}>ನಮ್ಮ ರಾಜಾಜಿನಗರ</Text>
                     <Text style={styles.description}>{i18n.t("LoginSection.WelcomeText")}</Text>
                 </View>
                 <View style={styles.inputContainer}>
