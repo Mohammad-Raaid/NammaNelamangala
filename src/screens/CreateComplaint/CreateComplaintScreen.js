@@ -23,8 +23,10 @@ const CreateComplaintScreen = () => {
         formData,
         visibility,
         toggleVisibility,
-        region
+        region,
+        successId
     } = CreateComplaintHooks()
+
 
     return (
         <View style={styles.mainConatiner}>
@@ -102,7 +104,7 @@ const CreateComplaintScreen = () => {
                             showsUserLocation={true}
                             showsMyLocationButton={true}
                         >
-                            {location && <Marker coordinate={region} />}
+                            {<Marker coordinate={region} />}
                         </MapView>
                     )}
                     <CustomCheckBox label={i18n.t("Common.AgreeTerms")} />
@@ -111,7 +113,7 @@ const CreateComplaintScreen = () => {
                     buttonPress={submitComplaint}
                     buttonText={i18n.t("Common.Submit")}
                 />
-                <SuccessModal visibility={visibility} toggleVisibility={toggleVisibility} desc={i18n.t("LodgedComplaintSection.SuccessMsg")} idLabel={i18n.t("ComplaintCardSection.ComplaintIdText")} id={"AAER22234D"} />
+                <SuccessModal visibility={visibility} toggleVisibility={toggleVisibility} desc={i18n.t("LodgedComplaintSection.SuccessMsg")} idLabel={i18n.t("ComplaintCardSection.ComplaintIdText")} id={successId} />
             </ScrollView>
         </View>
     )
