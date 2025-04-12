@@ -3,6 +3,8 @@ import { CommonActions, useNavigation, useRoute } from '@react-navigation/native
 import { useDispatch } from 'react-redux';
 import { ScreenNames } from '../../global';
 import * as UserActions from '../../redux/actions/userAction';
+import axiosInstance from '../../global/api-core';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 const OtpHooks = () => {
 
     const navigation = useNavigation()
@@ -26,26 +28,26 @@ const OtpHooks = () => {
         routes: [{ name: ScreenNames.REGISTER_SCREEN }],
     });
 
-    const goToHome = async (autoVerified = false) => {
+    const goToHome = async () => {
         dispatch(UserActions.setOnScreenLodaer(true))
-        if (!autoVerified) {
-            try {
-                // if (confirm) {
-                //     await confirm.confirm(code)
-                // }
-            } catch (error) {
-                dispatch(UserActions.setOnScreenLodaer(false))
-                console.log('goToHome_error', error.message)
-                return;
-            }
-        }
         try {
-            navigation.dispatch(resetStackAndGoToRegister)
-            // navigation.dispatch(resetStackAndGoToHome)
+            const response = await axiosInstance.post(`login`, {
+                "username": route.params.mobileNumber,
+                "password": code,
+                "userAgent": "generic"
+            })
+            if (response.status == 200 || response.status == 201) {
+                await AsyncStorage.setItem('userData', JSON.stringify(response.data.user))
+                await AsyncStorage.setItem('token', response.data.token)
+                axiosInstance.defaults.headers['Authorization'] = `Bearer ${response.data.token}`
+                dispatch(UserActions.setUser(response.data.user))
+                navigation.dispatch(resetStackAndGoToHome)
+            }
             dispatch(UserActions.setOnScreenLodaer(false))
         } catch (error) {
             dispatch(UserActions.setOnScreenLodaer(false))
             console.log('goToHome_error', error.message)
+            return;
         }
     }
 

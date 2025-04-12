@@ -23,13 +23,11 @@ const SignInHooks = () => {
         routes: [{ name: ScreenNames.BOTTOM_TABS, }],
     });
 
-
-
     const goToOtp = async () => {
         if (isValidPhoneNumber(mobileNumber).valid) {
             try {
                 dispatch(UserAction.setOnScreenLodaer(true))
-                navigation.navigate(ScreenNames.OTP_SCREEN)
+                navigation.navigate(ScreenNames.OTP_SCREEN, { mobileNumber: mobileNumber })
                 dispatch(UserAction.setOnScreenLodaer(false))
             } catch (error) {
                 dispatch(UserAction.setOnScreenLodaer(false))

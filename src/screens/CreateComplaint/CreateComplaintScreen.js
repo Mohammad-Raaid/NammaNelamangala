@@ -13,6 +13,8 @@ import CustomCheckBox from '../../components/CustomCheckBox/CustomCheckBox'
 import i18n from '../../i18n'
 import CustomImagePicker from '../../components/CustomImagePicker/CustomImagePicker'
 import SuccessModal from '../../components/SuccessModal/SuccessModal'
+import { mla_constituency_id, mp_constituency_id } from '../../global/config'
+import MapView, { Marker } from 'react-native-maps'
 const CreateComplaintScreen = () => {
     const {
         submitComplaint,
@@ -20,8 +22,10 @@ const CreateComplaintScreen = () => {
         updateFormData,
         formData,
         visibility,
-        toggleVisibility
+        toggleVisibility,
+        region
     } = CreateComplaintHooks()
+
     return (
         <View style={styles.mainConatiner}>
             <FocusAwareStatusBar barColor={Colors.WHITE} isLightBar={false} isTopSpace={true} />
@@ -29,51 +33,47 @@ const CreateComplaintScreen = () => {
                 <Header headerText={i18n.t("LodgedComplaintSection.HeaderText")} headerDesc={i18n.t("LodgedComplaintSection.HeaderDesc")} />
                 <View style={styles.inputContainer}>
                     <CustomDropDown
-                        setState={(value) => updateFormData("ward", value)}
+                        setState={(value) => updateFormData("ward_number_id", value)}
                         placeHolder={i18n.t("Common.Ward")}
-                        dropDownList={[
-                            {
-                                name: 'Ward1',
-                                value: 'Ward1'
-                            },
-                            {
-                                name: 'Ward2',
-                                value: 'Ward2'
-                            },
-                        ]}
+                        endPoint={'/meta'}
+                        disabled={!!formData?.main_village_id}
+                        dropDownSearchKey={'disp_name'}
+                        body={{
+                            flag: "ward_number",
+                            group: "political",
+                            filters: [{ field: "mla_constituency_id", value: mla_constituency_id }],
+                        }}
                     />
                     <CustomDropDown
-                        setState={(value) => updateFormData("village", value)}
+                        setState={(value) => updateFormData("main_village_id", value)}
                         placeHolder={i18n.t("Common.VillageName")}
-                        dropDownList={[
-                            {
-                                name: 'Village1',
-                                value: 'Village1'
-                            },
-                            {
-                                name: 'Village2',
-                                value: 'Village2'
-                            },
-                        ]}
-                    />
-                    <CustomTextInput
-                        placeholderText={i18n.t("Common.Booth")}
-                        onChangeText={(value) => updateFormData("booth", value)}
-                        error={invalidFields.find(e => e.field == "booth")}
+                        endPoint={'get/main_village'}
+                        dropDownSearchKey={'disp_name'}
+                        disabled={!!formData?.ward_number_id}
+                        body={{
+                            mp_constituency_id: mp_constituency_id
+                        }}
                     />
                     <CustomDropDown
-                        setState={(value) => updateFormData("complaintType", value)}
+                        setState={(value) => updateFormData("booth_number_id", value)}
+                        placeHolder={i18n.t("Common.Booth")}
+                        endPoint={'get/booth_number'}
+                        dropDownSearchKey={'disp_name'}
+                        body={{
+                            mla_constituency_id: mla_constituency_id,
+                            mp_constituency_id: mp_constituency_id,
+                            ward_number_id: formData?.ward_number_id ? formData?.ward_number_id?.id : null,
+                            main_village_id: formData?.main_village_id ? formData?.main_village_id?.id : null
+                        }}
+                    />
+                    <CustomDropDown
+                        setState={(value) => updateFormData("complaint_type_id", value)}
                         placeHolder={i18n.t("Common.Complainttype")}
-                        dropDownList={[
-                            {
-                                name: 'Type1',
-                                value: 'Type1'
-                            },
-                            {
-                                name: 'Type2',
-                                value: 'Type2'
-                            },
-                        ]}
+                        endPoint={'meta'}
+                        dropDownSearchKey={'disp_name'}
+                        body={{
+                            "flag": "user_complaint_type"
+                        }}
                     />
                     <CustomTextInput
                         placeholderText={i18n.t("LodgedComplaintSection.LocationAndLandmarkText")}
@@ -84,13 +84,24 @@ const CreateComplaintScreen = () => {
                         placeholderText={i18n.t("LodgedComplaintSection.ComplaintDescription")}
                         multiline
                         maxLength={200}
-                        onChangeText={(value) => updateFormData("complaintDescription", value)}
-                        error={invalidFields.find(e => e.field == "complaintDescription")}
+                        onChangeText={(value) => updateFormData("description", value)}
+                        error={invalidFields.find(e => e.field == "description")}
                     />
                     <CustomImagePicker
                         placeholderText={i18n.t("LodgedComplaintSection.UploadImages")}
                         maxLength={4}
+                        onChange={(value) => updateFormData("images", value)}
                     />
+                    {region && (
+                        <MapView
+                            style={styles.map}
+                            region={region}
+                            showsUserLocation={true}
+                            showsMyLocationButton={true}
+                        >
+                            {location && <Marker coordinate={region} />}
+                        </MapView>
+                    )}
                     <CustomCheckBox label={i18n.t("Common.AgreeTerms")} />
                 </View>
                 <GlobalButton

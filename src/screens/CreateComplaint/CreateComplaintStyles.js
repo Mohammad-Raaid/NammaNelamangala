@@ -63,6 +63,11 @@ export const styles = StyleSheet.create({
         color: Colors.LIGHT_PRIMARY,
         fontFamily: Fonts.REGULAR,
         fontSize: Constants.CHANGE_BY_MOBILE_DPI(12)
+    },
+    map: {
+        width: Constants.SCREEN_WIDTH - Constants.CHANGE_BY_MOBILE_DPI(48),
+        alignSelf: "center",
+        height: Constants.CHANGE_BY_MOBILE_DPI(200)
     }
 
 })

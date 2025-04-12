@@ -46,13 +46,13 @@ const OtpScreen = () => {
                     <OTPTextInput
                         handleTextChange={(item) => {
                             setCode(item);
-                            if (item.length == 6) {
+                            if (item.length == 4) {
                                 Keyboard.dismiss();
                             }
                         }}
                         underlineColorAndroid='transparent'
                         ref={otpInput}
-                        inputCount={6}
+                        inputCount={4}
                         tintColor={Colors.PRIMARY}
                         offTintColor={Colors.GRAY_85}
                         containerStyle={styles.otpContainer}
@@ -61,7 +61,7 @@ const OtpScreen = () => {
                 </View>
                 <GlobalButton
                     buttonPress={() => {
-                        if (code.length == 6) {
+                        if (code.length == 4) {
                             goToHome()
                         } else {
                             // setToastMsgData({

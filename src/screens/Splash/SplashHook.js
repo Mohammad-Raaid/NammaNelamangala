@@ -21,7 +21,7 @@ const SplashHook = () => {
     });
     const resetStackAndGoToBottom = CommonActions.reset({
         index: 0,
-        routes: [{ name: ScreenNames.BOTTOM_TABS, }],
+        routes: [{ name: ScreenNames.HOME_DRAWER, }],
     });
 
     // Api
@@ -44,9 +44,7 @@ const SplashHook = () => {
         if (token) {
             const userData = await AsyncStorage.getItem('userData')
             axiosInstance.defaults.headers['Authorization'] = 'Bearer ' + token;
-            const response = await axiosInstance.get(`users/${JSON.parse(userData).userId}`);
-            await AsyncStorage.setItem('userData', JSON.stringify(response.data));
-            dispatch(UserActions.setUserData(response.data))
+            dispatch(UserActions.setUser(JSON.parse(userData)))
             navigation.dispatch(resetStackAndGoToBottom);
         } else {
             navigation.dispatch(resetStackAndGoToSignIn);

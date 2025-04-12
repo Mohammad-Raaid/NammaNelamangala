@@ -4,8 +4,8 @@ import { Constants, Colors, Fonts } from "../../global/index"
 import DownArrow from '../../assets/svgs/DropDownIcon.svg'
 import DropDownModal from "../DropDownModal/DropDownModal";
 import { CHANGE_BY_MOBILE_DPI } from "../../global/constant";
-const CustomDropDown = ({ placeHolder, containerStyle = {}, dropDownList, setState, defaultValue = null, disabled = false, externalPlaceholder = '', required = false }) => {
-    const [selectedValue, setSelectedValue] = React.useState(null)
+const CustomDropDown = ({ placeHolder, containerStyle = {}, dropDownList = [], setState, defaultValue = null, disabled = false, endPoint, body, dropDownSearchKey }) => {
+    const [selectedValue, setSelectedValue] = React.useState('')
     const [borderColor, setBorderColor] = React.useState(Colors.BLACK)
     const [placeHolderColor, setPlaceHolderColor] = React.useState(
         Colors.BLACK + "33",
@@ -15,7 +15,7 @@ const CustomDropDown = ({ placeHolder, containerStyle = {}, dropDownList, setSta
     const setValue = (data) => {
         setBorderColor(Colors.PRIMARY)
         setPlaceHolderColor(Colors.BLACK)
-        setState(data.value)
+        setState(data)
         setSelectedValue(data)
     }
     React.useEffect(() => {
@@ -34,10 +34,19 @@ const CustomDropDown = ({ placeHolder, containerStyle = {}, dropDownList, setSta
             }
             <TouchableOpacity disabled={disabled} onPress={toggleModalVisibility} style={[styles.container,]}>
                 <Text style={[styles.placeHolderText, { color: placeHolderColor }]}>
-                    {selectedValue ? selectedValue.name : ''}
+                    {selectedValue ? selectedValue[dropDownSearchKey] : ''}
                 </Text>
                 <DownArrow fill={Colors.GRAY_85} />
-                <DropDownModal visibility={modalVisibility} toggleVisibility={toggleModalVisibility} dropDownList={dropDownList} setState={setValue} state={selectedValue} />
+                <DropDownModal
+                    visibility={modalVisibility}
+                    toggleVisibility={toggleModalVisibility}
+                    dropDownList={dropDownList}
+                    setState={setValue}
+                    state={selectedValue}
+                    endPoint={endPoint}
+                    body={body}
+                    dropDownSearchKey={dropDownSearchKey}
+                />
             </TouchableOpacity>
         </View>
     )

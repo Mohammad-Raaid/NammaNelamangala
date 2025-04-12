@@ -8,27 +8,22 @@ import AddSvg from '../../assets/svgs/imageAdd.svg'
 import ImagePickerModal from '../ImagePickerModal/ImagePickerModal'
 import CrossSvg from '../../assets/svgs/cross.svg'
 const CustomImagePicker = ({
-    onChangeText,
+    onChange,
     externalStyle,
     placeholderText = '',
     multiline = false,
-    keyboardType = 'default',
     maxLength = null,
-    onFocus = () => { },
-    onBlur = () => { },
-    editable = true,
-    defaultValue = '',
     error = null,
-    placeholderStyle = {},
-    Prefix = null
+    placeholderStyle = {}
 }) => {
     const [images, setImages] = React.useState([])
     const [selectImageModalVisibility, setSelectImageModalVisibility] = React.useState(false)
     const toggleSelectImageModalVisibility = () => setSelectImageModalVisibility(!selectImageModalVisibility);
     const onSelectImage = (image) => {
-        setImages([...images, image])
+        let newArray = [...images, image]
+        setImages(newArray)
+        onChange(newArray)
     }
-    console.log(images);
     function bytesToSize(bytes) {
         const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
         if (bytes === 0) return 'n/a'
@@ -37,7 +32,10 @@ const CustomImagePicker = ({
         return `${(bytes / (1024 ** i)).toFixed(1)} ${sizes[i]}`
     }
     const removeImage = (index) => {
-        setImages(images.filter((e, i) => i != index))
+        let newArray = images.filter((e, i) => i != index)
+        setImages(newArray)
+        onChange(newArray)
+
     }
 
     return (

@@ -1,1 +1,3 @@
-export const BASE_URL = `http://3.109.243.209:3000/api`;
+export const BASE_URL = `https://api.chilumeravikumar.in/api`;
+export const mla_constituency_id = 199;
+export const mp_constituency_id = 5;

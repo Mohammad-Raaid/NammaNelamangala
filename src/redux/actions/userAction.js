@@ -5,7 +5,7 @@ export const setOnScreenLodaer = payload => ({
   payload,
 });
 
-export const setUserData = payload => ({
-  type: actionTypes.SET_USER_DATA,
+export const setUser = payload => ({
+  type: actionTypes.SET_USER,
   payload,
 });

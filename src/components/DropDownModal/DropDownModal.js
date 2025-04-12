@@ -1,7 +1,9 @@
 import React from "react";
 import { ActivityIndicator, Modal, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from "react-native";
 import { Colors, Constants, Fonts, Server, Helper } from "../../global/index"
-const DropDownModal = ({ dropDownList, visibility = false, toggleVisibility = () => { }, onRequestClose = () => { }, setState, state, showSearch = true }) => {
+import axiosInstance from "../../global/api-core";
+import CustomTextInput from "../CustomTextInput/CustomTextInput";
+const DropDownModal = ({ dropDownList, visibility = false, toggleVisibility = () => { }, onRequestClose = () => { }, setState, state, endPoint, body, dropDownSearchKey }) => {
     const loadingLoader = <ActivityIndicator size="small" color="#988F8A" />
     const [searchText, setSearchText] = React.useState("");
     const [searchList, setSearchList] = React.useState(dropDownList);
@@ -10,7 +12,7 @@ const DropDownModal = ({ dropDownList, visibility = false, toggleVisibility = ()
 
     const searchData = (text) => {
         setSearchText(text)
-        const response = dataList.filter(item => (item.name.toString().toUpperCase()).includes(text.toString().toUpperCase()))
+        const response = dataList.filter(item => (item[dropDownSearchKey].toString().toUpperCase()).includes(text.toString().toUpperCase()))
         setSearchList(response);
     }
 
@@ -21,16 +23,32 @@ const DropDownModal = ({ dropDownList, visibility = false, toggleVisibility = ()
     const renderSearchItem = (item) => {
         return (
             <TouchableOpacity onPress={() => selectContent(item)} key={JSON.stringify(item)} style={styles.searchItemContainer} >
-                <Text style={{ ...styles.searchItemText, color: state?.name == item.name ? Colors.PRIMARY : "#988F8A" }}>
-                    {item.name}
+                <Text style={{ ...styles.searchItemText, color: state[dropDownSearchKey] == item[dropDownSearchKey] ? Colors.PRIMARY : "#988F8A" }}>
+                    {item[dropDownSearchKey]}
                 </Text>
             </TouchableOpacity >
         )
     }
 
     const onShow = async () => {
-        setDataList(dropDownList)
-        setSearchList(dropDownList)
+        if (endPoint != '') {
+            try {
+                setSearchList(null)
+                setDataList(null)
+                console.log(endPoint, body);
+
+                const response = await axiosInstance.post(endPoint, body)
+                console.log(response.data.data);
+
+                setDataList(response.data.data)
+                setSearchList(response.data.data)
+            } catch (error) {
+
+            }
+        } else {
+            setDataList(dropDownList)
+            setSearchList(dropDownList)
+        }
     }
 
     return (
@@ -46,6 +64,11 @@ const DropDownModal = ({ dropDownList, visibility = false, toggleVisibility = ()
                 <View style={styles.dropDownContainer}>
                     <Text style={styles.dropDownTitle}>
                     </Text>
+                    <CustomTextInput
+                        onChangeText={searchData}
+                        autoCapitalize={'none'}
+                        placeholderText="Search here"
+                    />
                     {/* dropDownTitle */}
                     {
                         dataList == null
@@ -56,7 +79,7 @@ const DropDownModal = ({ dropDownList, visibility = false, toggleVisibility = ()
                             :
                             <ScrollView contentContainerStyle={styles.dropDownListContainer}>
                                 {
-                                    searchList.map(renderSearchItem)
+                                    searchList && searchList.map(renderSearchItem)
                                 }
                             </ScrollView>
                     }

@@ -1,14 +1,12 @@
 import * as actionTypes from '../actionTypes/actionTypes';
 const initialState = {
 	userData: null,
-	onScreenLodaer: false,
-	currentStatusIndex: 0,
-	animationStop: false,
+	onScreenLodaer: false
 };
 const user = (state = initialState, action) => {
 	const { type, payload } = action;
 	switch (type) {
-		case actionTypes.SET_USER_DATA:
+		case actionTypes.SET_USER:
 			return {
 				...state,
 				userData: payload,
