@@ -23,13 +23,12 @@ const RegisterScreen = () => {
         modalVisibility,
         toggleModalVisibility
     } = RegisterHooks()
-    console.log(invalidFields);
 
     return (
         <View style={styles.mainConatiner}>
             <FocusAwareStatusBar barColor={Colors.WHITE} isLightBar={false} isTopSpace={true} />
             <ScrollView contentContainerStyle={styles.scrollContainer}>
-                <Header headerText="Register" />
+                <Header backIcon={false} headerText="Register" />
                 <View style={styles.inputContainer}>
                     <CustomTextInput
                         placeholderText={i18n.t("Common.FullName")}

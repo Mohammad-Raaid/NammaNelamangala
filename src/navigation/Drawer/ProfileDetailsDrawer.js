@@ -11,46 +11,89 @@ import DescriptionIcon from '../../assets/svgs/description'
 import ArticleIcon from '../../assets/svgs/article'
 import CallIcon from '../../assets/svgs/call'
 import NotificationIcon from '../../assets/svgs/menuNotifications'
+import LogoutIcon from '../../assets/svgs/LogoutIcon.svg'
 import GalleryIcon from '../../assets/svgs/gallery'
 import SettingIcon from '../../assets/svgs/settings'
 import FrameIcon from '../../assets/svgs/Frame'
 import i18n from '../../i18n';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 const ProfileDetailsDrawer = ({ }) => {
 	const navigation = useNavigation()
 	const userDetails = useSelector(state => state.user.userData);
-	const pcashCount = useSelector(state => state.user.pcashCount);
 	const resetStackAndGoToHome = CommonActions.reset({
 		index: 0,
-		routes: [{ name: ScreenNames.HOME_DRAWER, params: { screen: ScreenNames.HOME_SCREEN } }],
+		routes: [{ name: ScreenNames.BOTTOM_TABS, params: { screen: ScreenNames.HOME_STACK } }],
+	});
+	const resetStackAndGoToComplaint = CommonActions.reset({
+		index: 0,
+		routes: [{ name: ScreenNames.BOTTOM_TABS, params: { screen: ScreenNames.COMPLAINTS_STACK } }],
+	});
+	const resetStackAndGoToApplication = CommonActions.reset({
+		index: 0,
+		routes: [{ name: ScreenNames.BOTTOM_TABS, params: { screen: ScreenNames.APPLICATIONS_STACK } }],
+	});
+	const resetStackAndGoToContact = CommonActions.reset({
+		index: 0,
+		routes: [{ name: ScreenNames.BOTTOM_TABS, params: { screen: ScreenNames.CONTACT_US_STACK } }],
+	});
+	const resetStackAndGoToLogin = CommonActions.reset({
+		index: 0,
+		routes: [{ name: ScreenNames.SIGNIN_SCREEN }],
 	});
 	const [menus, setMenus] = React.useState([
 		{
 			icon: <HomeIcon />,
 			name: i18n.t("ProfileDetailSection.HomeText"),
-
+			value: 'home',
+			onPress: () => {
+				navigation.dispatch(resetStackAndGoToHome)
+			}
 		},
 		{
 			icon: <DescriptionIcon />,
 			name: i18n.t("ProfileDetailSection.ComplaintsText"),
+			value: 'complaints',
+			onPress: () => {
+				navigation.dispatch(resetStackAndGoToComplaint)
+			}
 		},
 		{
 			icon: <ArticleIcon />,
 			name: i18n.t("ProfileDetailSection.ApplicationText"),
-
+			value: 'application',
+			onPress: () => {
+				navigation.dispatch(resetStackAndGoToApplication)
+			}
 		},
 		{
 			icon: <CallIcon />,
 			name: i18n.t("ProfileDetailSection.ContactText"),
-
+			value: 'call',
+			onPress: () => {
+				navigation.dispatch(resetStackAndGoToContact)
+			}
 		},
-		{
-			icon: <GalleryIcon />,
-			name: i18n.t("ProfileDetailSection.GalleryText"),
-
-		},
+		// {
+		// 	icon: <GalleryIcon />,
+		// 	name: i18n.t("ProfileDetailSection.GalleryText"),
+		// },
 		{
 			icon: <NotificationIcon />,
 			name: i18n.t("ProfileDetailSection.NotificationText"),
+			value: 'notification',
+			onPress: () => {
+				navigation.navigate(ScreenNames.NOTIFICATION_SCREEN)
+			}
+
+		},
+		{
+			icon: <LogoutIcon />,
+			name: i18n.t("ProfileDetailSection.LogoutText"),
+			value: 'logout',
+			onPress: async () => {
+				await AsyncStorage.clear()
+				navigation.dispatch(resetStackAndGoToLogin)
+			}
 
 		}
 	])
@@ -63,7 +106,7 @@ const ProfileDetailsDrawer = ({ }) => {
 				</Text>
 				<View style={styles.notificationCountContainer}>
 					{
-						index == 5 ? <View style={styles.notificationCount}><Text style={styles.countColor}>1</Text></View> : null
+						item?.value == 'notification' ? <View style={styles.notificationCount}><Text style={styles.countColor}>1</Text></View> : null
 					}
 				</View>
 			</TouchableOpacity>)
@@ -183,7 +226,8 @@ const styles = StyleSheet.create({
 	},
 	settingText: {
 		marginLeft: Constants.CHANGE_BY_MOBILE_DPI(10),
-		fontFamily: Fonts.BOLD
+		fontFamily: Fonts.BOLD,
+		color: Colors.BLACK
 	},
 	flexContainer: {
 		flex: 1,
@@ -221,7 +265,7 @@ const styles = StyleSheet.create({
 		marginLeft: CHANGE_BY_MOBILE_DPI(10),
 		fontSize: CHANGE_BY_MOBILE_DPI(16),
 		fontFamily: Fonts.REGULAR,
-		color: Colors.TEXT_COLOR
+		color: Colors.BLACK
 	},
 	notificationCountContainer: {
 		flex: 1,

@@ -7,7 +7,7 @@ import DeleteSvg from '../../assets/svgs/deleteIcon'
 import ShareDetailSvg from '../../assets/svgs/shareDetail'
 import ConformationModal from '../ConformationModal/ConformationModal'
 import i18n from '../../i18n'
-const Header = ({ headerText = "", externalHeaderContainer, headerDesc = "", rightActions = false, desc, idLabel, id }) => {
+const Header = ({ headerText = "", externalHeaderContainer, headerDesc = "", rightActions = false, desc, idLabel, id, backIcon = true }) => {
     const [visibility, setVisibility] = React.useState(false)
     const toggleVisibility = () => setVisibility(!visibility)
     const navigation = useNavigation()
@@ -17,9 +17,13 @@ const Header = ({ headerText = "", externalHeaderContainer, headerDesc = "", rig
     return (
         <View style={styles.headerMainConatiner}>
             <View style={styles.iconView} hitSlop={{ left: 20, right: 20, top: 20, bottom: 20 }} >
-                <TouchableOpacity onPress={onpress}>
-                    <BackIcon />
-                </TouchableOpacity>
+                {
+                    backIcon
+                    &&
+                    <TouchableOpacity onPress={onpress}>
+                        <BackIcon />
+                    </TouchableOpacity>
+                }
                 {
                     rightActions
                     &&

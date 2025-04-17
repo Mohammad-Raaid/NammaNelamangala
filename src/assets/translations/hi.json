@@ -26,6 +26,7 @@
     "ContactText": "Contact",
     "GalleryText": "Gallery",
     "NotificationText": "Notification",
+    "LogoutText": "Log out",
     "SettingText": "Setting"
   },
   "ComplaintCardSection": {

@@ -19,7 +19,7 @@ const BottomTabs = ({ }) => {
 				<Tab.Screen name={ScreenNames.HOME_STACK} component={HomeStack} />
 				<Tab.Screen name={ScreenNames.COMPLAINTS_STACK} component={ComplaintsStack} />
 				<Tab.Screen name={ScreenNames.APPLICATIONS_STACK} component={ApplicationsStack} />
-				<Tab.Screen name={ScreenNames.GALLERY_STACK} component={GalleryStack} />
+				{/* <Tab.Screen name={ScreenNames.GALLERY_STACK} component={GalleryStack} /> */}
 				<Tab.Screen name={ScreenNames.CONTACT_US_STACK} component={ContactUsStack} />
 			</Tab.Navigator>
 		</>

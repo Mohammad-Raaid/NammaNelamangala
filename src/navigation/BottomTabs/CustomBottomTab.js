@@ -27,19 +27,21 @@ const CustomBottomTab = ({ state, navigation }) => {
 
     const insets = useSafeAreaInsets();
     const isIOS = Platform.OS === 'ios';
-    const names = [i18n.t("BottomTabSection.Home"), i18n.t("BottomTabSection.Complaints"), i18n.t("BottomTabSection.Applications"), i18n.t("BottomTabSection.Gallery"), i18n.t("BottomTabSection.ContactUs")];
+    const names = [i18n.t("BottomTabSection.Home"), i18n.t("BottomTabSection.Complaints"), i18n.t("BottomTabSection.Applications"),
+    // i18n.t("BottomTabSection.Gallery"), 
+    i18n.t("BottomTabSection.ContactUs")];
     const svgs = [
         <HomeSelected height={Constants.CHANGE_BY_MOBILE_DPI(28)} width={Constants.CHANGE_BY_MOBILE_DPI(28)} />,
         <ComplaintsSelected height={Constants.CHANGE_BY_MOBILE_DPI(28)} width={Constants.CHANGE_BY_MOBILE_DPI(28)} />,
         <ApplicationsSelected height={Constants.CHANGE_BY_MOBILE_DPI(28)} width={Constants.CHANGE_BY_MOBILE_DPI(28)} />,
-        <GallerySelected height={Constants.CHANGE_BY_MOBILE_DPI(28)} width={Constants.CHANGE_BY_MOBILE_DPI(28)} />,
+        // <GallerySelected height={Constants.CHANGE_BY_MOBILE_DPI(28)} width={Constants.CHANGE_BY_MOBILE_DPI(28)} />,
         <ContactUsSelected height={Constants.CHANGE_BY_MOBILE_DPI(28)} width={Constants.CHANGE_BY_MOBILE_DPI(28)} />
     ];
     const blurredSvg = [
         <Home height={Constants.CHANGE_BY_MOBILE_DPI(28)} width={Constants.CHANGE_BY_MOBILE_DPI(28)} />,
         <Complaints height={Constants.CHANGE_BY_MOBILE_DPI(28)} width={Constants.CHANGE_BY_MOBILE_DPI(28)} />,
         <Applications height={Constants.CHANGE_BY_MOBILE_DPI(28)} width={Constants.CHANGE_BY_MOBILE_DPI(28)} />,
-        <Gallery height={Constants.CHANGE_BY_MOBILE_DPI(28)} width={Constants.CHANGE_BY_MOBILE_DPI(28)} />,
+        // <Gallery height={Constants.CHANGE_BY_MOBILE_DPI(28)} width={Constants.CHANGE_BY_MOBILE_DPI(28)} />,
         <ContactUs height={Constants.CHANGE_BY_MOBILE_DPI(28)} width={Constants.CHANGE_BY_MOBILE_DPI(28)} />
     ]
 
